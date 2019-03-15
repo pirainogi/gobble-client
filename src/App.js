@@ -1,35 +1,39 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import Home from './components/Home'
+import UserShow from './components/UserShow'
+import Footer from './components/Footer'
 import { connect } from 'react-redux';
 
 class App extends Component {
+
   render() {
     console.log(this.props);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+      <Header />
+      <Switch>
+        <Route
+          path="/usershow"
+          component={() => <UserShow />}
+        />
+        <Route
+          path="/"
+          component={() => <Home />}
+        />
+      </Switch>
+      <Footer />
+      </>
     );
   }
 }
 
 function mapStateToProps(state){
   return {
-    test: state.test 
+    test: state.test
   }
 }
 
