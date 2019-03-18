@@ -3,7 +3,7 @@ const defaultState = {
 }
 
 function reducer(state=defaultState, action){
-  console.log(action)
+  console.log('%c REDUCER', 'color: blue', state, action)
 
   switch(action.type){
     default:
