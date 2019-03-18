@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
@@ -58,8 +57,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
+  console.log('map state to props', state);
   return {
-    test: state.test
+    state
   }
 }
 
