@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/RecipePreview.css';
 import Button from './Button'
 
+
 const RecipePreview = () => {
   return (
     <div className="recipe-preview">

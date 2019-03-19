@@ -16,7 +16,7 @@ import { getrecipes } from './action-creators/actions'
 class App extends Component {
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <>
       <Header />
@@ -56,11 +56,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state){
-  console.log('map state to props', state);
-  return {
-    state
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
