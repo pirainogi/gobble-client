@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Search.css';
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 class Search extends Component {
   //
@@ -25,11 +25,11 @@ class Search extends Component {
   render(){
     console.log(this.props);
     return (
-      <form>
+      <form onChange={this.props.onSearchInput}>
         <input
           type='text'
           placeholder='Search for Recipes'
-          value={this.props.searchInput}
+          value={this.props.input}
         />
       </form>
     )

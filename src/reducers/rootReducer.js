@@ -1,9 +1,9 @@
-import { GET_RECIPES, GET_USER, GET_SEARCH_VALUE, SEARCH_RETURN } from '../types'
+import { GET_RECIPES, GET_USER } from '../types'
 
 
 const defaultState = {
   recipes: [],
-  currentrecipes: [],
+  searchedRecipes: [],
   currentUser: [],
   searchInput: ""
 }
