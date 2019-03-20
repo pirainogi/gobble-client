@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../css/SearchContainer.css';
 import Search from './Search'
 import RecipePreview from './RecipePreview'
-import { connect } from 'react-redux'
 
 
 class SearchContainer extends Component {
@@ -39,10 +38,4 @@ class SearchContainer extends Component {
 
 }
 
-function mapStateToProps(state){
-  return {
-    recipes: state.recipes
-  }
-}
-
-export default connect(mapStateToProps)(SearchContainer);
+export default (SearchContainer);
