@@ -37,18 +37,5 @@ class Search extends Component {
 
 
 }
-//
-// function mapStateToProps(state){
-//   return {
-//     searchInput: state.searchInput
-//   }
-// }
-//
-// function mapDispatchToProps(dispatch){
-//   console.log(dispatch);
-//   return {
-//       getSearchValue: () => getSearchValue(dispatch)
-//   }
-// }
 
 export default (Search);
