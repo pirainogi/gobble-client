@@ -4,51 +4,31 @@ import RecipeShow from './RecipeShow'
 
 class RecipeContainer extends Component {
 
-
-  constructor(props){
-    super(props)
-
-    this.state = {
-      recipeToDisplay: []
-    }
+  pushToRecipeBox = (e) => {
+    console.log('pushing add button', e.target);
+    // this.props.history.push(`/recipes/${e.target.id}`)
   }
-
-  componentDidMount(){
-    console.log('finding recipe');
-    if(this.props.recipes.length > 0){
-      let foundRecipe =  this.props.recipes.find( recipe => recipe.id === parseInt(this.props.match.params.id) )
-      console.log('returned recipe', foundRecipe);
-      this.setState({
-        recipeToDisplay: foundRecipe
-      })
-      console.log('recipeToDisplay', this.state.recipeToDisplay);
-    }
-  }
-
-  // findRecipe() {
-  //
-  // }
 
   generateRecipe = () => {
-    if(this.state.recipeToDisplay.length !== 0){
-      this.state.recipeToDisplay.map(recipe => {
-      return (
-          <RecipeShow
-            key={recipe.id}
-            recipe={recipe}
-          />
-        )
-      })
-    }
+    // console.log(this.props.foundRecipe);
+    return (
+      <RecipeShow
+        key={this.props.foundRecipe.id}
+        recipe={this.props.foundRecipe}
+        pushToRecipeBox={this.pushToRecipeBox}
+      />
+    )
   }
 
+
+
   render(){
-    console.log('recipecontainer props', this.props, 'state', this.state)
-    console.log('match params', this.props.match.params.id);
+    // console.log('recipecontainer props', this.props)
+    // console.log('match params', this.props.match.params.id);
     return (
       <div className="recipe-container">
         <h1> RECIPE CONTAINER </h1>
-        {this.generateRecipe}
+        {this.generateRecipe()}
       </div>
     )
   }

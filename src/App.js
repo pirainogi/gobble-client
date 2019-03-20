@@ -23,7 +23,7 @@ class App extends Component {
     this.state = {
       recipes: [],
       currentUser: [],
-      recipebox: []
+      currentRecipebox: []
     }
   }
 
@@ -34,11 +34,23 @@ class App extends Component {
 
     fetch(UserAPI)
     .then(res => res.json())
-    .then(user => this.setState({currentUser: user}) )
+    .then(user =>
+      this.setState({
+        currentUser: user,
+        currentRecipebox: user[0].recipeboxes
+      })
+    )
+  }
+
+  findRecipe = (routerID) => {
+    // console.log('looking for recipe that matches', );
+    let foundRecipe =  this.state.recipes.find( recipe => recipe.id === parseInt(routerID) )
+    // console.log('returned recipe', foundRecipe);
+    return foundRecipe
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <div>
       <Header />
@@ -57,15 +69,28 @@ class App extends Component {
         />
         <Route
           path="/recipebox"
-          component={() => <RecipeBoxContainer />}
+          component={() => <RecipeBoxContainer
+              currentRecipebox={this.state.currentRecipebox}
+            />}
         />
         <Route
+          exact
           path="/recipes/:id"
-          render={(routerProps) => <RecipeContainer {...routerProps}    recipes={this.state.recipes}/>}
+          render={routerProps => {
+            let recipe = this.findRecipe(routerProps.match.params.id)
+            return recipe ? (
+              <RecipeContainer
+                recipes={this.state.recipes}
+                foundRecipe={recipe}
+              />
+            ) : (
+              <h1> loading dem recipes </h1>
+            )
+          }}
         />
         <Route
           path="/search"
-          component={() => <SearchContainer recipes={this.state.recipes}/>}
+          render={(routerProps) => <SearchContainer {...routerProps} recipes={this.state.recipes}/>}
         />
         <Route
           path="/"

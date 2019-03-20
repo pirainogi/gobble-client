@@ -3,7 +3,7 @@ import '../css/UserInfo.css';
 
 
 const UserInfo = (props) => {
-  console.log(props.user);
+  // console.log(props.user);
 
   return (
     <div className="user-info">

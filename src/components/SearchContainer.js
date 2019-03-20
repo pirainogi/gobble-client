@@ -28,7 +28,7 @@ class SearchContainer extends Component {
   }
 
   pushToRecipeShow = (e) => {
-    console.log('pushing view button', e.target);
+    console.log('pushing view button', e.target.id);
     this.props.history.push(`/recipes/${e.target.id}`)
   }
 
@@ -68,7 +68,7 @@ class SearchContainer extends Component {
 
 
   render(){
-    // console.log('filtered recipes', this.state.recipesReturnedFromSearch);
+    // console.log('history', this.props);
     return (
       <div className="search-container">
         <h1> CONTAINER </h1>
