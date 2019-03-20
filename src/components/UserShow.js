@@ -6,25 +6,17 @@ import Button from './Button';
 
 class UserShow extends Component {
 
-  componentDidMount(){
-  }
-
   render(){
-    console.log(this.props.currentUser);
-    if(this.props.currentUser.length === 1){
-      return (
+    console.log("usershow");
+    return (
         <div className="user-show">
-          <h1> NAME: {this.props.currentUser[0].name}</h1>
+          <h1> NAME: </h1>
           <h2> PIC PLACEHOLDER </h2>
           <UserInfo />
           <Button text={'Change PW'}/>
           <Button text={'Delete Acct'}/>
         </div>
       )
-    }
-    else {
-      return null
-    }
   }
 
 }

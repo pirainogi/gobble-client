@@ -23,13 +23,11 @@ class Search extends Component {
   // }
 
   render(){
-    console.log(this.props);
     return (
-      <form onChange={this.props.onSearchInput}>
+      <form >
         <input
           type='text'
           placeholder='Search for Recipes'
-          value={this.props.input}
         />
       </form>
     )
