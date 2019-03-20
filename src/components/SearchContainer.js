@@ -27,9 +27,9 @@ class SearchContainer extends Component {
     })
   }
 
-  pushToRecipeShow = () => {
-    console.log('pushing view button');
-    this.props.
+  pushToRecipeShow = (e) => {
+    console.log('pushing view button', e.target);
+    this.props.history.push(`/recipes/${e.target.id}`)
   }
 
   generateRecipePreview = () => {

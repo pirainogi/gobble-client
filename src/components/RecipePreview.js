@@ -15,7 +15,7 @@ const RecipePreview = (props) => {
       <p>vegetarian: {props.recipe.vegetarian.toString()}</p>
       <p>vegan: {props.recipe.vegan.toString()}</p>
       <p>healthy: {props.recipe.healthy.toString()}</p>
-      <button className='button' onClick={props.pushToRecipeShow}>View</button>
+      <button className='button' id={props.recipe.id} onClick={props.pushToRecipeShow}>View</button>
     </div>
   )
 
