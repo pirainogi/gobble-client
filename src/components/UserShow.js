@@ -7,7 +7,7 @@ import Button from './Button';
 class UserShow extends Component {
 
   render(){
-    console.log("usershow");
+    // console.log("usershow");
     return (
         <div className="user-show">
           <h1> NAME: </h1>

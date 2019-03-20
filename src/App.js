@@ -12,17 +12,41 @@ import SearchContainer from './components/SearchContainer'
 import RecipeContainer from './components/RecipeContainer'
 
 
+const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
+const UserAPI = 'http://localhost:3000/api/v1/users'
+
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      recipes: [],
+      recipesReturnedFromSearch: [],
+      currentUser: [],
+      recipebox: []
+    }
+  }
+
+  componentDidMount() {
+    fetch(RecipeAPI)
+    .then(res => res.json())
+    .then(recipes => this.setState({recipes: recipes}) )
+
+    fetch(UserAPI)
+    .then(res => res.json())
+    .then(user => this.setState({currentUser: user}) )
+  }
+
   render() {
-    // console.log(this.props);
+    console.log(this.state);
     return (
       <>
       <Header />
       <Switch>
         <Route
           path="/usershow"
-          component={() => <UserShow />}
+          component={() => <UserShow user={this.state.currentUser}/>}
         />
         <Route
           path="/dashboard"
