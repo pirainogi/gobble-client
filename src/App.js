@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header'
@@ -39,9 +39,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
-      <>
+      <div>
       <Header />
       <Switch>
         <Route
@@ -74,7 +74,7 @@ class App extends Component {
         />
       </Switch>
       <Footer />
-      </>
+      </div>
     );
   }
 }
