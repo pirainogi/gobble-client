@@ -9,7 +9,7 @@ import Dashboard from './components/Dashboard'
 import Calendar from './components/Calendar'
 import RecipeBoxContainer from './components/RecipeBoxContainer'
 import SearchContainer from './components/SearchContainer'
-import RecipeContainer from './components/RecipeContainer'
+// import RecipeContainer from './components/RecipeContainer'
 
 
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
@@ -62,11 +62,7 @@ class App extends Component {
         />
         <Route
           path="/search"
-          component={() => <SearchContainer />}
-        />
-        <Route
-          path="/recipe"
-          component={() => <RecipeContainer />}
+          component={() => <SearchContainer recipes={this.state.recipes}/>}
         />
         <Route
           path="/"
@@ -80,3 +76,8 @@ class App extends Component {
 }
 
 export default App;
+
+// <Route
+//   path="/recipes"
+//   component={() => <RecipeContainer recipes={this.state.recipes}/>}
+// />
