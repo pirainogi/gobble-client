@@ -9,7 +9,7 @@ import Button from './Button'
 // }
 
 const RecipeShow = (props) => {
-  // console.log(props.recipe.glutenFree);
+  console.log(props.recipe);
   return (
     <div className="recipe-show" id={props.recipe.id}>
       <h1>{props.recipe.name}</h1>

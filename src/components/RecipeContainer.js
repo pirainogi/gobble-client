@@ -1,31 +1,62 @@
 import React, { Component } from 'react';
 import '../css/RecipeContainer.css';
-// import RecipeShow from './RecipeShow'
+import RecipeShow from './RecipeShow'
 
-const RecipeContainer = (props) => {
-  console.log('recipecontainer props', props)
-  console.log('match params', props.match.params.id);
-  const { currentRecipe = [] } = props
+class RecipeContainer extends Component {
 
-  return (
-    <div className="recipe-container">
-      <h1> RECIPE CONTAINER </h1>
-    </div>
-  )
+
+  constructor(props){
+    super(props)
+
+    this.state = {
+      recipeToDisplay: []
+    }
+  }
+
+  componentDidMount(){
+    console.log('finding recipe');
+    if(this.props.recipes.length > 0){
+      let foundRecipe =  this.props.recipes.find( recipe => recipe.id === parseInt(this.props.match.params.id) )
+      console.log('returned recipe', foundRecipe);
+      this.setState({
+        recipeToDisplay: foundRecipe
+      })
+      console.log('recipeToDisplay', this.state.recipeToDisplay);
+    }
+  }
+
+  // findRecipe() {
+  //
+  // }
+
+  generateRecipe = () => {
+    if(this.state.recipeToDisplay.length !== 0){
+      this.state.recipeToDisplay.map(recipe => {
+      return (
+          <RecipeShow
+            key={recipe.id}
+            recipe={recipe}
+          />
+        )
+      })
+    }
+  }
+
+  render(){
+    console.log('recipecontainer props', this.props, 'state', this.state)
+    console.log('match params', this.props.match.params.id);
+    return (
+      <div className="recipe-container">
+        <h1> RECIPE CONTAINER </h1>
+        {this.generateRecipe}
+      </div>
+    )
+  }
 
 }
 
-  // makeRecipes = () => {
-  //   return this.state.recipe.map( recipe => {
-  //     return <RecipeShow
-  //       key={recipe.id}
-  //       recipe={recipe}
-  //     />
-  //   })
-  // }
+
 
 
 
 export default (RecipeContainer);
-
-// <RecipeShow recipe={this.state.recipe}/>
