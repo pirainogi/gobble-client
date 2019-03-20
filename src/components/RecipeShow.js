@@ -12,7 +12,7 @@ const RecipeShow = (props) => {
   // console.log(props.recipe.glutenFree);
   return (
     <div className="recipe-show" id={props.recipe.id}>
-      <h1>Name {props.recipe.name}</h1>
+      <h1>{props.recipe.name}</h1>
       <img src={props.recipe.imgurl} alt={props.recipe.name} />
       <p> Servings: {props.recipe.servings}</p>
       <p> Prep Time: {props.recipe.preptime} minutes </p>

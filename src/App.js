@@ -60,7 +60,7 @@ class App extends Component {
           component={() => <RecipeBoxContainer />}
         />
         <Route
-          path="/recipes"
+          path="/recipes/:id"
           render={(routerProps) => <RecipeContainer {...routerProps}    recipes={this.state.recipes}/>}
         />
         <Route
