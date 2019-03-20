@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import '../css/UserShow.css';
 import UserInfo from './UserInfo';
 import Button from './Button';
-import { connect } from 'react-redux'
-import { fetchUser } from '../action-creators/actions'
+
 
 class UserShow extends Component {
 
   componentDidMount(){
-    console.log(this.props.currentUser);
-    this.props.getuser()
   }
 
   render(){
@@ -32,16 +29,4 @@ class UserShow extends Component {
 
 }
 
-function mapStateToProps(state){
-  return {
-    currentUser: state.currentUser
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    getuser: () => fetchUser(dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
+export default (UserShow);
