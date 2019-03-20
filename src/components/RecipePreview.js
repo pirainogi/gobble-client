@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/RecipePreview.css';
-import Button from './Button'
+import '../css/Button.css';
 
 
 const RecipePreview = (props) => {
@@ -15,7 +15,7 @@ const RecipePreview = (props) => {
       <p>vegetarian: {props.recipe.vegetarian.toString()}</p>
       <p>vegan: {props.recipe.vegan.toString()}</p>
       <p>healthy: {props.recipe.healthy.toString()}</p>
-      <Button text={"View"}/>
+      <button className='button' onClick={props.pushToRecipeShow}>View</button>
     </div>
   )
 
