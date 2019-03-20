@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../css/RecipeContainer.css';
 import RecipeShow from './RecipeShow'
-import { fetchrecipes } from '../action-creators/actions'
-import { connect } from 'react-redux'
 
 class RecipeContainer extends Component {
 
@@ -33,16 +31,4 @@ class RecipeContainer extends Component {
   )}
 }
 
-function mapStateToProps(state){
-  return {
-    recipes: state.recipes
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    getrecipes: () => fetchrecipes(dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeContainer);
+export default (RecipeContainer);
