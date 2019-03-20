@@ -8,10 +8,10 @@ class RecipeContainer extends Component {
 
   componentDidMount() {
     console.log(this.props.recipes);
-    // if(this.props.recipes.length === 0){
-    //   this.props.getrecipes()
-    // }
-    this.props.getrecipes()
+    if(this.props.recipes.length === 0){
+      this.props.getrecipes()
+    }
+    // this.props.getrecipes()
   }
 
   makeRecipes = () => {

@@ -2,7 +2,7 @@ import { GET_RECIPES, GET_USER } from '../types'
 
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
 const UserAPI = 'http://localhost:3000/api/v1/users'
-const RecipeSearch = ''
+// const RecipeSearch = ''
 
 export function fetchrecipes(dispatch) {
   return fetch(RecipeAPI)
