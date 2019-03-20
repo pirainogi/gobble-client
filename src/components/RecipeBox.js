@@ -1,12 +1,25 @@
 import React from 'react';
 import '../css/RecipeBox.css';
-// import Search from './Search'
-// import RecipePreview from './RecipePreview'
+import RecipeBoxPreview from './RecipeBoxPreview'
 
-const RecipeBox = () => {
+const RecipeBox = (props) => {
+  console.log('recipebox', props);
+
+  let generateRecipeBoxPreviews = () => {
+    return props.recipes.map(recipe => {
+      return (
+        <RecipeBoxPreview
+          key={recipe.id}
+          recipeID={recipe.id}
+        />
+      )
+    })
+  }
+
   return (
     <div className="recipe-box">
       <h1> RECIPE BOX </h1>
+      {generateRecipeBoxPreviews()}
     </div>
   )
 }

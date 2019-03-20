@@ -2,11 +2,12 @@ import React from 'react';
 import '../css/RecipeBoxPreview.css';
 import Button from './Button'
 
-const RecipeBoxPreview = () => {
+const RecipeBoxPreview = (props) => {
+  console.log('recipeboxpreview', props);
   return (
     <div className="recipe-box-preview">
       <h1> recipebox preview here </h1>
-      <Button text={"Go"}/>
+      <button className='button'>view</button>
     </div>
   )
 }
