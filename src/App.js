@@ -10,8 +10,7 @@ import Calendar from './components/Calendar'
 import RecipeBoxContainer from './components/RecipeBoxContainer'
 import SearchContainer from './components/SearchContainer'
 import RecipeContainer from './components/RecipeContainer'
-import { connect } from 'react-redux';
-import { getrecipes } from './action-creators/actions'
+
 
 class App extends Component {
 
