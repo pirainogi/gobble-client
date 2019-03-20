@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/UserInfo.css';
-import { connect } from 'react-redux'
+
 
 const UserInfo = (props) => {
   console.log(props);
@@ -16,10 +16,4 @@ const UserInfo = (props) => {
   )
 }
 
-function mapStateToProps(state){
-  return {
-    currentUser: state.currentUser
-  }
-}
-
-export default connect(mapStateToProps)(UserInfo);
+export default (UserInfo);
