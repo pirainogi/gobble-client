@@ -23,7 +23,8 @@ class App extends Component {
     this.state = {
       recipes: [],
       currentUser: [],
-      currentRecipebox: []
+      currentRecipebox: [],
+      currentRecipeView: {}
     }
   }
 
@@ -41,18 +42,21 @@ class App extends Component {
       })
     )
   }
-  // 
-  // generateRecipeBoxData = () => {
-  //   let usersRecipeBoxes = this.state.recipes.filter(recipe => {
-  //
-  //   })
-  // }
 
   findRecipe = (routerID) => {
     // console.log('looking for recipe that matches', );
     let foundRecipe =  this.state.recipes.find( recipe => recipe.id === parseInt(routerID) )
     // console.log('returned recipe', foundRecipe);
     return foundRecipe
+  }
+
+  selectRecipePreviewForShow = (e) => {
+    // console.log(e.target.id);
+    let recipeToView = this.props.currentRecipebox.find(recipe => recipe.id === parseInt(e.target.id))
+    // console.log(recipeToView);
+    this.setState({
+      currentRecipeView: recipeToView
+    })
   }
 
   render() {
@@ -67,7 +71,7 @@ class App extends Component {
         />
         <Route
           path="/dashboard"
-          component={() => <Dashboard />}
+          component={() => <Dashboard currentRecipebox={this.state.currentRecipebox}/>}
         />
         <Route
           path="/calendar"
@@ -88,6 +92,8 @@ class App extends Component {
               <RecipeContainer
                 recipes={this.state.recipes}
                 foundRecipe={recipe}
+                currentRecipeView={this.state.currentRecipeView}
+                selectRecipePreviewForShow={this.selectRecipePreviewForShow}
               />
             ) : (
               <h1> loading dem recipes </h1>
@@ -103,10 +109,11 @@ class App extends Component {
           component={() => <Home />}
         />
       </Switch>
-      <Footer />
       </div>
     );
   }
 }
 
 export default App;
+
+// <Footer />
