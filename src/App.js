@@ -37,10 +37,16 @@ class App extends Component {
     .then(user =>
       this.setState({
         currentUser: user,
-        currentRecipebox: user[0].recipeboxes
+        currentRecipebox: user[0].recipes
       })
     )
   }
+  // 
+  // generateRecipeBoxData = () => {
+  //   let usersRecipeBoxes = this.state.recipes.filter(recipe => {
+  //
+  //   })
+  // }
 
   findRecipe = (routerID) => {
     // console.log('looking for recipe that matches', );
@@ -50,7 +56,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <div>
       <Header />

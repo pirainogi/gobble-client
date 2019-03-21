@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import '../css/RecipeBoxContainer.css';
 import RecipeBox from './RecipeBox'
+import RecipeShow from './RecipeShow'
 
 
 class RecipeBoxContainer extends Component {
+
+  constructor(props){
+    super(props)
+
+    this.state = {
+      currentRecipeView: {}
+    }
+  }
+
+  selectRecipePreviewForShow = (e) => {
+    console.log(e.target);
+    
+
+  }
 
   generateRecipeBox = () => {
     // console.log(this.props.foundRecipe);
@@ -11,6 +26,8 @@ class RecipeBoxContainer extends Component {
       <RecipeBox
         key={'recipebox'}
         recipes={this.props.currentRecipebox}
+        currentRecipeView={this.state.currentRecipeView}
+        selectRecipePreviewForShow={this.selectRecipePreviewForShow}
       />
     )
   }
@@ -20,7 +37,7 @@ class RecipeBoxContainer extends Component {
     <div className="recipe-box-container">
       <h1> CONTAINER </h1>
       {this.generateRecipeBox()}
-      <h1>RecipeShow</h1>
+      <RecipeShow currentRecipeView={this.state.currentRecipeView}/>
     </div>
   )
 }

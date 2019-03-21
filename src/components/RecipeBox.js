@@ -10,7 +10,8 @@ const RecipeBox = (props) => {
       return (
         <RecipeBoxPreview
           key={recipe.id}
-          recipeID={recipe.id}
+          recipe={recipe}
+          selectRecipePreviewForShow={props.selectRecipePreviewForShow}
         />
       )
     })
