@@ -15,9 +15,12 @@ class RecipeBoxContainer extends Component {
   }
 
   selectRecipePreviewForShow = (e) => {
-    console.log(e.target);
-    
-
+    // console.log(e.target.id);
+    let recipeToView = this.props.currentRecipebox.find(recipe => recipe.id === parseInt(e.target.id))
+    // console.log(recipeToView);
+    this.setState({
+      currentRecipeView: recipeToView
+    })
   }
 
   generateRecipeBox = () => {
@@ -37,7 +40,7 @@ class RecipeBoxContainer extends Component {
     <div className="recipe-box-container">
       <h1> CONTAINER </h1>
       {this.generateRecipeBox()}
-      <RecipeShow currentRecipeView={this.state.currentRecipeView}/>
+      <RecipeShow recipe={this.state.currentRecipeView}/>
     </div>
   )
 }
