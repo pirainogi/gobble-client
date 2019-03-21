@@ -4,10 +4,7 @@ import RecipeShow from './RecipeShow'
 
 class RecipeContainer extends Component {
 
-  pushToRecipeBox = (e) => {
-    console.log('pushing add button', e.target);
-    // this.props.history.push(`/recipes/${e.target.id}`)
-  }
+
 
   generateRecipe = () => {
     // console.log(this.props.foundRecipe);
@@ -15,7 +12,7 @@ class RecipeContainer extends Component {
       <RecipeShow
         key={this.props.foundRecipe.id}
         recipe={this.props.foundRecipe}
-        pushToRecipeBox={this.pushToRecipeBox}
+        addRecipeToRecipeBox={this.props.addRecipeToRecipeBox}
       />
     )
   }

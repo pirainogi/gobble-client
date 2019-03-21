@@ -9,7 +9,7 @@ import Button from './Button'
 // }
 
 const RecipeShow = (props) => {
-  console.log('recipe show', props);
+  console.log('recipe we want to view in full', props);
 
   return (
     props.recipe ?
@@ -28,7 +28,7 @@ const RecipeShow = (props) => {
         <h4>Vegan Icon: {props.recipe.vegan !== undefined ? props.recipe.vegan.toString() : null }</h4>
         <h4>Veg Icon: {props.recipe.vegetarian !== undefined ? props.recipe.vegetarian.toString() : null }</h4>
         <h4>Healthy Icon: {props.recipe.healthy !== undefined ? props.recipe.healthy.toString() : null }</h4>
-        <button className='button' id={props.recipe.id} onClick={props.pushToRecipeBox}>Add to Box</button>
+        <button className='button' id={props.recipe.id} onClick={props.addRecipeToRecipeBox}>Add to Box</button>
         <Button text={"Add to Calendar"}/>
       </div>
     :

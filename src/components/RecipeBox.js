@@ -3,7 +3,7 @@ import '../css/RecipeBox.css';
 import RecipeBoxPreview from './RecipeBoxPreview'
 
 const RecipeBox = (props) => {
-  console.log('recipebox', props);
+  console.log('recipebox props', props);
 
   let generateRecipeBoxPreviews = () => {
     return props.recipes.map(recipe => {

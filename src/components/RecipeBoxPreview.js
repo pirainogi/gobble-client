@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/RecipeBoxPreview.css';
-import Button from './Button'
+// import Button from './Button'
 
 const RecipeBoxPreview = (props) => {
-  console.log('recipeboxpreview', props);
+  console.log('recipeboxpreview props', props, 'button should work here');
   return (
     <div className="recipe-box-preview">
       <h1> recipebox preview </h1>

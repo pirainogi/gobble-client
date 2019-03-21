@@ -7,7 +7,7 @@ import RecipeShow from './RecipeShow'
 class RecipeBoxContainer extends Component {
 
   generateRecipeBox = () => {
-    // console.log(this.props.foundRecipe);
+    console.log('recipebox container: recipes', this.props.foundRecipe);
     return (
       <RecipeBox
         key={'recipebox'}
