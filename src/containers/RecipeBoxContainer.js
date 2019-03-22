@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import '../css/RecipeBoxContainer.css';
 import RecipeBox from './RecipeBox'
-import RecipeShow from './RecipeShow'
+import RecipeShow from '../components/RecipeShow'
+import Footer from '../components/Footer'
 
 
 class RecipeBoxContainer extends Component {
 
   generateRecipeBox = () => {
-    console.log('recipebox container: recipes', this.props.foundRecipe);
+    // console.log('recipebox container: recipes', this.props.foundRecipe);
     return (
       <RecipeBox
         key={'recipebox'}
@@ -21,9 +22,14 @@ class RecipeBoxContainer extends Component {
   render(){
     return (
     <div className="recipe-box-container">
-      <h1> CONTAINER </h1>
-      {this.generateRecipeBox()}
-      <RecipeShow recipe={this.props.currentRecipeView}/>
+      <div>
+        <h1> CONTAINER </h1>
+        {this.generateRecipeBox()}
+        <RecipeShow recipe={this.props.currentRecipeView}/>
+      </div>
+      <div>
+        < Footer />
+      </div>
     </div>
   )
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../css/SearchContainer.css';
-import Search from './Search'
-import RecipePreview from './RecipePreview'
+import SearchBar from '../components/SearchBar'
+import RecipePreview from '../components/RecipePreview'
+import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 
 
@@ -70,10 +71,15 @@ class SearchContainer extends Component {
   render(){
     // console.log('history', this.props);
     return (
-      <div className="search-container">
-        <h1> CONTAINER </h1>
-        <Search filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
-        {this.generateRecipePreview()}
+      <div>
+        <div>
+          <Header />
+        </div>
+        <div className="search-container">
+          <h1> CONTAINER </h1>
+          <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
+          {this.generateRecipePreview()}
+        </div>
       </div>
     )
   }

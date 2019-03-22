@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/Search.css';
 // import { connect } from 'react-redux'
 
-class Search extends Component {
+class SearchBar extends Component {
 
 
   render(){
@@ -21,4 +21,4 @@ class Search extends Component {
 
 }
 
-export default (Search);
+export default (SearchBar);

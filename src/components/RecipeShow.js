@@ -9,7 +9,7 @@ import Button from './Button'
 // }
 
 const RecipeShow = (props) => {
-  console.log('recipe we want to view in full', props);
+  // console.log('recipe we want to view in full', props);
 
   return (
     props.recipe ?

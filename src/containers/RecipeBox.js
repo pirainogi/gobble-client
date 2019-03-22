@@ -1,9 +1,9 @@
 import React from 'react';
-import '../css/RecipeBox.css';
-import RecipeBoxPreview from './RecipeBoxPreview'
+import '../css/RecipeBox.css'
+import RecipeBoxPreview from '../components/RecipeBoxPreview'
 
 const RecipeBox = (props) => {
-  console.log('recipebox props', props);
+  // console.log('recipebox props', props);
 
   let generateRecipeBoxPreviews = () => {
     return props.recipes.map(recipe => {

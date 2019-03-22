@@ -2,9 +2,10 @@ import React from 'react';
 import '../css/Dashboard.css';
 import Calendar from './Calendar'
 import RecipeBoxPreview from './RecipeBoxPreview'
+import Footer from './Footer'
 
 const Dashboard = (props) => {
-console.log(props);
+// console.log(props);
 
   let generateRecipeBoxPreviews = () => {
     return props.currentRecipebox.map(recipe => {
@@ -20,9 +21,14 @@ console.log(props);
 
   return (
     <div className="dashboard">
-      <h1> dashboard </h1>
-      <Calendar />
-      {generateRecipeBoxPreviews()}
+      <div>
+        <h1> dashboard </h1>
+        <Calendar />
+        {generateRecipeBoxPreviews()}
+      </div>
+      <div>
+        < Footer />
+      </div>
     </div>
   )
 }

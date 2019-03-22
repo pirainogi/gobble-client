@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header'
+// import Header from './components/Header'
 import Home from './components/Home'
-import UserShow from './components/UserShow'
+import UserShow from './containers/UserShow'
 // import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
 import Calendar from './components/Calendar'
-import RecipeBoxContainer from './components/RecipeBoxContainer'
-import SearchContainer from './components/SearchContainer'
-import RecipeContainer from './components/RecipeContainer'
+import RecipeBoxContainer from './containers/RecipeBoxContainer'
+import SearchContainer from './containers/SearchContainer'
+import RecipeContainer from './containers/RecipeContainer'
 
 
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
@@ -52,7 +52,7 @@ class App extends Component {
   }
 
   selectRecipePreviewForShow = (e) => {
-    console.log(e.target.id);
+    // console.log(e.target.id);
     let recipeToView = this.state.currentRecipebox.find(recipe => recipe.id === parseInt(e.target.id))
     // console.log(recipeToView);
     this.setState({
@@ -61,11 +61,11 @@ class App extends Component {
   }
 
   addRecipeToRecipeBox = (e) => {
-    console.log('pushing add button', e.target.id, 'user', this.state.currentUser);
+    // console.log('pushing add button', e.target.id, 'user', this.state.currentUser);
     // this.props.history.push(`/recipes/${e.target.id}`)
     let recipeToAdd = this.state.recipes.find(recipe => recipe.id === parseInt(e.target.id))
-    console.log('recipe to add', recipeToAdd)
-    console.log('user id', this.state.currentUser[0].id, 'type', typeof this.state.currentUser[0].id, 'recipe id', recipeToAdd.id, 'type', typeof recipeToAdd.id)
+    // console.log('recipe to add', recipeToAdd)
+    // console.log('user id', this.state.currentUser[0].id, 'type', typeof this.state.currentUser[0].id, 'recipe id', recipeToAdd.id, 'type', typeof recipeToAdd.id)
     fetch(RecipeboxAPI,{
       method: 'POST',
       headers: {
@@ -78,14 +78,13 @@ class App extends Component {
       })
     })
     .then(res => res.json())
-    console.log('updated recipebox', this.state.currentRecipebox);
+    // console.log('updated recipebox', this.state.currentRecipebox);
   }
 
   render() {
     // console.log(this.state);
     return (
       <div>
-      <Header />
       <Switch>
         <Route
           path="/usershow"

@@ -1,5 +1,19 @@
+.fixed-header {
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  width: 100%;
+  background-color: #f79e6e;
+  /* overflow: hidden; */
+  position: fixed;
+}
+
 .header {
   border-style: solid;
   border-width: 2px;
   display: flex;
+  width: 100%;
+  background-color: #f79e6e;
+  overflow: hidden;
+  position: relative;
 }
