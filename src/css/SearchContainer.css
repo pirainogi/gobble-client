@@ -2,3 +2,31 @@
   border-style: solid;
   border-width: 2px;
 }
+
+@media (min-width: 768px) {
+	.container .text-muted {
+		text-align: end;
+	}
+	.card-flex-item {
+		width: 33.33%;
+		padding-right: 1em;
+	}
+	.card-flex-item:nth-child(3n) {
+		padding-right: 0;
+	}
+	.card-flex-image img {
+		opacity: 0.8;
+	}
+.card-flex-wrapper:hover {
+		cursor: pointer;
+		background-color: white;
+		box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+	}
+	.card-flex-wrapper:hover .card-flex-image img {
+		opacity: 1;
+		transition: opacity 0.5s cubic-bezier(.43,.41,.22,.91);
+	}
+	.card-flex-wrapper:hover .card-flex-button {
+		background-color: #FFFFCC;
+	}
+}

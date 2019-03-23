@@ -87,7 +87,7 @@ class App extends Component {
       <div>
       <Switch>
         <Route
-          path="/usershow"
+          path="/profile"
           component={() => <UserShow user={this.state.currentUser}/>}
         />
         <Route

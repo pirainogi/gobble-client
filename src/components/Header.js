@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import '../css/Header.css';
 
 class Header extends Component {
@@ -26,16 +27,19 @@ class Header extends Component {
 
   componentDidUpdate(){
     this.state.scroll > this.state.top ?
-      document.body.style.paddingTop = `${this.state.height}px` :
+      document.body.style.paddingTop = 0 :
       document.body.style.paddingTop = 0
   }
 
   render(){
-    console.log(this.state);
+    console.log(this.props);
     return (
       <div className={this.state.scroll > this.state.top ? 'fixed-header' : 'header'} id='header'>
-      <h1> LOGO</h1>
-      <h4> Search Link </h4>
+      <NavLink to='/' activeClassName='active'><h1> LOGO</h1></NavLink>
+      <NavLink to='/search' activeClassName='active'>Search</NavLink>
+      <NavLink to='/profile' activeClassName='active'>Profile</NavLink>
+      <NavLink to='/recipebox' activeClassName='active'>RecipeBox</NavLink>
+      <NavLink to='/dashboard' activeClassName='active'>Dashboard</NavLink>
       </div>
     )
   }
