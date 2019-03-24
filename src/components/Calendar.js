@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import BigCalendar from 'react-big-calendar';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import moment from 'moment';
 import '../css/Calendar.css';
-import Button from './Button'
+moment.locale('en-GB');
+const localizer = BigCalendar.momentLocalizer(moment);
 
 
-const Calendar = () => {
-  return (
-    <div className="calendar">
-      <h1> calendar here </h1>
-      <Button text={"change view"}/>
-    </div>
-  )
+class Calendar extends Component {
+
+  render(){
+    return (
+      <div style={{ height: 700}}>
+        <BigCalendar
+          events={this.props.events}
+          step={30}
+          defaultView='week'
+          views={['month', 'week', 'day']}
+          defaultDate={new Date()}
+          localizer={localizer}
+        />
+      </div>
+    )
+  }
+
 }
 
 export default Calendar;

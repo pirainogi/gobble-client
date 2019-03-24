@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+// import BigCalendar from 'react-big-calendar';
+// import moment from 'moment';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './App.css';
 // import Header from './components/Header'
-import Home from './components/Home'
-import UserShow from './containers/UserShow'
+import Home from './components/Home';
+import UserShow from './containers/UserShow';
 // import Footer from './components/Footer'
-import Dashboard from './components/Dashboard'
-import Calendar from './components/Calendar'
-import RecipeBoxContainer from './containers/RecipeBoxContainer'
-import SearchContainer from './containers/SearchContainer'
-import RecipeContainer from './containers/RecipeContainer'
+import Dashboard from './components/Dashboard';
+import Calendar from './components/Calendar';
+import RecipeBoxContainer from './containers/RecipeBoxContainer';
+import SearchContainer from './containers/SearchContainer';
+import RecipeContainer from './containers/RecipeContainer';
+// moment.locale('en-GB');
+// BigCalendar.momentLocalizer(moment);
 
 
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
@@ -25,7 +30,8 @@ class App extends Component {
       recipes: [],
       currentUser: [],
       currentRecipebox: [],
-      currentRecipeView: {}
+      currentRecipeView: {},
+      calendarEvents: []
     }
   }
 
@@ -92,19 +98,23 @@ class App extends Component {
         />
         <Route
           path="/dashboard"
-          component={() => <Dashboard currentRecipebox={this.state.currentRecipebox}/>}
+          component={() => <Dashboard
+            currentRecipebox={this.state.currentRecipebox}
+          />}
         />
         <Route
           path="/calendar"
-          component={() => <Calendar />}
+          component={() => <Calendar
+            events={this.state.calendarEvents}
+          />}
         />
         <Route
           path="/recipebox"
           component={() => <RecipeBoxContainer
-              currentRecipebox={this.state.currentRecipebox}
-              currentRecipeView={this.state.currentRecipeView}
-              selectRecipePreviewForShow={this.selectRecipePreviewForShow}
-            />}
+            currentRecipebox={this.state.currentRecipebox}
+            currentRecipeView={this.state.currentRecipeView}
+            selectRecipePreviewForShow={this.selectRecipePreviewForShow}
+          />}
         />
         <Route
           exact
