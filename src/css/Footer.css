@@ -7,6 +7,7 @@
   width: 100%;
   background-color: #f79e6e;
   height: 80px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer p {
@@ -22,3 +23,5 @@
   background-color: transparent;
   margin: 15px;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins')

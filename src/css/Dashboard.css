@@ -2,4 +2,7 @@
   border-style: solid;
   border-width: 2px;
   display: flex;
+  font-family: 'Poppins', sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins')

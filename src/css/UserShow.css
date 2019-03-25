@@ -3,4 +3,5 @@
   border-width: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-family: 'Poppins', sans-serif;
 }

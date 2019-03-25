@@ -1,6 +1,7 @@
 .search-container {
   border-style: solid;
   border-width: 2px;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 768px) {

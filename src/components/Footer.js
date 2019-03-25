@@ -5,7 +5,7 @@ import '../css/Footer.css';
 const Footer = () => {
   return (
     <div className="footer">
-      <p> Designed by Gabbie Piraino</p>
+      <p> Designed by Gabbie Piraino 🍴 </p>
       <a href='https://github.com/pirainogi'>
         <img src={process.env.PUBLIC_URL + '/github.png'} alt='github logo'></img>
       </a>
