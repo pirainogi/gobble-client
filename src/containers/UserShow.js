@@ -3,6 +3,7 @@ import '../css/UserShow.css';
 import UserInfo from '../components/UserInfo';
 import UserButtons from '../components/UserButtons'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 // import Button from '../components/Button';
 
 
@@ -34,14 +35,15 @@ class UserShow extends Component {
   render(){
     // console.log("usershow", this.props.user[0]);
     return (
-      <div className="user-show">
-        <div>
-          {this.generateUserButtons()}
-          {this.generateUserInfo()}
+      <div>
+        <Header />
+        <div className="user-show">
+          <div>
+            {this.generateUserButtons()}
+            {this.generateUserInfo()}
+          </div>
         </div>
-        <div>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     )
   }

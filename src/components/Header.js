@@ -32,14 +32,16 @@ class Header extends Component {
   }
 
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className={this.state.scroll > this.state.top ? 'fixed-header' : 'header'} id='header'>
-      <NavLink to='/' activeClassName='active'><h1> LOGO</h1></NavLink>
-      <NavLink to='/search' activeClassName='active'>Search</NavLink>
-      <NavLink to='/profile' activeClassName='active'>Profile</NavLink>
-      <NavLink to='/recipebox' activeClassName='active'>RecipeBox</NavLink>
-      <NavLink to='/dashboard' activeClassName='active'>Dashboard</NavLink>
+        <NavLink to='/' activeClassName='active'><h1> LOGO</h1></NavLink>
+        <ul id='navbar'>
+          <li><NavLink to='/search' activeClassName='active' id='navlink'>Search</NavLink></li>
+          <li><NavLink to='/recipebox' activeClassName='active' id='navlink'>RecipeBox</NavLink></li>
+          <li><NavLink to='/dashboard' activeClassName='active' id='navlink'>Dashboard</NavLink></li>
+          <li><NavLink to='/profile' activeClassName='active' id='navlink'>Profile</NavLink></li>
+        </ul>
       </div>
     )
   }

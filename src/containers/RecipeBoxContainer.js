@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/RecipeBoxContainer.css';
 import RecipeBox from './RecipeBox'
 import RecipeShow from '../components/RecipeShow'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 
@@ -21,15 +22,14 @@ class RecipeBoxContainer extends Component {
 
   render(){
     return (
-    <div className="recipe-box-container">
-      <div>
-        <h1> CONTAINER </h1>
-        {this.generateRecipeBox()}
-        <RecipeShow recipe={this.props.currentRecipeView}/>
+    <div>
+      <Header />
+      <div className="recipe-box-container">
+          <h1> CONTAINER </h1>
+          {this.generateRecipeBox()}
+          <RecipeShow recipe={this.props.currentRecipeView}/>
       </div>
-      <div>
-        < Footer />
-      </div>
+      <Footer />
     </div>
   )
 }

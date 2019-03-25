@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-// import BigCalendar from 'react-big-calendar';
-// import moment from 'moment';
-// import 'react-big-calendar/lib/css/react-big-calendar.css';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './App.css';
 // import Header from './components/Header'
 import Home from './components/Home';
@@ -13,13 +13,14 @@ import Calendar from './components/Calendar';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
 import SearchContainer from './containers/SearchContainer';
 import RecipeContainer from './containers/RecipeContainer';
-// moment.locale('en-GB');
-// BigCalendar.momentLocalizer(moment);
+moment.locale('en-us');
+BigCalendar.momentLocalizer(moment);
 
 
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
 const UserAPI = 'http://localhost:3000/api/v1/users'
 const RecipeboxAPI = 'http://localhost:3000/api/v1/recipeboxes'
+const EventAPI = 'http://localhost:3000/api/v1/events'
 
 class App extends Component {
 
@@ -48,6 +49,22 @@ class App extends Component {
         currentRecipebox: user[0].recipes
       })
     )
+
+    fetch(EventAPI)
+    .then(res => res.json())
+    .then(events => {
+      for (let i=0; i < events.length; i++){
+        console.log(events[i])
+        events[i].start = this.convertDate(events[i].eventStart)
+        events[i].end = this.convertDate(events[i].eventEnd)
+      }
+      this.setState({calendarEvents: events})
+    })
+
+  }
+
+  convertDate = (date) => {
+    return moment.utc(date).toDate()
   }
 
   findRecipe = (routerID) => {

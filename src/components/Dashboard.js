@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/Dashboard.css';
 import Calendar from './Calendar'
 import RecipeBoxPreview from './RecipeBoxPreview'
+import Header from './Header'
 import Footer from './Footer'
 
 const Dashboard = (props) => {
@@ -20,17 +21,19 @@ const Dashboard = (props) => {
   }
 
   return (
-    <div className="dashboard">
-      <div>
-        <h1> dashboard </h1>
-        <Calendar />
-        {generateRecipeBoxPreviews()}
-      </div>
-      <div>
-        < Footer />
-      </div>
+    <div>
+      <Header />
+      <div className="dashboard">
+        <div>
+          <h1> dashboard </h1>
+          {generateRecipeBoxPreviews()}
+        </div>
+        </div>
+      <Footer />
     </div>
   )
 }
 
 export default Dashboard;
+
+// <Calendar />

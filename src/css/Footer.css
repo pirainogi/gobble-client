@@ -4,5 +4,12 @@
   position: absolute;
   left: 0px;
   bottom: 0;
-  width: 100%
+  width: 100%;
+  background-color: #f79e6e;
+  height: 50px;
+}
+
+.footer p {
+  color: black;
+  float: right;
 }
