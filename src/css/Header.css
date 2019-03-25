@@ -6,6 +6,7 @@
   background-color: #f79e6e;
   /* overflow: hidden; */
   position: fixed;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header {
@@ -16,6 +17,7 @@
   background-color: #f79e6e;
   overflow: hidden;
   position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 ul#navbar {
