@@ -5,21 +5,13 @@ import Header from './Header'
 
 const Home = () => {
 
-
-
   return (
     <div id="home">
-      <div>
-        <Header />
-      </div>
+      <Header />
       <div>
         <h1> HOME</h1>
-        <p> login </p>
-        <p> sign up</p>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }

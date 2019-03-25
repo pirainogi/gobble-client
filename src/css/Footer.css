@@ -6,10 +6,19 @@
   bottom: 0;
   width: 100%;
   background-color: #f79e6e;
-  height: 50px;
+  height: 80px;
 }
 
 .footer p {
   color: black;
+  font-weight: bold;
   float: right;
+  margin: 30px 10px;
+}
+
+.footer img {
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  margin: 15px;
 }
