@@ -5,7 +5,10 @@ import '../css/Footer.css';
 const Footer = () => {
   return (
     <div className="footer">
-      <p> Designed by Gabbie Piraino 🍴 </p>
+      <div className='designed'>
+        <img src={process.env.PUBLIC_URL + '/fork.svg'} alt='fork'></img>
+        <p> Designed by Gabbie Piraino </p>
+      </div>
       <a href='https://github.com/pirainogi'>
         <img src={process.env.PUBLIC_URL + '/github.png'} alt='github logo'></img>
       </a>

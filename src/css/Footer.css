@@ -5,23 +5,28 @@
   left: 0px;
   bottom: 0;
   width: 100%;
-  background-color: #f79e6e;
+  background-color: #ffa557;
   height: 80px;
   font-family: 'Poppins', sans-serif;
-}
-
-.footer p {
-  color: black;
-  font-weight: bold;
-  float: right;
-  margin: 30px 10px;
 }
 
 .footer img {
   height: 60px;
   width: 60px;
-  background-color: transparent;
   margin: 15px;
 }
+
+.designed {
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin: 10px 4px;
+}
+
+/* .designed img {
+
+} */
+
+
 
 @import url('https://fonts.googleapis.com/css?family=Poppins')
