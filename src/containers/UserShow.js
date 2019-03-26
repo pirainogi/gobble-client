@@ -38,8 +38,10 @@ class UserShow extends Component {
       <div>
         <Header />
         <div className="user-show">
-          <div>
+          <div className='user-basic'>
             {this.generateUserButtons()}
+          </div>
+          <div classname='user-details'>
             {this.generateUserInfo()}
           </div>
         </div>

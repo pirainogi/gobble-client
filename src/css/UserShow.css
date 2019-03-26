@@ -1,7 +1,20 @@
 .user-show {
   border-style: solid;
   border-width: 2px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   font-family: 'Poppins', sans-serif;
+  display: grid;
+  grid-template-columns: [first] 10% [line2] 40% [line3] 40% [line4] 10% [last];
+  grid-template-rows: auto;
+  grid-gap: 20px;
+
+}
+
+.user-basic {
+  grid-column-start: line2;
+  grid-column-end: line3;
+}
+
+.user-details {
+  grid-column-start: line3;
+  grid-column-end: line4;
 }

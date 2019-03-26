@@ -35,7 +35,7 @@ class Header extends Component {
     // console.log(this.props);
     return (
       <div className={this.state.scroll > this.state.top ? 'fixed-header' : 'header'} id='header'>
-        <NavLink to='/' activeClassName='active'><h1> LOGO</h1></NavLink>
+        <NavLink to='/' activeClassName='active'><h1>GOBBLE</h1></NavLink>
         <ul id='navbar'>
           <li><NavLink to='/search' activeClassName='active' id='navlink'>search</NavLink></li>
           <li><NavLink to='/recipebox' activeClassName='active' id='navlink'>recipebox</NavLink></li>
