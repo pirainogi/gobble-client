@@ -18,7 +18,7 @@
 		padding-right: 0;
 	}
 	.card-flex-image img {
-		opacity: 0.8;
+		opacity: 1;
 	}
 .card-flex-wrapper:hover {
 		cursor: pointer;
@@ -30,6 +30,6 @@
 		transition: opacity 0.5s cubic-bezier(.43,.41,.22,.91);
 	}
 	.card-flex-wrapper:hover .card-flex-button {
-		background-color: #FFFFCC;
+		background-color: #ffa557;
 	}
 }

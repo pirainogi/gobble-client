@@ -9,7 +9,7 @@ html {
 
 body {
 	@include linear-gradient(-45deg, #19d3d1 5%, #57abf2, $fallback: #57abf2);
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 }
 
@@ -25,7 +25,7 @@ img {
 	margin: 4em auto;
 	width: 90%;
 	max-width: 496px;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 5px #ffa557;
 	@include border-top-radius(5px);
 	@include border-bottom-radius(5px);
 
@@ -167,7 +167,7 @@ img {
 		padding-right: 0;
 	}
 	.card-flex-image img {
-		opacity: 0.8;
+		opacity: 1;
 	}
 	.card-flex-wrapper:hover {
 		cursor: pointer;
@@ -179,6 +179,6 @@ img {
 		transition: opacity 0.5s cubic-bezier(.43,.41,.22,.91);
 	}
 	.card-flex-wrapper:hover .card-flex-button {
-		background-color: #FFFFCC;
+		background-color: white;
 	}
 }

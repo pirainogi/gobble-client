@@ -6,7 +6,7 @@
   border-color: #E8E8E8;
   box-shadow: 10px 10px #ffa557;
   height: 80px;
-  margin: 3% 40% 0 40%;
+  margin: 2% 40% 0 40%;
 }
 
 .search input {
@@ -15,7 +15,7 @@
 }
 
 input[type='text'] {
-  font-size: 25px;
+  font-size: 28px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
