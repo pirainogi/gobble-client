@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../css/SearchContainer.css';
-import SearchBar from '../components/SearchBar'
-import RecipePreview from '../components/RecipePreview'
-import Header from '../components/Header'
-import { Link } from 'react-router-dom'
+import SearchBar from '../components/SearchBar';
+import RecipePreview from '../components/RecipePreview';
+import Header from '../components/Header';
+import Footer from '../components/Footer'
+import { Link } from 'react-router-dom';
 
 
 class SearchContainer extends Component {
@@ -72,16 +73,14 @@ class SearchContainer extends Component {
     // console.log('history', this.props);
     return (
       <div>
-        <div>
-          <Header />
-        </div>
+        <Header />
         <div className="search-container">
-          <h1> CONTAINER </h1>
           <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
-          <div className='card-flex'>
-            {this.generateRecipePreview()}
-          </div>
         </div>
+        <div className='card-flex'>
+          {this.generateRecipePreview()}
+        </div>
+        <Footer />
       </div>
     )
   }

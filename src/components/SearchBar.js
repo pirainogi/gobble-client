@@ -8,10 +8,10 @@ class SearchBar extends Component {
   render(){
     // console.log(this.props);
     return (
-      <form >
+      <form className="search">
         <input
           type='text'
-          placeholder='Search for Recipes'
+          placeholder='Search for Recipes...'
           onChange={this.props.filterRecipesBySearchInput}
         />
       </form>

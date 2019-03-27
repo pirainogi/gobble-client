@@ -1,4 +1,13 @@
 .search {
-  border-style: solid;
-  border-width: 2px;
+  /* border-style: solid;
+  border-width: 2px; */
+}
+
+.search input {
+  height: 60px;
+  width: 400px;
+}
+
+input[type='text'] {
+  font-size: 25px;
 }

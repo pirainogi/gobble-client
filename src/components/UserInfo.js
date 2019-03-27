@@ -7,13 +7,20 @@ const UserInfo = (props) => {
 
   return (
     <div className="user-info">
-      <h2> PIC PLACEHOLDER </h2>
-      <h4> Bio: {props.user.bio} </h4>
-      <h4> Allergies: {props.user.allergies}</h4>
-      <h4> Diet: {props.user.diet}</h4>
+      <img src={props.user.profile_pic} alt="user profile picture"></img>
+      <div className="details">
+        <p> <b>Name:</b> {props.user.name}<br></br><br></br>
+        <b>Bio:</b> {props.user.bio}<br></br>
+        <b>Allergies:</b> {props.user.allergies}<br></br>
+        <b>Diet:</b> {props.user.diet}<br></br><br></br>
+        <b>RecipeBox:</b> {props.user.recipes.length} Saved Recipes</p>
+      </div>
     </div>
   )
 
 }
 
 export default UserInfo;
+
+// <button className='button'>Change PW</button><br></br>
+// <button className='button'>Delete Acct</button>
