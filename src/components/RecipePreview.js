@@ -30,7 +30,7 @@ const RecipePreview = (props) => {
   }
 
   return (
-    <div className='card-flex-item'>
+    <div className="card-container">
       <div className="recipe-card card-flex-wrapper">
       	<aside>
           <div className='card-flex-image'>
@@ -46,49 +46,42 @@ const RecipePreview = (props) => {
         <div className='card-flex-content'>
         	<article>
         		<h2>{props.recipe.name}</h2>
-        		<h3>{generateDishCategories()}</h3>
+        		<h3>{generateDishCategories()}</h3><br></br>
 
-        		<ul>
-        			<li>{props.recipe.glutenFree ?
+        		<div className="recipe-icons">
+        			{props.recipe.glutenFree ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-gray.jpg'} alt='gluten-free icon'></img> }
-              </li>
 
-        			<li>{props.recipe.dairyFree ?
+
+        			{props.recipe.dairyFree ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-4c.jpg'} alt='dairy-free icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-gray.jpg'} alt='dairy-free icon'></img> }
-              </li>
 
-        			<li>{props.recipe.keto ?
+        			{props.recipe.keto ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/keto-4c.jpg'} alt='keto icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/keto-gray.jpg'} alt='keto icon'></img> }
-              </li>
 
-              <li>{props.recipe.whole30 ?
+              {props.recipe.whole30 ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/whole30_4c.jpg'} alt='whole30 icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/whole30_gray.jpg'} alt='whole30 icon'></img> }
-              </li>
 
-        			<li>{props.recipe.vegetarian ?
+        			{props.recipe.vegetarian ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-4c.png'} alt='vegetarian icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-gray.jpg'} alt='vegetarian icon'></img> }
-                </li>
 
-              <li>{props.recipe.vegan ?
+              {props.recipe.vegan ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpg'} alt='vegan icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-gray.jpg'} alt='vegan icon'></img> }
-              </li>
 
-              <li>{props.recipe.healthy ?
+              {props.recipe.healthy ?
                 <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-gray.jpg'} alt='healthy icon'></img> }
-              </li>
-        		</ul>
+        		</div>
 
-        		<p className="ingredients"><span>Ingredients:&nbsp; {generateIngredients()}</span></p>
+        		<br></br><p className="ingredients"><span><b>Ingredients:</b> {generateIngredients()}</span></p>
         	</article>
         </div>
-
       </div>
     </div>
   )

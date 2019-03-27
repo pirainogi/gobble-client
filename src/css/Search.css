@@ -7,7 +7,7 @@
   box-shadow: 10px 10px #ffa557;
   height: 80px;
   margin: 0 40% 0 40%;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .search input {

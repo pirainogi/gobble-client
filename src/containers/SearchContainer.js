@@ -74,7 +74,7 @@ class SearchContainer extends Component {
     return (
         <div className="search-container">
           <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
-          <div className='card-flex'>
+          <div className='seached-recipes-container'>
             {this.generateRecipePreview()}
           </div>
         </div>
