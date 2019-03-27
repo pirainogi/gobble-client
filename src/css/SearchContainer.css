@@ -3,6 +3,7 @@
   border-width: 2px; */
   font-family: 'Poppins', sans-serif;
   text-align: center;
+  padding-top: 9%
 }
 
 @media (min-width: 768px) {

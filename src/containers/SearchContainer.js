@@ -72,10 +72,8 @@ class SearchContainer extends Component {
   render(){
     // console.log('history', this.props);
     return (
-        <div>
-          <div className="search-container">
-            <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
-          </div>
+        <div className="search-container">
+          <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
           <div className='card-flex'>
             {this.generateRecipePreview()}
           </div>

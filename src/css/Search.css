@@ -6,7 +6,8 @@
   border-color: #E8E8E8;
   box-shadow: 10px 10px #ffa557;
   height: 80px;
-  margin: 2% 40% 0 40%;
+  margin: 0 40% 0 40%;
+  position: fixed;
 }
 
 .search input {
