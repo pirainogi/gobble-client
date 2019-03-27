@@ -109,56 +109,56 @@ class App extends Component {
     return (
       <div>
       <Header />
-      <Switch>
-        <Route
-          path="/profile"
-          component={() => <UserShow user={this.state.currentUser}/>}
-        />
-        <Route
-          path="/dashboard"
-          component={() => <Dashboard
-            currentRecipebox={this.state.currentRecipebox}
-          />}
-        />
-        <Route
-          path="/calendar"
-          component={() => <Calendar
-            events={this.state.calendarEvents}
-          />}
-        />
-        <Route
-          path="/recipebox"
-          component={() => <RecipeBoxContainer
-            currentRecipebox={this.state.currentRecipebox}
-            currentRecipeView={this.state.currentRecipeView}
-            selectRecipePreviewForShow={this.selectRecipePreviewForShow}
-          />}
-        />
-        <Route
-          exact
-          path="/recipes/:id"
-          render={routerProps => {
-            let recipe = this.findRecipe(routerProps.match.params.id)
-            return recipe ? (
-              <RecipeContainer
-                recipes={this.state.recipes}
-                foundRecipe={recipe}
-                addRecipeToRecipeBox={this.addRecipeToRecipeBox}
-              />
-            ) : (
-              <h1> loading dem recipes </h1>
-            )
-          }}
-        />
-        <Route
-          path="/search"
-          render={(routerProps) => <SearchContainer {...routerProps} recipes={this.state.recipes}/>}
-        />
-        <Route
-          path="/"
-          component={() => <Home />}
-        />
-      </Switch>
+        <Switch>
+          <Route
+            path="/profile"
+            component={() => <UserShow user={this.state.currentUser}/>}
+          />
+          <Route
+            path="/dashboard"
+            component={() => <Dashboard
+              currentRecipebox={this.state.currentRecipebox}
+            />}
+          />
+          <Route
+            path="/calendar"
+            component={() => <Calendar
+              events={this.state.calendarEvents}
+            />}
+          />
+          <Route
+            path="/recipebox"
+            component={() => <RecipeBoxContainer
+              currentRecipebox={this.state.currentRecipebox}
+              currentRecipeView={this.state.currentRecipeView}
+              selectRecipePreviewForShow={this.selectRecipePreviewForShow}
+            />}
+          />
+          <Route
+            exact
+            path="/recipes/:id"
+            render={routerProps => {
+              let recipe = this.findRecipe(routerProps.match.params.id)
+              return recipe ? (
+                <RecipeContainer
+                  recipes={this.state.recipes}
+                  foundRecipe={recipe}
+                  addRecipeToRecipeBox={this.addRecipeToRecipeBox}
+                />
+              ) : (
+                <h1> loading dem recipes </h1>
+              )
+            }}
+          />
+          <Route
+            path="/search"
+            render={(routerProps) => <SearchContainer {...routerProps} recipes={this.state.recipes}/>}
+          />
+          <Route
+            path="/"
+            component={() => <Home />}
+          />
+        </Switch>
       <Footer />
       </div>
     );
