@@ -24,9 +24,7 @@ class UserShow extends Component {
     // console.log("usershow", this.props.user[0]);
     return (
       <div className="user-show">
-        <div className='user-details'>
-          {this.generateUserInfo()}
-        </div>
+        {this.generateUserInfo()}
       </div>
     )
   }

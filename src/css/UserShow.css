@@ -3,10 +3,4 @@
   display: grid;
   /* grid-template-rows: [first] 50% [line1] 50% [last];*/
   grid-template-columns: auto;
-  margin-top: 5%;
-}
-
-.user-details {
-  /* grid-row-start: line1;
-  grid-row-end: last; */
 }

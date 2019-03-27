@@ -21,15 +21,11 @@ const Dashboard = (props) => {
   }
 
   return (
-    <div>
-      <Header />
-      <div className="dashboard">
-        <div>
-          <h1> dashboard </h1>
-          {generateRecipeBoxPreviews()}
-        </div>
-        </div>
-      <Footer />
+    <div className="dashboard">
+      <div>
+        <h1> dashboard </h1>
+        {generateRecipeBoxPreviews()}
+      </div>
     </div>
   )
 }
