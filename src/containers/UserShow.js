@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/UserShow.css';
 import UserInfo from '../components/UserInfo';
 import Footer from '../components/Footer'
@@ -21,16 +21,12 @@ class UserShow extends Component {
 
 
   render(){
-    console.log("usershow", this.props.user[0]);
+    // console.log("usershow", this.props.user[0]);
     return (
-      <div>
-        <Header />
-        <div className="user-show">
-          <div className='user-details'>
-            {this.generateUserInfo()}
-          </div>
+      <div className="user-show">
+        <div className='user-details'>
+          {this.generateUserInfo()}
         </div>
-        <Footer />
       </div>
     )
   }

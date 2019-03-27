@@ -1,13 +1,13 @@
-.fixed-header {
+/* .fixed-header {
   border-style: solid;
   border-width: 2px;
   display: flex;
   width: 100%;
   background-color: #ffa557;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: fixed;
   font-family: 'Poppins', sans-serif;
-}
+} */
 
 .header {
   border-style: solid;
@@ -15,8 +15,7 @@
   display: flex;
   width: 100%;
   background-color: #ffa557;
-  overflow: hidden;
-  position: relative;
+  position: fixed;
   font-family: 'Poppins', sans-serif;
 }
 

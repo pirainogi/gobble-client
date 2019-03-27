@@ -4,10 +4,10 @@ import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './App.css';
-// import Header from './components/Header'
+import Header from './components/Header'
 import Home from './components/Home';
 import UserShow from './containers/UserShow';
-// import Footer from './components/Footer'
+import Footer from './components/Footer'
 import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
@@ -108,6 +108,7 @@ class App extends Component {
     console.log(this.state.currentUser);
     return (
       <div>
+      <Header />
       <Switch>
         <Route
           path="/profile"
@@ -158,6 +159,7 @@ class App extends Component {
           component={() => <Home />}
         />
       </Switch>
+      <Footer />
       </div>
     );
   }
