@@ -24,7 +24,6 @@ class RecipeContainer extends Component {
     // console.log('match params', this.props.match.params.id);
     return (
       <div className="recipe-container">
-        <h1> RECIPE CONTAINER </h1>
         {this.generateRecipe()}
       </div>
     )

@@ -39,7 +39,7 @@ const RecipePreview = (props) => {
             />
           </div>
           <div className='card-flex-button'>
-      		  <a href="#" className="button">View</a>
+      		  <a href={`/recipes/${props.recipe.id}`} className="button">View</a>
           </div>
       	</aside>
 
@@ -71,7 +71,7 @@ const RecipePreview = (props) => {
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-gray.jpg'} alt='vegetarian icon'></img> }
 
               {props.recipe.vegan ?
-                <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpg'} alt='vegan icon'></img>
+                <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpeg'} alt='vegan icon'></img>
                 : <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-gray.jpg'} alt='vegan icon'></img> }
 
               {props.recipe.healthy ?

@@ -138,6 +138,7 @@ class App extends Component {
                   recipes={this.state.recipes}
                   foundRecipe={recipe}
                   addRecipeToRecipeBox={this.addRecipeToRecipeBox}
+                  addRecipe={true}
                 />
               ) : (
                 <h1> loading dem recipes </h1>

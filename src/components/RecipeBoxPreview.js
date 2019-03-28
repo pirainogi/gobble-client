@@ -44,7 +44,7 @@ const RecipeBoxPreview = (props) => {
     //   <p>Healthy Icon: {props.recipe.healthy !== undefined ? props.recipe.healthy.toString() : null }</p>
     //   <button className='button' id={props.recipe.id} onClick={props.selectRecipePreviewForShow}>view</button>
 
-    <div className="card-flex-wrapper">
+    <div className="recipe-box-preview card-flex-wrapper">
       <aside>
         <div className='card-flex-image'>
           <img

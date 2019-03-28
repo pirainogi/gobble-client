@@ -9,7 +9,7 @@ import Button from './Button'
 // }
 
 const RecipeShow = (props) => {
-  // console.log('recipe we want to view in full', props);
+  console.log('recipe container', props);
   //
   // let capitalizeFirstLetter = (string) => {
   //   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -36,7 +36,7 @@ const RecipeShow = (props) => {
 
   return (
     props.recipe ?
-      <div className="recipe-show" id={props.recipe.id}>
+      <div className={props.addRecipeToRecipeBox ? "recipe-from-search" : "recipe-show" } id={props.recipe.id}>
         <h1>{props.recipe.name}</h1>
         <img src={props.recipe.imgurl} alt={props.recipe.name} />
         <p> <b>Servings:</b> {props.recipe.servings}</p>
@@ -68,16 +68,14 @@ const RecipeShow = (props) => {
             : <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-gray.jpg'} alt='vegetarian icon'></img> }
 
           {props.recipe.vegan ?
-            <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpg'} alt='vegan icon'></img>
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpeg'} alt='vegan icon'></img>
             : <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-gray.jpg'} alt='vegan icon'></img> }
 
           {props.recipe.healthy ?
             <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
             : <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-gray.jpg'} alt='healthy icon'></img> }
         </div>
-
-        <button className='button' id={props.recipe.id} onClick={props.addRecipeToRecipeBox}>Add to Box</button>
-        <Button text={"Add to Calendar"}/>
+        {props.addRecipeToRecipeBox ? <button className='button'>Add to Box</button> : null}
       </div>
     :
       <div className="recipe-show" >
