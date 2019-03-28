@@ -2,15 +2,15 @@
   border-style: solid;
   border-width: 2px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   margin: 0;
-  padding: 8%;
+  padding: 5%;
   height: 100%;
   font-family: 'Poppins', sans-serif;
 }
 
 .recipe-show-container {
-  padding: 8%;
+  padding: 3%;
   float: right;
   /* position: relative; */
 }

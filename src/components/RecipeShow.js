@@ -75,7 +75,7 @@ const RecipeShow = (props) => {
             <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
             : <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-gray.jpg'} alt='healthy icon'></img> }
         </div>
-        {props.addRecipeToRecipeBox ? <button className='button'>Add to Box</button> : null}
+        {props.addRecipeToRecipeBox ? <button className='button' onClick={ () => props.addRecipeToRecipeBox(props.recipe.id)}>Add to Box</button> : null}
       </div>
     :
       <div className="recipe-show" >
@@ -88,6 +88,6 @@ const RecipeShow = (props) => {
 
 export default RecipeShow;
 
-// onClick={props.addRecipeToRecipeBox}
+
 // (e) => props.addRecipeToRecipeBox
 // <p>Dish Types: {props.recipe.dishType.split(",").join(", ")}</p>

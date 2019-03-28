@@ -83,11 +83,11 @@ class App extends Component {
     })
   }
 
-  addRecipeToRecipeBox = (e) => {
-    console.log('pushing add button', e.target.id, 'user', this.state.currentUser);
-    // this.props.history.push(`/recipes/${e.target.id}`)
-    let recipeToAdd = this.state.recipes.find(recipe => recipe.id === parseInt(e.target.id))
-    // console.log('recipe to add', recipeToAdd)
+  addRecipeToRecipeBox = (recipeID) => {
+    console.log('pushing add button', recipeID, 'user', this.state.currentUser);
+    // // this.props.history.push(`/recipes/${e.target.id}`)
+    let recipeToAdd = this.state.recipes.find(recipe => recipe.id === recipeID)
+    // // console.log('recipe to add', recipeToAdd)
     // console.log('user id', this.state.currentUser[0].id, 'type', typeof this.state.currentUser[0].id, 'recipe id', recipeToAdd.id, 'type', typeof recipeToAdd.id)
     fetch(RecipeboxAPI,{
       method: 'POST',
@@ -101,13 +101,20 @@ class App extends Component {
       })
     })
     .then(res => res.json())
-    console.log('updated recipebox', this.state.currentRecipebox);
+    .then(addedRecipe => {
+      let foundRecipe = this.state.recipes.find(recipe => recipe.id === addedRecipe.recipe_id)
+      console.log(foundRecipe)
+      let updatedRecipebox = [...this.state.currentRecipebox, foundRecipe]
+      this.setState({
+        currentRecipebox: updatedRecipebox
+      })
+    })
   }
 
   render() {
     // console.log(this.state.currentUser);
     return (
-      <div>
+      <div className="App">
       <Header />
         <Switch>
           <Route
