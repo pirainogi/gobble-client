@@ -39,7 +39,6 @@ class Header extends Component {
         <ul id='navbar'>
           <li><NavLink to='/search' activeClassName='active' id='navlink'>search</NavLink></li>
           <li><NavLink to='/recipebox' activeClassName='active' id='navlink'>recipebox</NavLink></li>
-          <li><NavLink to='/dashboard' activeClassName='active' id='navlink'>dashboard</NavLink></li>
           <li><NavLink to='/profile' activeClassName='active' id='navlink'>profile</NavLink></li>
         </ul>
       </div>
@@ -49,3 +48,5 @@ class Header extends Component {
 }
 
 export default Header;
+
+// <li><NavLink to='/dashboard' activeClassName='active' id='navlink'>dashboard</NavLink></li>

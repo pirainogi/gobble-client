@@ -115,12 +115,6 @@ class App extends Component {
             component={() => <UserShow user={this.state.currentUser}/>}
           />
           <Route
-            path="/dashboard"
-            component={() => <Dashboard
-              currentRecipebox={this.state.currentRecipebox}
-            />}
-          />
-          <Route
             path="/calendar"
             component={() => <Calendar
               events={this.state.calendarEvents}
@@ -167,4 +161,10 @@ class App extends Component {
 
 export default App;
 
-// <Footer />
+
+// <Route
+//   path="/dashboard"
+//   component={() => <Dashboard
+//     currentRecipebox={this.state.currentRecipebox}
+//   />}
+// />
