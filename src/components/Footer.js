@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className='designed'>
-        <img src={process.env.PUBLIC_URL + '/fork.svg'} alt='fork'></img>
         <p> Designed by Gabbie Piraino </p>
       </div>
       <a href='https://github.com/pirainogi'>
@@ -25,3 +24,4 @@ const Footer = () => {
 export default Footer
 
 // <img src='public/github-logo.png' alt='github logo' height='15' width='15'></img>
+        // <img src={process.env.PUBLIC_URL + '/fork.svg'} alt='fork'></img>

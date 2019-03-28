@@ -16,11 +16,16 @@
   margin: 15px;
 }
 
+.footer a {
+  float: left;
+}
+
 .designed {
   color: black;
   font-weight: bold;
   float: right;
   margin: 10px 4px;
+  margin-right: 10px;
 }
 
 /* .designed img {

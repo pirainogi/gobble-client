@@ -24,8 +24,10 @@
 	margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5%;
 	width: 35%;
-	min-height: 790px;
+  height: auto;
+	/* min-height: 790px; */
 	border-style: solid;
 	border-color: #E8E8E8;
 	border-width: 1px;

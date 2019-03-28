@@ -9,7 +9,7 @@ import Button from './Button'
 // }
 
 const RecipeShow = (props) => {
-  console.log('recipe container', props);
+  // console.log('recipe container', props);
   //
   // let capitalizeFirstLetter = (string) => {
   //   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -75,7 +75,13 @@ const RecipeShow = (props) => {
             <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
             : <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-gray.jpg'} alt='healthy icon'></img> }
         </div>
-        {props.addRecipeToRecipeBox ? <button className='button' onClick={ () => props.addRecipeToRecipeBox(props.recipe.id)}>Add to Box</button> : null}
+        {props.addRecipeToRecipeBox ?
+          <div>
+            <button className='button' onClick={ () => props.addRecipeToRecipeBox(props.recipe.id)}>Add to Box</button>
+            <a href='/recipebox' className="button">Go to Recipebox</a>
+            <a href='/search' className="button">Return to Search</a>
+          </div>
+          : null}
       </div>
     :
       <div className="recipe-show" >
