@@ -17,6 +17,7 @@
   background-color: #ffa557;
   position: fixed;
   font-family: 'Poppins', sans-serif;
+  z-index: 99;
 }
 
 ul#navbar {

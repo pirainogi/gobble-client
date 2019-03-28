@@ -23,9 +23,10 @@ class RecipeBoxContainer extends Component {
   render(){
     return (
     <div className="recipe-box-container">
-        <h1> CONTAINER </h1>
-        {this.generateRecipeBox()}
+      {this.generateRecipeBox()}
+      <div className="recipe-show-container">
         <RecipeShow recipe={this.props.currentRecipeView}/>
+      </div>
     </div>
   )
 }

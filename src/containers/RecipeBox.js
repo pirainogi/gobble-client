@@ -19,7 +19,6 @@ const RecipeBox = (props) => {
 
   return (
     <div className="recipe-box">
-      <h1> RECIPE BOX </h1>
       {generateRecipeBoxPreviews()}
     </div>
   )
