@@ -10,24 +10,72 @@ import Button from './Button'
 
 const RecipeShow = (props) => {
   // console.log('recipe we want to view in full', props);
+  //
+  // let capitalizeFirstLetter = (string) => {
+  //   return string.charAt(0).toUpperCase() + string.slice(1)
+  // }
+  //
+  // let generateIngredients = () => {
+  //   let recipeingredients = props.recipe.ingredients.map(ingredient =>  ingredient.name)
+  //   // console.log(recipeingredients);
+  //   let capitalizedRecipes = recipeingredients.map(ingredient => {
+  //     return capitalizeFirstLetter(ingredient)
+  //   })
+  //   // console.log(recipeingredients);
+  //   return capitalizedRecipes.join(', ')
+  // }
+  //
+  // let generateDishCategories = () => {
+  //   let dishCategories = props.recipe.dishType.split(',')
+  //   // console.log(dishCategories);
+  //   let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
+  //   // console.log(capitalizedCategories);
+  //   return capitalizedCategories.join(', ')
+  //
+  // }
 
   return (
     props.recipe ?
       <div className="recipe-show" id={props.recipe.id}>
         <h1>{props.recipe.name}</h1>
         <img src={props.recipe.imgurl} alt={props.recipe.name} />
-        <p> Servings: {props.recipe.servings}</p>
-        <p> Prep Time: {props.recipe.preptime} minutes </p>
-        <p> Ingredients: </p>
-        <p> Instructions: {props.recipe.instructions} </p>
-        <p> Source: <a href={props.recipe.sourceUrl}> {props.recipe.sourceUrl}</a></p>
-        <h4>GF Icon: {props.recipe.glutenFree !== undefined ? props.recipe.glutenFree.toString() : null }</h4>
-        <h4>DairyFree Icon: {props.recipe.dairyFree !== undefined ? props.recipe.dairyFree.toString() : null }</h4>
-        <h4>W30 Icon: {props.recipe.whole30 !== undefined ? props.recipe.whole30.toString() : null }</h4>
-        <h4>Keto Icon: {props.recipe.keto !== undefined ? props.recipe.keto.toString() : null }</h4>
-        <h4>Vegan Icon: {props.recipe.vegan !== undefined ? props.recipe.vegan.toString() : null }</h4>
-        <h4>Veg Icon: {props.recipe.vegetarian !== undefined ? props.recipe.vegetarian.toString() : null }</h4>
-        <h4>Healthy Icon: {props.recipe.healthy !== undefined ? props.recipe.healthy.toString() : null }</h4>
+        <p> <b>Servings:</b> {props.recipe.servings}</p>
+        <p> <b>Prep Time:</b> {props.recipe.preptime} minutes </p>
+        <p> <b>Ingredients:</b> </p>
+        <p> <b>Instructions:</b> {props.recipe.instructions} </p>
+        <p> <b>Source:</b> <a href={props.recipe.sourceUrl}> {props.recipe.sourceUrl}</a></p>
+
+        <div className="recipe-icons">
+          {props.recipe.glutenFree ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-gray.jpg'} alt='gluten-free icon'></img> }
+
+
+          {props.recipe.dairyFree ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-4c.jpg'} alt='dairy-free icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-gray.jpg'} alt='dairy-free icon'></img> }
+
+          {props.recipe.keto ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/keto-4c.jpg'} alt='keto icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/keto-gray.jpg'} alt='keto icon'></img> }
+
+          {props.recipe.whole30 ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/whole30_4c.jpg'} alt='whole30 icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/whole30_gray.jpg'} alt='whole30 icon'></img> }
+
+          {props.recipe.vegetarian ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-4c.png'} alt='vegetarian icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-gray.jpg'} alt='vegetarian icon'></img> }
+
+          {props.recipe.vegan ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpg'} alt='vegan icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-gray.jpg'} alt='vegan icon'></img> }
+
+          {props.recipe.healthy ?
+            <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
+            : <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-gray.jpg'} alt='healthy icon'></img> }
+        </div>
+
         <button className='button' id={props.recipe.id} onClick={props.addRecipeToRecipeBox}>Add to Box</button>
         <Button text={"Add to Calendar"}/>
       </div>
