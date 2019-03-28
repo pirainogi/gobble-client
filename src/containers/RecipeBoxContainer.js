@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import '../css/RecipeBoxContainer.css';
 import RecipeBox from './RecipeBox'
 import RecipeShow from '../components/RecipeShow'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+// import Header from '../components/Header'
+// import Footer from '../components/Footer'
 
 
 class RecipeBoxContainer extends Component {

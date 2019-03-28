@@ -54,7 +54,7 @@ class App extends Component {
     .then(res => res.json())
     .then(events => {
       for (let i=0; i < events.length; i++){
-        console.log(events[i])
+        // console.log(events[i])
         events[i].start = this.convertDate(events[i].eventStart)
         events[i].end = this.convertDate(events[i].eventEnd)
       }
@@ -105,7 +105,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.currentUser);
+    // console.log(this.state.currentUser);
     return (
       <div>
       <Header />

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import '../css/SearchContainer.css';
 import SearchBar from '../components/SearchBar';
 import RecipePreview from '../components/RecipePreview';
-import Header from '../components/Header';
-import Footer from '../components/Footer'
-import { Link } from 'react-router-dom';
+// import Header from '../components/Header';
+// import Footer from '../components/Footer'
+// import { Link } from 'react-router-dom';
 
 
 class SearchContainer extends Component {

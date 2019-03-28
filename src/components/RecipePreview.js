@@ -4,7 +4,7 @@ import '../css/RecipePreview.css';
 
 
 const RecipePreview = (props) => {
-  console.log(props);
+  // console.log(props);
 
   let capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1)

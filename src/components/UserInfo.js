@@ -3,11 +3,11 @@ import '../css/UserInfo.css';
 
 
 const UserInfo = (props) => {
-  console.log(props.user);
+  // console.log(props.user);
 
   return (
     <div className="user-info">
-      <img src={props.user.profile_pic} alt="user profile picture"></img>
+      <img src={props.user.profile_pic} alt="user profile"></img>
       <div className="details">
         <p> <b>Name:</b> {props.user.name}<br></br><br></br>
         <b>Bio:</b> {props.user.bio}<br></br>

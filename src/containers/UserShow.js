@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../css/UserShow.css';
 import UserInfo from '../components/UserInfo';
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+// import Footer from '../components/Footer'
+// import Header from '../components/Header'
 // import Button from '../components/Button';
 
 

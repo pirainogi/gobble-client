@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/Dashboard.css';
-import Calendar from './Calendar'
+// import Calendar from './Calendar'
 import RecipeBoxPreview from './RecipeBoxPreview'
-import Header from './Header'
-import Footer from './Footer'
+// import Header from './Header'
+// import Footer from './Footer'
 
 const Dashboard = (props) => {
 // console.log(props);
