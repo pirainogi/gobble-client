@@ -88,5 +88,6 @@ const RecipeShow = (props) => {
 
 export default RecipeShow;
 
-
+// onClick={props.addRecipeToRecipeBox}
+// (e) => props.addRecipeToRecipeBox
 // <p>Dish Types: {props.recipe.dishType.split(",").join(", ")}</p>

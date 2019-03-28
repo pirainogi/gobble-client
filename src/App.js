@@ -84,7 +84,7 @@ class App extends Component {
   }
 
   addRecipeToRecipeBox = (e) => {
-    // console.log('pushing add button', e.target.id, 'user', this.state.currentUser);
+    console.log('pushing add button', e.target.id, 'user', this.state.currentUser);
     // this.props.history.push(`/recipes/${e.target.id}`)
     let recipeToAdd = this.state.recipes.find(recipe => recipe.id === parseInt(e.target.id))
     // console.log('recipe to add', recipeToAdd)
@@ -101,7 +101,7 @@ class App extends Component {
       })
     })
     .then(res => res.json())
-    // console.log('updated recipebox', this.state.currentRecipebox);
+    console.log('updated recipebox', this.state.currentRecipebox);
   }
 
   render() {
