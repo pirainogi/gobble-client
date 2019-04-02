@@ -10,6 +10,7 @@ import UserShow from './containers/UserShow';
 import Footer from './components/Footer'
 // import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
+import Login from './components/Login';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
 import SearchContainer from './containers/SearchContainer';
 import RecipeContainer from './containers/RecipeContainer';
@@ -117,6 +118,10 @@ class App extends Component {
       <div className="App">
       <Header />
         <Switch>
+          <Route
+            path="/login"
+            component={() => <Login />}
+          />
           <Route
             path="/profile"
             component={() => <UserShow user={this.state.currentUser}/>}

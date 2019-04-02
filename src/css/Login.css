@@ -1,0 +1,9 @@
+.login {
+  border-style: solid;
+  border-width: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login h1 {
+  margin-top: 10%;
+}
