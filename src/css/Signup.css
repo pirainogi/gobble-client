@@ -1,0 +1,9 @@
+.signup {
+  border-style: solid;
+  border-width: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.signup h1 {
+  margin-top: 10%;
+}

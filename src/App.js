@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 // import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
 import SearchContainer from './containers/SearchContainer';
 import RecipeContainer from './containers/RecipeContainer';
@@ -19,7 +20,7 @@ BigCalendar.momentLocalizer(moment);
 
 
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
-const UserAPI = 'http://localhost:3000/api/v1/users'
+// const UserAPI = 'http://localhost:3000/api/v1/users'
 const RecipeboxAPI = 'http://localhost:3000/api/v1/recipeboxes'
 const EventAPI = 'http://localhost:3000/api/v1/events'
 
@@ -30,7 +31,7 @@ class App extends Component {
 
     this.state = {
       recipes: [],
-      currentUser: [],
+      currentUser: null,
       currentRecipebox: [],
       currentRecipeView: {},
       calendarEvents: []
@@ -41,15 +42,6 @@ class App extends Component {
     fetch(RecipeAPI)
     .then(res => res.json())
     .then(recipes => this.setState({recipes: recipes}) )
-
-    fetch(UserAPI)
-    .then(res => res.json())
-    .then(user =>
-      this.setState({
-        currentUser: user,
-        currentRecipebox: user[0].recipes
-      })
-    )
 
     fetch(EventAPI)
     .then(res => res.json())
@@ -112,6 +104,27 @@ class App extends Component {
     })
   }
 
+  setCurrentUser = (response) => {
+    localStorage.setItem("token", response.jwt)
+    this.setState({
+      currentUser: response.user,
+      currentRecipebox: response.user.recipes
+    })
+  }
+
+  updateUser = (user) => {
+    this.setState({
+      currentUser: user
+    })
+  }
+
+  logout = () => {
+    localStorage.removeItem("token")
+    this.setState({
+      currentUser: null
+    }, () => { this.props.history.push('/')})
+  }
+
   render() {
     // console.log(this.state.currentUser);
     return (
@@ -120,7 +133,11 @@ class App extends Component {
         <Switch>
           <Route
             path="/login"
-            component={() => <Login />}
+            render={routerProps => <Login {...routerProps} setCurrentUser={this.setCurrentUser}/>}
+          />
+          <Route
+            path="/signup"
+            render={routerProps => <Signup {...routerProps} setCurrentUser={this.setCurrentUser}/>}
           />
           <Route
             path="/profile"
@@ -181,3 +198,12 @@ export default App;
 //     currentRecipebox={this.state.currentRecipebox}
 //   />}
 // />
+
+// fetch(UserAPI)
+// .then(res => res.json())
+// .then(user =>
+//   this.setState({
+//     currentUser: user,
+//     currentRecipebox: user[0].recipes
+//   })
+// )
