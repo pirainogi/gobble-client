@@ -89,7 +89,7 @@ class App extends Component {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        user_id: this.state.currentUser[0].id,
+        user_id: this.state.currentUser.id,
         recipe_id: recipeToAdd.id
       })
     })
@@ -111,18 +111,18 @@ class App extends Component {
     })
   }
 
-  updateUser = (user) => {
-    this.setState({
-      currentUser: user
-    })
-  }
-
-  logout = () => {
-    localStorage.removeItem("token")
-    this.setState({
-      currentUser: null
-    }, () => { this.props.history.push('/')})
-  }
+  // updateUser = (user) => {
+  //   this.setState({
+  //     currentUser: user
+  //   })
+  // }
+  //
+  // logout = () => {
+  //   localStorage.removeItem("token")
+  //   this.setState({
+  //     currentUser: null
+  //   }, () => { this.props.history.push('/')})
+  // }
 
   render() {
     console.log('logging all info', this.state);

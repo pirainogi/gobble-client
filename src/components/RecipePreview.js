@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/RecipePreview.css';
+import { NavLink } from 'react-router-dom';
 // import '../css/Button.css';
 
 
@@ -39,7 +40,7 @@ const RecipePreview = (props) => {
             />
           </div>
           <div className='card-flex-button'>
-      		  <a href={`/recipes/${props.recipe.id}`} className="button">View</a>
+            <NavLink to={`/recipes/${props.recipe.id}`} activeClassName='active' id='navlink'>View</NavLink>
           </div>
       	</aside>
 

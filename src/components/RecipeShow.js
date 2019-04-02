@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/RecipeShow.css';
 import Button from './Button'
+import { NavLink } from 'react-router-dom';
 
 // function displayIngredients(ingredients) {
 //   for(let i of ingredients){
@@ -78,8 +79,8 @@ const RecipeShow = (props) => {
         {props.addRecipeToRecipeBox ?
           <div>
             <button className='button' onClick={ () => props.addRecipeToRecipeBox(props.recipe.id)}>Add to Box</button>
-            <a href='/recipebox' className="button">Go to Recipebox</a>
-            <a href='/search' className="button">Return to Search</a>
+            <NavLink to='/recipebox' activeClassName='active' id='navlink' className="button">Go to RecipeBox</NavLink>
+            <NavLink to='/search' activeClassName='active' id='navlink' className="button">Return to Search</NavLink>
           </div>
           : null}
       </div>
