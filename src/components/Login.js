@@ -14,7 +14,8 @@ class Login extends Component {
     })
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
     fetch("http://localhost:3000/api/v1/login", {
       method: "POST",
       headers: {
@@ -25,8 +26,7 @@ class Login extends Component {
     })
     .then(res => res.json())
     .then(response => {
-      console.log(response)
-      if(response.errors){
+      if (response.errors){
         alert(response.errors)
       } else {
         this.props.setCurrentUser(response)
@@ -36,6 +36,7 @@ class Login extends Component {
   }
 
   render(){
+    console.log(this.props);
     return (
       <div className='login'>
         <h1>this is the login page</h1>

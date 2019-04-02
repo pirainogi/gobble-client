@@ -31,7 +31,7 @@ class App extends Component {
 
     this.state = {
       recipes: [],
-      currentUser: null,
+      currentUser: {},
       currentRecipebox: [],
       currentRecipeView: {},
       calendarEvents: []
@@ -104,11 +104,10 @@ class App extends Component {
     })
   }
 
-  setCurrentUser = (response) => {
-    localStorage.setItem("token", response.jwt)
+  setCurrentUser = (user) => {
     this.setState({
-      currentUser: response.user,
-      currentRecipebox: response.user.recipes
+      currentUser: user,
+      currentRecipebox: user.recipes
     })
   }
 
@@ -126,7 +125,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.currentUser);
+    console.log('logging all info', this.state);
     return (
       <div className="App">
       <Header />
