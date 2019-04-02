@@ -70,7 +70,7 @@ class SearchContainer extends Component {
 
 
   render(){
-    console.log('props', this.props);
+    // console.log('props', this.props);
     return (
         <div className="search-container">
           <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>

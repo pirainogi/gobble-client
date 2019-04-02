@@ -117,18 +117,17 @@ class App extends Component {
   //   })
   // }
   //
-  // logout = () => {
-  //   localStorage.removeItem("token")
-  //   this.setState({
-  //     currentUser: null
-  //   }, () => { this.props.history.push('/')})
-  // }
+  logout = () => {
+    this.setState({
+      currentUser: {}
+    })
+  }
 
   render() {
-    console.log('logging all info', this.state);
+    // console.log('logging all info', this.state);
     return (
       <div className="App">
-      <Header />
+      <Header currentUser={this.state.currentUser} logout={this.logout}/>
         <Switch>
           <Route
             path="/login"

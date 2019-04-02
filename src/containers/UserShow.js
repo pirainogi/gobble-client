@@ -16,7 +16,7 @@ class UserShow extends Component {
 
 
   render(){
-    console.log("usershow", this.props.user);
+    // console.log("usershow", this.props.user);
     return (
       <div className="user-show">
         {this.generateUserInfo()}

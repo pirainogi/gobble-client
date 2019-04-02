@@ -49,3 +49,14 @@ ul#navbar li hover {
   padding-top: 12px;
   background-color: #000;
 }
+
+button {
+  position: absolute;
+  right: 0;
+  list-style: none;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 30px;
+}

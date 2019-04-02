@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/Header.css';
 
@@ -32,15 +32,32 @@ class Header extends Component {
   // }
 
   render(){
-    // console.log(this.props);
+    console.log(this.props, this.props.currentUser);
     return (
       <div className='header' id='header'>
-        <NavLink to='/' activeClassName='active'><h1>GOBBLE</h1></NavLink>
-        <ul id='navbar'>
-          <li><NavLink to='/search' activeClassName='active' id='navlink'>search</NavLink></li>
-          <li><NavLink to='/recipebox' activeClassName='active' id='navlink'>recipebox</NavLink></li>
-          <li><NavLink to='/profile' activeClassName='active' id='navlink'>profile</NavLink></li>
-        </ul>
+        {this.props.currentUser.id ?
+          <>
+            <NavLink to='/' activeClassName='active'><h1>GOBBLE</h1></NavLink>
+            <ul id='navbar'>
+              <li><NavLink to='/search' activeClassName='active' id='navlink'>search</NavLink></li>
+
+              <li><NavLink to='/recipebox' activeClassName='active' id='navlink'>recipebox</NavLink></li>
+
+              <li><NavLink to='/profile' activeClassName='active' id='navlink'>profile</NavLink></li>
+
+              <li><NavLink to='/' activeClassName='active' id='navlink' onClick={this.props.logout}>logout</NavLink></li>
+            </ul>
+          </>
+          :
+          <>
+            <NavLink to='/' activeClassName='active'><h1>GOBBLE</h1></NavLink>
+            <ul id='navbar'>
+              <li><NavLink to='/login' activeClassName='active' id='navlink'>login</NavLink></li>
+
+              <li><NavLink to='/signup' activeClassName='active' id='navlink'>signup</NavLink></li>
+            </ul>
+          </>
+        }
       </div>
     )
   }
