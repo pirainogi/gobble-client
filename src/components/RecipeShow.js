@@ -10,21 +10,23 @@ import { NavLink } from 'react-router-dom';
 // }
 
 const RecipeShow = (props) => {
-  // console.log('recipe container', props);
+  console.log('recipe ingredients', props.recipe.ingredients);
   //
-  // let capitalizeFirstLetter = (string) => {
-  //   return string.charAt(0).toUpperCase() + string.slice(1)
-  // }
-  //
-  // let generateIngredients = () => {
-  //   let recipeingredients = props.recipe.ingredients.map(ingredient =>  ingredient.name)
-  //   // console.log(recipeingredients);
-  //   let capitalizedRecipes = recipeingredients.map(ingredient => {
-  //     return capitalizeFirstLetter(ingredient)
-  //   })
-  //   // console.log(recipeingredients);
-  //   return capitalizedRecipes.join(', ')
-  // }
+  let capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
+  let generateIngredients = () => {
+    let recipeingredients = props.recipe.ingredients.map(i => {
+      return i.name
+    })
+    // console.log(recipeingredients);
+    let capitalizedRecipes = recipeingredients.map(ingredient => {
+      return capitalizeFirstLetter(ingredient)
+    })
+    // console.log(recipeingredients);
+    return capitalizedRecipes.join(', ')
+  }
   //
   // let generateDishCategories = () => {
   //   let dishCategories = props.recipe.dishType.split(',')
@@ -38,11 +40,11 @@ const RecipeShow = (props) => {
   return (
     props.recipe ?
       <div className={props.addRecipeToRecipeBox ? "recipe-from-search" : "recipe-show" } id={props.recipe.id}>
-        <h1>{props.recipe.name}</h1>
+        <h1>{props.recipe.name}</h1><br></br>
         <img src={props.recipe.imgurl} alt={props.recipe.name} />
-        <p> <b>Servings:</b> {props.recipe.servings}<br></br>
-        <b>Prep Time:</b> {props.recipe.preptime} minutes<br></br>
-        <b>Ingredients:</b><br></br>
+        <p> <b>Servings:</b> {props.recipe.servings}
+        <b>         Prep Time:</b> {props.recipe.preptime} minutes<br></br>
+        <b>Ingredients:</b> {generateIngredients()}<br></br><br></br>
         <b>Instructions:</b> {props.recipe.instructions}<br></br>
         <b>Source:</b> <a href={props.recipe.sourceUrl}> {props.recipe.sourceUrl}</a></p>
 
