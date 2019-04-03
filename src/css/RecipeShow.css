@@ -36,8 +36,16 @@
 }
 
 .recipe-from-search button {
+  font-size: 15px;
   margin-top: 3%;
-  margin-left: 40%;
-  margin-right: 40%;
-  width: 20%;
+  margin-left: 37%;
+  margin-right: 35%;
+  width: 30%;
+}
+
+.recipe-from-search h1 {
+  display: inline;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
 }

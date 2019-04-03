@@ -23,7 +23,7 @@ img {
 	background: #fff;
 	font-family: 'Poppins', sans-serif;
 	margin: 5%;
-	width: 40%;
+	width: 80%;
 	min-height: 150px;
 	border-style: solid;
 	border-color: #E8E8E8;
@@ -141,7 +141,7 @@ img {
 
 @media {
 	.card-flex-item {
-		width: 33.33%;
+		width: 50%;
 	}
 
 	.card-flex-image img {

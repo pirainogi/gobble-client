@@ -9,25 +9,24 @@
   z-index: 99;
 }
 
-h1 {
+.header h1 {
   display: inline;
   margin-right: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: #ffa557;
-  color: #black;
+  color: black;
   font-weight: bold;
   font-size: 22px;
   text-decoration: none;
 }
 
-ul#navbar {
+.header ul#navbar {
   position: absolute;
   right: 0;
   list-style: none;
 }
 
-ul#navbar li {
+.header ul#navbar li {
   float: left;
   flex-direction: row;
   justify-content: flex-end;
@@ -45,7 +44,7 @@ ul#navbar li a {
   text-decoration: none;
 }
 
-ul#navbar li hover {
+.header ul#navbar li hover {
   background-color: #000;
 }
 
