@@ -10,15 +10,15 @@ import { NavLink } from 'react-router-dom';
 // }
 
 const RecipeShow = (props) => {
-  console.log('recipe ingredients', props.recipe.ingredients);
+  // console.log('recipe container', props);
   //
   let capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   let generateIngredients = () => {
-    let recipeingredients = props.recipe.ingredients.map(i => {
-      return i.name
+    let recipeingredients = props.recipe.ingredients.map(ingredient => {
+      return ingredient.name
     })
     // console.log(recipeingredients);
     let capitalizedRecipes = recipeingredients.map(ingredient => {
@@ -40,11 +40,11 @@ const RecipeShow = (props) => {
   return (
     props.recipe ?
       <div className={props.addRecipeToRecipeBox ? "recipe-from-search" : "recipe-show" } id={props.recipe.id}>
-        <h1>{props.recipe.name}</h1><br></br>
+        <h1>{props.recipe.name}</h1>
         <img src={props.recipe.imgurl} alt={props.recipe.name} />
         <p> <b>Servings:</b> {props.recipe.servings}
-        <b>         Prep Time:</b> {props.recipe.preptime} minutes<br></br>
-        <b>Ingredients:</b> {generateIngredients()}<br></br><br></br>
+        <b>    Prep Time:</b> {props.recipe.preptime} minutes<br></br>
+        <b>Ingredients:</b> <br></br>
         <b>Instructions:</b> {props.recipe.instructions}<br></br>
         <b>Source:</b> <a href={props.recipe.sourceUrl}> {props.recipe.sourceUrl}</a></p>
 

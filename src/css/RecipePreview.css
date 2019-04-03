@@ -1,7 +1,7 @@
 
-* {
+/* * {
 	@include box-sizing(border-box);
-}
+} */
 
 /* html {
 	height: 100%;
@@ -123,6 +123,7 @@ img {
 @media {
 	.card-flex-item {
 		width: 50%;
+		height: auto;
 	}
 
 	.card-flex-image img {
