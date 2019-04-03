@@ -51,7 +51,7 @@ const RecipeBoxPreview = (props) => {
             src={props.recipe.imgurl} alt={props.recipe.name}
           />
         </div>
-        <div className='card-flex-button'>
+        <div>
           <button className="button" id={props.recipe.id} onClick={props.selectRecipePreviewForShow}>See Full Recipe</button>
         </div>
       </aside>
@@ -64,7 +64,6 @@ const RecipeBoxPreview = (props) => {
             {props.recipe.glutenFree ?
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
               : null }
-
 
             {props.recipe.dairyFree ?
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-4c.jpg'} alt='dairy-free icon'></img>

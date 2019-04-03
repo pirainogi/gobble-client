@@ -31,7 +31,6 @@ const RecipePreview = (props) => {
   }
 
   return (
-    <div className="card-container">
       <div className="recipe-card card-flex-wrapper">
       	<aside>
           <div className='card-flex-image'>
@@ -83,7 +82,6 @@ const RecipePreview = (props) => {
         	</article>
         </div>
       </div>
-    </div>
   )
 
 }

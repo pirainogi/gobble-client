@@ -3,18 +3,17 @@
 
   position: -webkit-sticky;
   position: sticky;
-  top: 200px;
+  top: 0px;
 
   background: #fff;
 	font-family: 'Poppins', sans-serif;
 	margin: 5%;
-	width: 65%;
-  height: 70vh;
+	width: 80%;
 	min-height: 200px;
 	border-style: solid;
 	border-color: #E8E8E8;
 	border-width: 1px;
-  box-shadow: 8px 8px 5px #ffa557;
+  box-shadow: 6px 6px 3px #ffa557;
   padding: 20px;
 }
 
