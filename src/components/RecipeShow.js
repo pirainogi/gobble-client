@@ -40,11 +40,11 @@ const RecipeShow = (props) => {
       <div className={props.addRecipeToRecipeBox ? "recipe-from-search" : "recipe-show" } id={props.recipe.id}>
         <h1>{props.recipe.name}</h1>
         <img src={props.recipe.imgurl} alt={props.recipe.name} />
-        <p> <b>Servings:</b> {props.recipe.servings}</p>
-        <p> <b>Prep Time:</b> {props.recipe.preptime} minutes </p>
-        <p> <b>Ingredients:</b> </p>
-        <p> <b>Instructions:</b> {props.recipe.instructions} </p>
-        <p> <b>Source:</b> <a href={props.recipe.sourceUrl}> {props.recipe.sourceUrl}</a></p>
+        <p> <b>Servings:</b> {props.recipe.servings}<br></br>
+        <b>Prep Time:</b> {props.recipe.preptime} minutes<br></br>
+        <b>Ingredients:</b><br></br>
+        <b>Instructions:</b> {props.recipe.instructions}<br></br>
+        <b>Source:</b> <a href={props.recipe.sourceUrl}> {props.recipe.sourceUrl}</a></p>
 
         <div className="recipe-icons">
           {props.recipe.glutenFree ?

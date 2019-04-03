@@ -3,14 +3,14 @@
 	font-family: 'Poppins', sans-serif;
 	margin: 5%;
 	width: 70%;
-	min-height: 790px;
+	min-height: 200px;
 	border-style: solid;
 	border-color: #E8E8E8;
 	border-width: 1px;
 	/* display: flex;
 	flex-wrap: wrap; */
 	/* max-width: 496px; */
-  box-shadow: 10px 10px 5px #ffa557;
+  box-shadow: 7px 7px 3px #ffa557;
 }
 
 aside {
@@ -80,18 +80,18 @@ article {
   }
 
   h2 {
-    font-size: em(28);
+    font-size: 20px;
     color: #222222;
   }
 
   h3 {
-    font-size: em(15);
+    font-size: 18px;
     color: #838689;
   }
 
   p {
     margin: 1.25em 0;
-    font-size: em(13);
+    font-size: 16px;
     font-weight: 400;
     color: #222222;
 

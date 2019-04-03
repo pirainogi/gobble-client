@@ -8,6 +8,6 @@
 
 .seached-recipes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  padding: 45px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 10px;
 }
