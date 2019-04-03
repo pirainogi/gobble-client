@@ -4,7 +4,7 @@
   display: flex;
   width: 100%;
   background-color: #ffa557;
-  position: fixed;
+  /* position: fixed; */
   font-family: 'Poppins', sans-serif;
   z-index: 99;
 }

@@ -43,6 +43,8 @@ class Header extends Component {
 
               <li><NavLink to='/recipebox' activeClassName='active' id='navlink'>recipebox</NavLink></li>
 
+                <li><NavLink to='/calendar' activeClassName='active' id='navlink'>calendar</NavLink></li>
+
               <li><NavLink to='/profile' activeClassName='active' id='navlink'>profile</NavLink></li>
 
               <li><NavLink to='/' activeClassName='active' id='navlink' onClick={this.props.logout}>logout</NavLink></li>

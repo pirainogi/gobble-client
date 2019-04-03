@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header'
-import Footer from './Footer'
 import BigCalendar from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
@@ -11,25 +9,44 @@ const localizer = BigCalendar.momentLocalizer(moment);
 
 class Calendar extends Component {
 
+  state = {
+    events: [],
+  }
 
+  componentDidMount() {
+    console.log(this.props.events);
+    let calEvents = this.props.events.map( event => {
+        event.eventEnd = new Date(event.eventEnd)
+        event.eventStart = new Date(event.eventStart)
+        return event
+      })
+    console.log(calEvents);
+    this.setState({
+      events: calEvents
+    })
+  }
 
 
   render(){
-    console.log(this.props);
+    console.log('calendar props', this.props, 'state', this.state)
     return (
-      <div>
-        <Header />
-        <div style={{ height: 700}}>
+      <div className='calendar'>
+      {this.props.events[0].id ?
+        <div style={{ height: 450}}>
           <BigCalendar
-            events={this.props.events}
+            events={this.state.events}
             step={30}
-            defaultView='week'
+            defaultView='month'
             views={['month', 'week', 'day']}
             defaultDate={new Date()}
             localizer={localizer}
+            startAccessor="eventStart"
+            endAccessor="eventEnd"
+            titleAccessor="name"
           />
-        </div>
-        <Footer />
+        </div> :
+        <p>calendar loading</p>
+      }
       </div>
     )
   }

@@ -64,10 +64,11 @@ class App extends Component {
       })
       .then(res => res.json())
       .then(response => {
-        // console.log(response)
+        console.log('getting user info', response)
         this.setState({
           currentUser: response,
-          currentRecipebox: response.recipes
+          currentRecipebox: response.recipes,
+          calendarEvents: response.events,
         })
       })
     }
@@ -126,7 +127,8 @@ class App extends Component {
     console.log(response.user)
     this.setState({
       currentUser: response.user,
-      currentRecipebox: response.user.recipes
+      currentRecipebox: response.user.recipes,
+      calendarEvents: response.user.events,
     })
   }
 
@@ -138,7 +140,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log('logging all info', this.state);
+    console.log('logging all info', this.state);
     return (
       <div className="App">
       <Header currentUser={this.state.currentUser} logout={this.logout}/>
@@ -159,6 +161,7 @@ class App extends Component {
             path="/calendar"
             component={() => <Calendar
               events={this.state.calendarEvents}
+              user={this.state.currentUser}
             />}
           />
           <Route
