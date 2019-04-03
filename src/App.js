@@ -54,6 +54,23 @@ class App extends Component {
       this.setState({calendarEvents: events})
     })
 
+    const token = localStorage.getItem("token")
+    if (token){
+      fetch("http://localhost:3000/api/v1/auto_login", {
+        method: "GET",
+        headers: {
+          "Authorization": token
+        }
+      })
+      .then(res => res.json())
+      .then(response => {
+        // console.log(response)
+        this.setState({
+          currentUser: response,
+          currentRecipebox: response.recipes
+        })
+      })
+    }
   }
 
   convertDate = (date) => {
@@ -104,20 +121,17 @@ class App extends Component {
     })
   }
 
-  setCurrentUser = (user) => {
+  setCurrentUser = (response) => {
+    localStorage.setItem("token", response.jwt)
+    console.log(response.user)
     this.setState({
-      currentUser: user,
-      currentRecipebox: user.recipes
+      currentUser: response.user,
+      currentRecipebox: response.user.recipes
     })
   }
 
-  // updateUser = (user) => {
-  //   this.setState({
-  //     currentUser: user
-  //   })
-  // }
-  //
   logout = () => {
+    localStorage.removeItem("token")
     this.setState({
       currentUser: {}
     })

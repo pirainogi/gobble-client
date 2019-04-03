@@ -32,6 +32,7 @@ class Signup extends Component {
     })
     .then(res => res.json())
     .then((response) => {
+      console.log(response);
       if (response.errors){
         alert(response.errors)
       } else {
@@ -41,9 +42,10 @@ class Signup extends Component {
     })
   }
 
-  handleSubmit= () => {
+  handleSubmit= (e) => {
+    e.preventDefault()
     if(this.state.password === this.state.passwordConfirmation){
-      console.log(this.state)
+      // console.log(this.state)
       this.createUser()
     } else {
       alert("Passwords don't match!")

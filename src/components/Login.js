@@ -26,6 +26,7 @@ class Login extends Component {
     })
     .then(res => res.json())
     .then(response => {
+      console.log(response);
       if (response.errors){
         alert(response.errors)
       } else {

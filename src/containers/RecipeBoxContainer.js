@@ -21,6 +21,7 @@ class RecipeBoxContainer extends Component {
   }
 
   render(){
+    console.log(this.props);
     return (
     <div className="recipe-box-container">
       {this.generateRecipeBox()}

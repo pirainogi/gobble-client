@@ -32,7 +32,7 @@ class Header extends Component {
   // }
 
   render(){
-    console.log(this.props, this.props.currentUser);
+    // console.log(this.props, this.props.currentUser);
     return (
       <div className='header' id='header'>
         {this.props.currentUser.id ?
