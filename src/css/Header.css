@@ -20,6 +20,16 @@
   z-index: 99;
 }
 
+h1 {
+  display: inline;
+  margin-right: 10px;
+  background-color: #ffa557;
+  color: #black;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+}
+
 ul#navbar {
   position: absolute;
   right: 0;
@@ -36,21 +46,20 @@ ul#navbar li {
 
 ul#navbar li a {
   display: inline;
-  padding: 4px 5px 3px 5px;
+  padding: 0px 5px 3px 5px;
   margin-right: 5px;
   background-color: #ffa557;
   color: #black;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 15px;
   text-decoration: none;
 }
 
 ul#navbar li hover {
-  padding-top: 12px;
   background-color: #000;
 }
 
-button {
+/* button {
   position: absolute;
   right: 0;
   list-style: none;
@@ -59,4 +68,4 @@ button {
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 30px;
-}
+} */
