@@ -7,14 +7,13 @@
 
   background: #fff;
 	font-family: 'Poppins', sans-serif;
-	margin: 5%;
-	width: 80%;
+	margin: 2%;
+	width: 90;
 	min-height: 200px;
 	border-style: solid;
 	border-color: #E8E8E8;
 	border-width: 1px;
   box-shadow: 6px 6px 3px #ffa557;
-  padding: 20px;
 }
 
 .recipe-from-search {
