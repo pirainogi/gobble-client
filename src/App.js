@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -146,6 +146,35 @@ class App extends Component {
     this.setState({
       recipeForEvent: recipe
     })
+    this.props.history.push('/eventform')
+  }
+
+  createEvent = (stringifiedStart, stringifiedEnd, recipeName) => {
+
+    console.log(stringifiedStart, stringifiedEnd);
+
+    fetch("http://localhost:3000/api/v1/events", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json"
+      },
+      body: JSON.stringify({
+        user_id: this.state.currentUser.id,
+        name: recipeName,
+        eventType: "tbd",
+        eventStart: stringifiedStart,
+        eventEnd: stringifiedEnd
+      })
+    })
+    .then(res => res.json())
+    .then(addedEvent => {
+      console.log(addedEvent)
+      this.setState({
+        calendarEvents: [...this.state.calendarEvents, addedEvent]
+      },     this.props.history.push('/calendar')
+)
+    })
   }
 
   render() {
@@ -178,6 +207,7 @@ class App extends Component {
             component={() => <EventForm
               userID={this.state.currentUser.id}
               recipeForEvent={this.state.recipeForEvent.name}
+              createEvent={this.createEvent}
             />}
           />
           <Route
@@ -220,7 +250,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
 
 
 // <Route
