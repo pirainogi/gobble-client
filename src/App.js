@@ -36,7 +36,7 @@ class App extends Component {
       currentRecipebox: [],
       currentRecipeView: {},
       calendarEvents: [],
-      recipeEvent: {},
+      recipeForEvent: {},
     }
   }
 
@@ -141,8 +141,11 @@ class App extends Component {
     })
   }
 
-  grabRecipeForEvent = (recipeID) => {
-    console.log(recipeID);
+  grabRecipeForEvent = (recipe) => {
+    console.log(recipe);
+    this.setState({
+      recipeForEvent: recipe
+    })
   }
 
   render() {
@@ -174,6 +177,7 @@ class App extends Component {
             path="/eventform"
             component={() => <EventForm
               userID={this.state.currentUser.id}
+              recipeForEvent={this.state.recipeForEvent.name}
             />}
           />
           <Route
@@ -194,8 +198,7 @@ class App extends Component {
                   recipes={this.state.recipes}
                   foundRecipe={recipe}
                   addRecipeToRecipeBox={this.addRecipeToRecipeBox}
-
-
+                  grabRecipeForEvent={this.grabRecipeForEvent}
                 />
               ) : (
                 <h1> loading dem recipes </h1>

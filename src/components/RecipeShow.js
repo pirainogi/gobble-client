@@ -34,6 +34,7 @@ class RecipeShow extends Component {
   // }
 
   render() {
+    console.log(this.props);
     return (
       <div>
       { this.props.recipe ?
@@ -82,7 +83,7 @@ class RecipeShow extends Component {
               <button className='button' onClick={ () => this.props.addRecipeToRecipeBox(this.props.recipe.id)}>Add to Box</button>
               <NavLink to='/recipebox' activeClassName='active' id='navlink' className="button">Go to RecipeBox</NavLink>
               <NavLink to='/search' activeClassName='active' id='navlink' className="button">Return to Search</NavLink>
-              <button className='button'>Add to Calendar</button>
+              <button onClick={() => this.props.grabRecipeForEvent(this.props.recipe)} className='button'>Add to Calendar</button>
 
             </div>
             : null}

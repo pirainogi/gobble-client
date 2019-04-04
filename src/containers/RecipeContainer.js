@@ -13,6 +13,7 @@ class RecipeContainer extends Component {
         key={this.props.foundRecipe.id}
         recipe={this.props.foundRecipe}
         addRecipeToRecipeBox={this.props.addRecipeToRecipeBox}
+        grabRecipeForEvent={this.props.grabRecipeForEvent}
       />
     )
   }
