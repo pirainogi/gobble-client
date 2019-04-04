@@ -45,8 +45,19 @@
   margin-top: 3%;
   margin-left: 37%;
   margin-right: 35%;
-  width: 30%;
+  width: 18%;
+  background-color: #ffa557;
+
 }
+
+/* .recipe-from-search a {
+  font-size: 15px;
+  margin-top: 3%;
+  margin-left: 37%;
+  margin-right: 35%;
+  width: 18%;
+  background-color: #ffa557;
+} */
 
 .recipe-from-search h1 {
   display: inline;

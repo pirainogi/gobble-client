@@ -4,25 +4,38 @@ import { NavLink } from 'react-router-dom';
 
 class RecipeShow extends Component {
   // console.log('recipe container', this.props);
+  // //
+  // state = {
+  //   ingredients: []
+  // }
   //
-
-
-  capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
-
-  generateIngredients = () => {
-    let recipeingredients = this.props.recipe.ingredients.map(ingredient => {
-      return ingredient.name
-    })
-    // console.log(recipeingredients);
-    let capitalizedRecipes = recipeingredients.map(ingredient => {
-      return this.capitalizeFirstLetter(ingredient)
-    })
-    // console.log(recipeingredients);
-    return capitalizedRecipes.join(', ')
-  }
+  // componentDidMount(){
+  //   this.grabIngredients()
+  // }
   //
+  // grabIngredients = () => { return this.props.recipe ? this.generateIngredients() : null }
+  //
+  // //
+  // capitalizeFirstLetter = (string) => {
+  //   return string.charAt(0).toUpperCase() + string.slice(1)
+  // }
+  //
+  // generateIngredients = () => {
+  //   let recipeingredients = this.props.recipe.ingredients.map(ingredient => {
+  //     return ingredient.name
+  //   })
+  //   // console.log(recipeingredients);
+  //   let capitalizedRecipes = recipeingredients.map(ingredient => {
+  //     return this.capitalizeFirstLetter(ingredient)
+  //   })
+  //   let joinedRecipes = capitalizedRecipes.join(', ')
+  //
+  //   this.setState({
+  //     ingredients: joinedRecipes
+  //   })
+  //   // console.log(recipeingredients);
+  // }
+  // //
   // let generateDishCategories = () => {
   //   let dishCategories = this.props.recipe.dishType.split(',')
   //   // console.log(dishCategories);
@@ -33,7 +46,7 @@ class RecipeShow extends Component {
   // }
 
   render() {
-    console.log(this.props);
+    console.log('generateIngredients', this.props.recipe.ingredients);
     return (
       <div>
       { this.props.recipe ?
@@ -74,7 +87,6 @@ class RecipeShow extends Component {
           </div>
           <p> <b>Servings:</b> {this.props.recipe.servings}<br></br>
           <b>    Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
-          <b>Ingredients:</b> <br></br>
           <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
           <b>Source:</b> <a href={this.props.recipe.sourceUrl} target="_blank" rel="noopener noreferrer"> {this.props.recipe.sourceUrl}</a></p>
 
@@ -105,3 +117,4 @@ export default RecipeShow;
 
 // (e) => this.props.addRecipeToRecipeBox
 // <p>Dish Types: {this.props.recipe.dishType.split(",").join(", ")}</p>
+// <b>Ingredients:</b>{this.state.ingredients}<br></br>

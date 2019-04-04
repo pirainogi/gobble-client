@@ -34,7 +34,7 @@ class Calendar extends Component {
     return (
       <div className='calendar'>
       {this.props.events[0].id ?
-        <div style={{ height: 450}}>
+        <div style={{ height: 600}}>
           <BigCalendar
             events={this.state.events}
             step={30}

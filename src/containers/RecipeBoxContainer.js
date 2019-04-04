@@ -26,7 +26,7 @@ class RecipeBoxContainer extends Component {
     <div className="recipe-box-container">
       {this.generateRecipeBox()}
       <div className="recipe-show-container">
-        <RecipeShow recipe={this.props.currentRecipeView}/>
+        <RecipeShow recipe={this.props.currentRecipeView} />
       </div>
     </div>
   )

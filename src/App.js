@@ -177,7 +177,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('logging all info', this.state);
+    // console.log('logging all info', this.state);
     return (
       <div className="App">
       <Header currentUser={this.state.currentUser} logout={this.logout}/>
