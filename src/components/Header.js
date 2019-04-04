@@ -56,7 +56,7 @@ class Header extends Component {
             <ul id='navbar'>
               <li><NavLink to='/login' activeClassName='active' id='navlink'>login</NavLink></li>
 
-              <li><NavLink to='/signup' activeClassName='active' id='navlink'>signup</NavLink></li>
+              <li><NavLink to='/signup' activeClassName='active' id='navlink'>sign up</NavLink></li>
             </ul>
           </>
         }

@@ -4,11 +4,12 @@
 	border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
   font-family: 'Poppins', sans-serif;
-  margin-top: 10%;
   width: 65%;
   margin-left: 16%;
   background-color: #ffa557;
   padding: 20px;
+  position: absolute;
+  top: 22%;
 }
 
 .home h1 {
