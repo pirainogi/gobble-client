@@ -36,6 +36,7 @@ class App extends Component {
       currentRecipebox: [],
       currentRecipeView: {},
       calendarEvents: [],
+      recipeEvent: {},
     }
   }
 
@@ -65,7 +66,7 @@ class App extends Component {
       })
       .then(res => res.json())
       .then(response => {
-        console.log('getting user info', response)
+        // console.log('getting user info', response)
         this.setState({
           currentUser: response,
           currentRecipebox: response.recipes,
@@ -140,6 +141,10 @@ class App extends Component {
     })
   }
 
+  grabRecipeForEvent = (recipeID) => {
+    console.log(recipeID);
+  }
+
   render() {
     console.log('logging all info', this.state);
     return (
@@ -189,7 +194,8 @@ class App extends Component {
                   recipes={this.state.recipes}
                   foundRecipe={recipe}
                   addRecipeToRecipeBox={this.addRecipeToRecipeBox}
-                  addRecipe={true}
+
+
                 />
               ) : (
                 <h1> loading dem recipes </h1>

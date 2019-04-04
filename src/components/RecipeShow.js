@@ -74,7 +74,7 @@ class RecipeShow extends Component {
           <b>    Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
           <b>Ingredients:</b> <br></br>
           <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
-          <b>Source:</b> <a href={this.props.recipe.sourceUrl}> {this.props.recipe.sourceUrl}</a></p>
+          <b>Source:</b> <a href={this.props.recipe.sourceUrl} target="_blank" rel="noopener noreferrer"> {this.props.recipe.sourceUrl}</a></p>
 
 
           {this.props.addRecipeToRecipeBox ?

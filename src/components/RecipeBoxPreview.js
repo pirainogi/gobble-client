@@ -19,31 +19,17 @@ const RecipeBoxPreview = (props) => {
     return capitalizedRecipes.join(', ')
   }
 
-  let generateDishCategories = () => {
-    let dishCategories = props.recipe.dishType.split(',')
-    // console.log(dishCategories);
-    let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
-    // console.log(capitalizedCategories);
-    return capitalizedCategories.join(', ')
-
-  }
+  // let generateDishCategories = () => {
+  //   let dishCategories = props.recipe.dishType.split(',')
+  //   // console.log(dishCategories);
+  //   let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
+  //   // console.log(capitalizedCategories);
+  //   return capitalizedCategories.join(', ')
+  //
+  // }
 
 
   return (
-    // <div className="recipe-box-preview">
-    //   <h3>{props.recipe.name}</h3>
-    //   <img src={props.recipe.imgurl} alt={props.recipe.name} />
-    //   <p>Servings: {props.recipe.servings}</p>
-    //   <p>Preptime: {props.recipe.preptime} minutes</p>
-    //   <p>GF Icon: {props.recipe.glutenFree !== undefined ? props.recipe.glutenFree.toString() : null }</p>
-    //   <p>DairyFree Icon: {props.recipe.dairyFree !== undefined ? props.recipe.dairyFree.toString() : null }</p>
-    //   <p>W30 Icon: {props.recipe.whole30 !== undefined ? props.recipe.whole30.toString() : null }</p>
-    //   <p>Keto Icon: {props.recipe.keto !== undefined ? props.recipe.keto.toString() : null }</p>
-    //   <p>Vegan Icon: {props.recipe.vegan !== undefined ? props.recipe.vegan.toString() : null }</p>
-    //   <p>Veg Icon: {props.recipe.vegetarian !== undefined ? props.recipe.vegetarian.toString() : null }</p>
-    //   <p>Healthy Icon: {props.recipe.healthy !== undefined ? props.recipe.healthy.toString() : null }</p>
-    //   <button className='button' id={props.recipe.id} onClick={props.selectRecipePreviewForShow}>view</button>
-
     <div className="recipe-box-preview card-flex-wrapper">
       <aside>
         <div className='card-flex-image'>
