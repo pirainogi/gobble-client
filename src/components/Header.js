@@ -37,6 +37,7 @@ class Header extends Component {
       <div className='header' id='header'>
         {this.props.currentUser.id ?
           <>
+            <img className="header-logo" src={process.env.PUBLIC_URL + '/fork-knife.png'} alt='gobble icon'></img>
             <NavLink to='/' activeClassName='active'><h1>GOBBLE</h1></NavLink>
             <ul id='navbar'>
               <li><NavLink to='/search' activeClassName='active' id='navlink'>search</NavLink></li>
