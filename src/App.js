@@ -172,8 +172,7 @@ class App extends Component {
       console.log(addedEvent)
       this.setState({
         calendarEvents: [...this.state.calendarEvents, addedEvent]
-      },     this.props.history.push('/calendar')
-)
+      },     this.props.history.push('/calendar'))
     })
   }
 

@@ -9,7 +9,7 @@
   background-color: #ffa557;
   padding: 20px;
   position: absolute;
-  top: 22%;
+  top: 40%;
 }
 
 .home h1 {
@@ -20,4 +20,10 @@
 .home h3 {
   color: white;
   font-weight: bold;
+}
+
+.logo img{
+  margin-top: 5%;
+  width: 200px;
+  height: auto;
 }
