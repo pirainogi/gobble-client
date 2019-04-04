@@ -56,12 +56,12 @@ class Signup extends Component {
     // console.log(this.props);
     return (
       <div className='signup'>
-        <h1>this is the signup page</h1>
+        <h3>create your gobble account</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" name="name" placeholder='Name' onChange={this.handleChange} value={this.state.name}/>
           <br></br>
-          <label>Profile Picture (Insert a Link): </label>
+          <label>Profile Picture (Link): </label>
           <input type="text" name="profile_pic" placeholder="Profile Picture" onChange={this.handleChange} value={this.state.profile_pic}/>
           <br></br>
           <label>Bio: </label>
@@ -72,7 +72,7 @@ class Signup extends Component {
           <br></br>
           <label>Diet: </label>
           <input type="text" name="diet" placeholder="Diet" onChange={this.handleChange} value={this.state.diet}/>
-          <br></br><br></br>
+
           <label>Email: </label>
           <input type="email" name="email" placeholder='Email' onChange={this.handleChange} value={this.state.email}/>
           <br></br>
@@ -82,7 +82,7 @@ class Signup extends Component {
           <label>Password Confirmation: </label>
           <input type="password" name="passwordConfirmation" placeholder="Password Confirmation" onChange={this.handleChange} value={this.state.passwordConfirmation}/>
           <br></br>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="button"/>
         </form>
       </div>
     )
