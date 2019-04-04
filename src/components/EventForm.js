@@ -63,8 +63,8 @@ class EventForm extends Component {
             <input type="time" id="event-end" name="endTime" min="01:00" max="24:00" onChange={this.handleChange} required></input><br></br><br></br>
             <label><b>Recipe Name:</b></label><br></br>
             <input type="text" id="recipeName" name="recipeName" onChange={this.handleChange} required></input><br></br><br></br>
+            <button onClick={this.handleSubmit}>Add to Calendar</button>
           </form>
-          <button onClick={this.handleSubmit}>Add to Calendar</button>
 
       </div>
     )

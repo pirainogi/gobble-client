@@ -40,12 +40,6 @@ class RecipeShow extends Component {
         <div className={this.props.addRecipeToRecipeBox ? "recipe-from-search" : "recipe-show" } id={this.props.recipe.id}>
           <h1>{this.props.recipe.name}</h1>
           <img src={this.props.recipe.imgurl} alt={this.props.recipe.name} />
-          <p> <b>Servings:</b> {this.props.recipe.servings}
-          <b>    Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
-          <b>Ingredients:</b> <br></br>
-          <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
-          <b>Source:</b> <a href={this.props.recipe.sourceUrl}> {this.props.recipe.sourceUrl}</a></p>
-
           <div className="recipe-icons">
             {this.props.recipe.glutenFree ?
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
@@ -76,6 +70,13 @@ class RecipeShow extends Component {
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
               : null }
           </div>
+          <p> <b>Servings:</b> {this.props.recipe.servings}
+          <b>    Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
+          <b>Ingredients:</b> <br></br>
+          <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
+          <b>Source:</b> <a href={this.props.recipe.sourceUrl}> {this.props.recipe.sourceUrl}</a></p>
+
+
           {this.props.addRecipeToRecipeBox ?
             <div>
               <button className='button' onClick={ () => this.props.addRecipeToRecipeBox(this.props.recipe.id)}>Add to Box</button>

@@ -15,3 +15,11 @@
 	border-width: 1px;
   box-shadow: 6px 6px 3px #ffa557;
 }
+
+.form button {
+  font-size: 15px;
+  margin-top: 3%;
+  margin-left: 37%;
+  margin-right: 35%;
+  width: 30%;
+}
