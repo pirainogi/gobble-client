@@ -40,7 +40,7 @@ class Login extends Component {
     // console.log(this.props);
     return (
       <div className='login'>
-        <h1>this is the login page</h1>
+      <h3>log in to gobble </h3>
         <form onSubmit={this.handleSubmit}>
           <label>Email: </label>
           <input onChange={this.handleChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
@@ -48,7 +48,7 @@ class Login extends Component {
           <label>Password: </label>
           <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder='Password'/>
           <br></br>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="button"/>
         </form>
       </div>
     )
