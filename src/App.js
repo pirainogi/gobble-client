@@ -36,10 +36,6 @@ class App extends Component {
       currentRecipebox: [],
       currentRecipeView: {},
       calendarEvents: [],
-      eventToPostDate: {},
-      eventToPostStartTime: {},
-      eventToPostEndTime: {},
-      eventToPostName: {}
     }
   }
 
@@ -172,6 +168,7 @@ class App extends Component {
           <Route
             path="/eventform"
             component={() => <EventForm
+              userID={this.state.currentUser.id}
             />}
           />
           <Route

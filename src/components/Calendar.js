@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
+import 'moment-timezone';
 import '../css/Calendar.css';
-moment.locale('en-US');
+moment.locale('en');
+moment.tz.setDefault("America/New_York");
 const localizer = BigCalendar.momentLocalizer(moment);
 
 
