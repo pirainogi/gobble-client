@@ -42,22 +42,24 @@
 
 .recipe-from-search button {
   font-size: 15px;
-  margin-top: 3%;
-  margin-left: 37%;
+  /* margin-top: 3%; */
+  margin-left: 35%;
   margin-right: 35%;
   width: 18%;
   background-color: #ffa557;
 
 }
 
-/* .recipe-from-search a {
+.button {
   font-size: 15px;
-  margin-top: 3%;
-  margin-left: 37%;
-  margin-right: 35%;
   width: 18%;
   background-color: #ffa557;
-} */
+  margin: 5px;
+}
+
+#navlink button {
+  margin: 5px;
+}
 
 .recipe-from-search h1 {
   display: inline;

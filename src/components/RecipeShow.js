@@ -92,9 +92,9 @@ class RecipeShow extends Component {
 
 
           {this.props.addRecipeToRecipeBox ?
-            <div>
-              <button className='button' onClick={ () => this.props.addRecipeToRecipeBox(this.props.recipe.id)}>Add to Box</button>
-              <NavLink to='/recipebox' activeClassName='active' id='navlink' className="button">Go to RecipeBox</NavLink>
+            <div className="button-group">
+              <button className='button' onClick={ () => this.props.addRecipeToRecipeBox(this.props.recipe.id)}>Add to Box</button><br></br>
+              <NavLink to='/recipebox' activeClassName='active' id='navlink' className="button">Go to RecipeBox</NavLink><br></br>
               <NavLink to='/search' activeClassName='active' id='navlink' className="button">Return to Search</NavLink>
               <button onClick={() => this.props.grabRecipeForEvent(this.props.recipe)} className='button'>Add to Calendar</button>
 
