@@ -1,9 +1,8 @@
 .recipe-box-container {
-
   display: grid;
   grid-template-columns: 2fr 2fr;
   margin: 0;
-  padding: 6.5%;
+  padding: 5%;
   height: 95%;
   font-family: 'Poppins', sans-serif;
 }
@@ -11,6 +10,9 @@
 .recipe-show-container {
   padding: 1.5%;
   float: right;
+  position: fixed;
+  width: 40%;
+  margin-left: 40%;
 }
 
 /* width */
