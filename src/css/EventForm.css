@@ -1,0 +1,17 @@
+.form {
+  font-family: 'Poppins', sans-serif;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+
+  background: #fff;
+	font-family: 'Poppins', sans-serif;
+	margin: 6%;
+	width: 60;
+	min-height: 150px;
+	border-style: solid;
+	border-color: #E8E8E8;
+	border-width: 1px;
+  box-shadow: 6px 6px 3px #ffa557;
+}

@@ -1,16 +1,12 @@
 import React, { Component }  from 'react';
 import '../css/RecipeShow.css';
 import Button from './Button';
-import EventModal from './EventModal';
 import { NavLink } from 'react-router-dom';
 
 class RecipeShow extends Component {
   // console.log('recipe container', this.props);
   //
 
-  state = {
-    showModal: false,
-  }
 
   capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1)
@@ -36,18 +32,6 @@ class RecipeShow extends Component {
   //   return capitalizedCategories.join(', ')
   //
   // }
-
-  showEventsModal = () => {
-    this.setState({
-      showModal: true,
-    })
-  }
-
-  hideEventsModal = () => {
-    this.setState({
-      showModal: false,
-    })
-  }
 
   render() {
     return (
@@ -97,7 +81,8 @@ class RecipeShow extends Component {
               <button className='button' onClick={ () => this.props.addRecipeToRecipeBox(this.props.recipe.id)}>Add to Box</button>
               <NavLink to='/recipebox' activeClassName='active' id='navlink' className="button">Go to RecipeBox</NavLink>
               <NavLink to='/search' activeClassName='active' id='navlink' className="button">Return to Search</NavLink>
-              <button className='button' onClick={ () => console.log('click')}>Add to Calendar</button>
+              <button className='button'>Add to Calendar</button>
+
             </div>
             : null}
         </div>

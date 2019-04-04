@@ -10,6 +10,7 @@ import UserShow from './containers/UserShow';
 import Footer from './components/Footer'
 // import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
+import EventForm from './components/EventForm';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
@@ -34,7 +35,11 @@ class App extends Component {
       currentUser: {},
       currentRecipebox: [],
       currentRecipeView: {},
-      calendarEvents: []
+      calendarEvents: [],
+      eventToPostDate: {},
+      eventToPostStartTime: {},
+      eventToPostEndTime: {},
+      eventToPostName: {}
     }
   }
 
@@ -162,6 +167,11 @@ class App extends Component {
             component={() => <Calendar
               events={this.state.calendarEvents}
               user={this.state.currentUser}
+            />}
+          />
+          <Route
+            path="/eventform"
+            component={() => <EventForm
             />}
           />
           <Route
