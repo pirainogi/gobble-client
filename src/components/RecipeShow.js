@@ -1,6 +1,5 @@
 import React, { Component }  from 'react';
 import '../css/RecipeShow.css';
-import Button from './Button';
 import { NavLink } from 'react-router-dom';
 
 class RecipeShow extends Component {
@@ -40,7 +39,9 @@ class RecipeShow extends Component {
       { this.props.recipe ?
         <div className={this.props.addRecipeToRecipeBox ? "recipe-from-search" : "recipe-show" } id={this.props.recipe.id}>
           <h1>{this.props.recipe.name}</h1>
-          <img src={this.props.recipe.imgurl} alt={this.props.recipe.name} />
+          <div className="recipe-img">
+            <img src={this.props.recipe.imgurl} alt={this.props.recipe.name} />
+          </div>
           <div className="recipe-icons">
             {this.props.recipe.glutenFree ?
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
@@ -71,7 +72,7 @@ class RecipeShow extends Component {
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
               : null }
           </div>
-          <p> <b>Servings:</b> {this.props.recipe.servings}
+          <p> <b>Servings:</b> {this.props.recipe.servings}<br></br>
           <b>    Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
           <b>Ingredients:</b> <br></br>
           <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
@@ -92,7 +93,6 @@ class RecipeShow extends Component {
         <div className="recipe-show" >
           <h1>loading dat recipe </h1>
           <button className='button'>Add to Box</button>
-          <Button text={"Add to Calendar"}/>
         </div>
       }
       </div>

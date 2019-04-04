@@ -14,7 +14,7 @@ const Home = () => {
         <h1>search and save recipes. </h1>
         <h1>create a fully planned meal-prepping calendar.</h1>
         <h1>never worry about <br></br>what the <i>fork</i> is for dinner again.</h1><br></br>
-        <h3>join gobble today to get started...</h3>
+        <h2>join gobble today to get started...</h2>
       </div>
     </div>
   )
