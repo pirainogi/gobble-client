@@ -30,6 +30,10 @@ Recipes can also be categorized in one or more of the following ways:
 * Vegan
 * Whole30
 
+# Future Features/Functionality
+
+
+
 # Built With
 
 * HTML5 and CSS3 (semi-responsive)
@@ -104,4 +108,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# omnomnom-frontend
