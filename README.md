@@ -1,7 +1,28 @@
 # GOBBLE
 
+A
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Made with React.js (create-react-app) and Ruby on Rails database.
+
+*** Work in Progress ***
+
+## Home Page
+
+## Search for Recipes
+
+#
+
+## Schedule Events on Personalized Calendar
+
+##
+
+# Built With
+
+* HTML5 and CSS3 (semi-responsive)
+* Javascript - Programming Language
+* Ruby on Rails - Database
+* React.js - User Interfact Library
+* Node.js - Javascript Runtime
 
 ## Available Scripts
 
