@@ -1,6 +1,6 @@
 # GOBBLE
 
-A
+A full service meal-prepping application with scheduling functionality so you never have to worry about what the <i>fork</i> is for dinner again.
 
 Made with React.js (create-react-app) and Ruby on Rails database.
 
@@ -10,11 +10,25 @@ Made with React.js (create-react-app) and Ruby on Rails database.
 
 ## Search for Recipes
 
-#
+## Save Your Favorite Recipes
 
 ## Schedule Events on Personalized Calendar
 
-##
+# Features
+
+* Users are authenticated with bcrypt and JWT
+* Upon sign in, users can search and save recipes
+* Users can also create events that correlate to recipes
+
+Recipes can also be categorized in one or more of the following ways:
+
+* Dairy Free
+* Gluten Free
+* Healthy
+* Keto
+* Vegetarian
+* Vegan
+* Whole30
 
 # Built With
 
