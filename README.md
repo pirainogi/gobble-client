@@ -22,6 +22,8 @@ In order to run this app, first clone the server repo down onto your local machi
 * `npm install` 
 * `yarn install` 
 
+Then you can start running the program with `npm start`.
+
 ## NPM Packages 
 * Moment.js 
 * Moment-Timezone.js 
