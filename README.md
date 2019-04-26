@@ -30,6 +30,17 @@ Recipes can also be categorized in one or more of the following ways:
 * Vegan
 * Whole30
 
+# WIP Features/Functionality
+
+* Ability to specify the type of event: purchase, prep, or consume
+* Ability to link a recipe with a prep or consume event
+* Ability to create grocery lists
+* Ability to link a grocery list with a purchase event
+* Authenticating a user with Google OAuth
+* Pushing calendar events from the application's built in calendar to a user's Google Calendar
+* Pushing grocery lists to a user's Google Keep
+* Allowing a user to specify what type of recipes they would like to exclude based on their diet (if a user self-selects gluten-free, exclude all recipes that aren't categorized as gluten-free)
+
 # Built With
 
 * HTML5 and CSS3 (semi-responsive)
@@ -104,4 +115,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# omnomnom-frontend
