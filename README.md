@@ -1,10 +1,34 @@
 # GOBBLE
+Developed by Gabbie Piraino 
 
-A full service meal-prepping application with scheduling functionality so you never have to worry about what the <i>fork</i> is for dinner again.
-
-Made with React.js and Ruby on Rails database. Please find the Rails database at [Gooble-Server](https://github.com/pirainogi/gobble-server). You will need to create an API key with RapidAPI in order to seed your data. 
+A full service meal-prepping application with scheduling functionality so you never have to worry about what the <i>fork</i> is for dinner again. 
 
 *** Work in Progress ***
+
+## Built With
+
+* Ruby on Rails 
+* React.js 
+* Javascript 
+* HTML5 and CSS3 (semi-responsive)
+
+Please find the Rails database at [Gooble-Server](https://github.com/pirainogi/gobble-server). You will need to create an API key with RapidAPI in order to seed your data. **There is a limit to the amount of free data that you can seed from the API, so please be aware before you seed thousands of recipes.**
+
+## Prerequisites
+
+You will need `node` or `yarn` installed on your computer in order to run this app. 
+
+In order to run this app, first clone the repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either: 
+* `npm install` 
+* `yarn install` 
+
+## NPM Packages 
+* Moment.js 
+* Moment-Timezone.js 
+* React-Big-Calendar.js 
+* React-Dom.js 
+* React-Router-Dom.js 
+
 
 ## Home Page
 
@@ -13,6 +37,7 @@ Made with React.js and Ruby on Rails database. Please find the Rails database at
 ## Save Your Favorite Recipes
 
 ## Schedule Events on Personalized Calendar
+
 
 # Features
 
@@ -40,28 +65,6 @@ Recipes can also be categorized in one or more of the following ways:
 * Pushing calendar events from the application's built in calendar to a user's Google Calendar
 * Pushing grocery lists to a user's Google Keep
 * Allowing a user to specify what type of recipes they would like to exclude based on their diet (if a user self-selects gluten-free, exclude all recipes that aren't categorized as gluten-free)
-
-# Built With
-
-* Ruby on Rails 
-* React.js 
-* Javascript 
-* HTML5 and CSS3 (semi-responsive)
-
-# Prerequisites
-
-You will need `node` or `yarn` installed on your computer in order to run this app. 
-
-In order to run this app, first clone the repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either: 
-* `npm install` 
-* `yarn install` 
-
-## NPM Packages 
-* Moment.js 
-* Moment-Timezone.js 
-* React-Big-Calendar.js 
-* React-Dom.js 
-* React-Router-Dom.js 
 
 
 ## Available Scripts
