@@ -2,7 +2,7 @@
 
 A full service meal-prepping application with scheduling functionality so you never have to worry about what the <i>fork</i> is for dinner again.
 
-Made with React.js (create-react-app) and Ruby on Rails database.
+Made with React.js and Ruby on Rails database. Please find the Rails database at [Gooble-Server](https://github.com/pirainogi/gobble-server). You will need to create an API key with RapidAPI in order to seed your data. 
 
 *** Work in Progress ***
 
@@ -43,15 +43,26 @@ Recipes can also be categorized in one or more of the following ways:
 
 # Built With
 
+* Ruby on Rails 
+* React.js 
+* Javascript 
 * HTML5 and CSS3 (semi-responsive)
-* Javascript - Programming Language
-* Ruby on Rails - Database
-* React.js - User Interfact Library
-* Node.js - Javascript Runtime
 
 # Prerequisites
 
-You will need 
+You will need `node` or `yarn` installed on your computer in order to run this app. 
+
+In order to run this app, first clone the repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either: 
+* `npm install` 
+* `yarn install` 
+
+## NPM Packages 
+* Moment.js 
+* Moment-Timezone.js 
+* React-Big-Calendar.js 
+* React-Dom.js 
+* React-Router-Dom.js 
+
 
 ## Available Scripts
 
@@ -83,7 +94,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
