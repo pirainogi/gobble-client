@@ -18,7 +18,7 @@ Please find the Rails database at [Gooble-Server](https://github.com/pirainogi/g
 
 You will need `node` or `yarn` installed on your computer in order to run this app. 
 
-In order to run this app, first clone the repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either: 
+In order to run this app, first clone the server repo down onto your local machine and follow the instructions in the readme to spin up the server. Then clone this repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either: 
 * `npm install` 
 * `yarn install` 
 
