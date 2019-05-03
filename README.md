@@ -1,38 +1,39 @@
 # GOBBLE
-Developed by Gabbie Piraino 
+Developed by Gabbie Piraino
 
-A full service meal-prepping application with scheduling functionality so you never have to worry about what the <i>fork</i> is for dinner again. 
+A full service meal-prepping application with scheduling functionality so you never have to worry about what the <i>fork</i> is for dinner again.
 
 *** Work in Progress ***
 
 ## Built With
 
-* Ruby on Rails 
-* React.js 
-* Javascript 
+* Ruby on Rails
+* React.js
+* Javascript
 * HTML5 and CSS3 (semi-responsive)
 
 Please find the Rails database at [Gooble-Server](https://github.com/pirainogi/gobble-server). You will need to create an API key with RapidAPI in order to seed your data. **There is a limit to the amount of free data that you can seed from the API, so please be aware before you seed thousands of recipes.**
 
 ## Prerequisites
 
-You will need `node` or `yarn` installed on your computer in order to run this app. 
+You will need `node` or `yarn` installed on your computer in order to run this app.
 
-In order to run this app, first clone the server repo down onto your local machine and follow the instructions in the readme to spin up the server. Then clone this repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either: 
-* `npm install` 
-* `yarn install` 
+In order to run this app, first clone the server repo down onto your local machine and follow the instructions in the readme to spin up the server. Then clone this repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either:
+* `npm install`
+* `yarn install`
 
 Then you can start running the program with `npm start`.
 
-## NPM Packages 
-* Moment.js 
-* Moment-Timezone.js 
-* React-Big-Calendar.js 
-* React-Dom.js 
-* React-Router-Dom.js 
+## NPM Packages
+* Moment.js
+* Moment-Timezone.js
+* React-Big-Calendar.js
+* React-Dom.js
+* React-Router-Dom.js
 
 
 ## Home Page
+(./public/gobble_home pg.png)
 
 ## Search for Recipes
 
