@@ -35,9 +35,21 @@ Then you can start running the program with `npm start`.
 ## Home Page
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble_home.png)
 
-## Search for Recipes
+## User Authentication through Sign Up/Login Functionality
+
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-signup.png)
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-login.png)
+
+## Search for Recipes Instantly and View Full Details
+
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-search.png)
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-live_search.png)
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-recipe_view.png)
 
 ## Save Your Favorite Recipes
+
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-recipebox.png)
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-recipebox_view.png)
 
 ## Schedule Events on Personalized Calendar
 
