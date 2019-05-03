@@ -40,7 +40,7 @@ Then you can start running the program with `npm start`.
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-signup.png)
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-login.png)
 
-## Search for Recipes Instantly and View Full Details
+## Search for Recipes Instantly and View Full Details - All Recipes include Servings, Preparation Time, Ingredients, Instructions, Source, Image, and Health Icons 
 
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-search.png)
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-live_search.png)
