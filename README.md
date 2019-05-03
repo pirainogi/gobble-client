@@ -33,7 +33,7 @@ Then you can start running the program with `npm start`.
 
 
 ## Home Page
-![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble_home pg.png)
+![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble_home.png)
 
 ## Search for Recipes
 
