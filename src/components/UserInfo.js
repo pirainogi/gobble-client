@@ -6,7 +6,7 @@ class UserInfo extends Component {
 
 
   render () {
-    console.log(this.props);
+    console.log(this.props.user);
 
     return (
       <div className="user-info">
@@ -16,7 +16,7 @@ class UserInfo extends Component {
           <b>Bio:</b> {this.props.user.bio}<br></br>
           <b>Allergies:</b> {this.props.user.allergies}<br></br>
           <b>Diet:</b> {this.props.user.diet}</p>
-          {this.props.user.recipes.length === undefined ?
+          {this.props.user.recipes === undefined ?
             <p><b>RecipeBox:</b> 0 Saved Recipes</p> :
             <p><b>RecipeBox:</b> {this.props.user.recipes.length} Saved Recipes</p>
           }
