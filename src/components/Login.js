@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import '../css/Login.css';
+import GoogleLogin from 'react-google-login';
+
+
+//trying to see if I can connect google auth for login purposes
+const responseGoogle = (response) => {
+  console.log(response);
+}
 
 class Login extends Component {
 
@@ -7,6 +14,7 @@ class Login extends Component {
     email: '',
     password: '',
   }
+
 
   handleChange = (e) => {
     this.setState({
@@ -50,6 +58,18 @@ class Login extends Component {
           <br></br>
           <input type="submit" value="Submit" className="button"/>
         </form>
+
+        <GoogleLogin
+          clientId="7681882745-qm7e2d4pkpu32nbf9qcgjbhhdq4315ic.apps.googleusercontent.com"
+          render={renderProps => (
+            <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+          )}
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+        />,
+
       </div>
     )
   }
