@@ -30,6 +30,8 @@ class UserInfo extends Component {
 
     return (
       <div className="user-info">
+      {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+
         <img src={this.props.user.profile_pic} alt="user profile"></img>
         <div className="details">
           <p> <b>Name:</b> {this.props.user.name}<br></br><br></br>
@@ -41,17 +43,16 @@ class UserInfo extends Component {
             <p><b>RecipeBox:</b> {this.props.user.recipes.length} Saved Recipes</p>
           }
         </div>
-        <div>
-          {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
-          <button className="open-modal-btn" onClick={this.openModalHandler}> edit ur profile</button>
-          <Modal
-            className="modal"
-            show={this.state.isShowing}
-            close={this.closeModalHandler}
-          >
-            testing 1 2 3
-          </Modal>
-        </div>
+
+        <button className="open-modal-btn" onClick={this.openModalHandler}> edit ur profile</button>
+        <Modal
+          className="modal"
+          show={this.state.isShowing}
+          close={this.closeModalHandler}
+        >
+          testing 1 2 3
+        </Modal>
+
       </div>
     )
   }
