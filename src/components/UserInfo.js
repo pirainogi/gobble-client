@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
+import Modal from './Modal';
 import '../css/UserInfo.css';
 
 
 class UserInfo extends Component {
 
+  constructor() {
+    super();
+
+    this.state = {
+      isShowing: false
+    }
+  }
+
+  openModalHandler = () => {
+    this.setState({
+      isShowing: true
+    })
+  }
+
+  closeModalHandler = () => {
+    this.setState({
+      isShowing: false
+    })
+  }
 
   render () {
     console.log(this.props.user);
@@ -21,8 +41,17 @@ class UserInfo extends Component {
             <p><b>RecipeBox:</b> {this.props.user.recipes.length} Saved Recipes</p>
           }
         </div>
-
-        <button> edit ur profile</button>
+        <div>
+          {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+          <button className="open-modal-btn" onClick={this.openModalHandler}> edit ur profile</button>
+          <Modal
+            className="modal"
+            show={this.state.isShowing}
+            close={this.closeModalHandler}
+          >
+            testing 1 2 3
+          </Modal>
+        </div>
       </div>
     )
   }
