@@ -141,6 +141,10 @@ class App extends Component {
     })
   }
 
+  updateCurrentUser = (response) => {
+    console.log(response);
+  }
+
   grabRecipeForEvent = (recipe) => {
     console.log(recipe);
     this.setState({

@@ -9,8 +9,25 @@ class UserInfo extends Component {
     super();
 
     this.state = {
-      isShowing: false
+      isShowing: false,
+      name: '',
+      email: '',
+      bio: '',
+      allergies: '',
+      diet: '',
+      profile_pic: '',
     }
+  }
+
+  componentDidMount() {
+    this.setState({
+      name: this.props.user.name,
+      email: this.props.user.email,
+      bio: this.props.user.bio,
+      allergies: this.props.user.allergies,
+      diet: this.props.user.diet,
+      profile_pic: this.props.user.profile_pic,
+    })
   }
 
   openModalHandler = () => {
@@ -26,7 +43,7 @@ class UserInfo extends Component {
   }
 
   render () {
-    console.log(this.props.user);
+    console.log('user props', this.props.user, 'state', this.state);
 
     return (
       <div className="user-info">
@@ -50,7 +67,19 @@ class UserInfo extends Component {
           show={this.state.isShowing}
           close={this.closeModalHandler}
         >
-          testing 1 2 3
+          <form>
+            <br></br><label><b>Change Your Name:</b></label><br></br>
+            <input type="text" id="user-name" name="name" onChange={this.handleChange} required></input><br></br><br></br>
+            <label><b>Change Your Bio:</b></label><br></br>
+            <input type="text" id="user-bio" name="bio"  onChange={this.handleChange} required></input><br></br><br></br>
+            <label><b>Change Your Allergies:</b></label><br></br>
+            <input type="text" id="user-allergies" name="allergies" onChange={this.handleChange} required></input><br></br><br></br>
+            <label><b>Change Your Diet:</b></label><br></br>
+            <input type="text" id="user-diet" name="diet" placeholder={this.props.recipeForEvent} onChange={this.handleChange} required></input><br></br><br></br>
+            <label><b>Update Your Profile Picture:</b></label><br></br>
+            <input type="text" id="user-pic" name="profile_pic" placeholder={this.props.recipeForEvent} onChange={this.handleChange} required></input><br></br><br></br>
+            <button onClick={this.handleSubmit}>Update Your Profile</button>
+          </form>
         </Modal>
 
       </div>
