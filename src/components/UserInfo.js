@@ -16,6 +16,7 @@ class UserInfo extends Component {
       allergies: '',
       diet: '',
       profile_pic: '',
+      password_digest: '',
     }
   }
 
@@ -27,7 +28,39 @@ class UserInfo extends Component {
       allergies: this.props.user.allergies,
       diet: this.props.user.diet,
       profile_pic: this.props.user.profile_pic,
+      password_digest: this.props.user.password_digest
     })
+  }
+
+  updateUser = () => {
+    fetch("http://localhost:3000/api/v1/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json",
+      },
+      body: JSON.stringify({
+        name: this.state.name,  bio: this.state.bio, allergies: this.state.allergies, diet: this.state.diet, profile_pic: this.state.profile_pic,
+        password_digest: this.state.password_digest
+      })
+    })
+    .then(res => res.json())
+    .then((response) => {
+      console.log('updating user', response);
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+    console.log('changed stuff', this.state);
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('submitting', this.state)
+    this.updateUser()
   }
 
   openModalHandler = () => {
@@ -69,15 +102,17 @@ class UserInfo extends Component {
         >
           <form>
             <br></br><label><b>Change Your Name:</b></label><br></br>
-            <input type="text" id="user-name" name="name" onChange={this.handleChange} required></input><br></br><br></br>
+            <input type="text" id="user-name" name="name" placeholder={this.props.user.name} onChange={this.handleChange} required></input><br></br><br></br>
+            <label><b>Change Your Email:</b></label><br></br>
+            <input type="text" id="user-email" name="email" placeholder={this.props.user.email} onChange={this.handleChange} required></input><br></br><br></br>
             <label><b>Change Your Bio:</b></label><br></br>
-            <input type="text" id="user-bio" name="bio"  onChange={this.handleChange} required></input><br></br><br></br>
+            <input type="text" id="user-bio" name="bio" placeholder={this.props.user.bio} onChange={this.handleChange} required></input><br></br><br></br>
             <label><b>Change Your Allergies:</b></label><br></br>
-            <input type="text" id="user-allergies" name="allergies" onChange={this.handleChange} required></input><br></br><br></br>
+            <input type="text" id="user-allergies" name="allergies" placeholder={this.props.user.allergies} onChange={this.handleChange} required></input><br></br><br></br>
             <label><b>Change Your Diet:</b></label><br></br>
-            <input type="text" id="user-diet" name="diet" placeholder={this.props.recipeForEvent} onChange={this.handleChange} required></input><br></br><br></br>
+            <input type="text" id="user-diet" name="diet" placeholder={this.props.user.diet} onChange={this.handleChange} required></input><br></br><br></br>
             <label><b>Update Your Profile Picture:</b></label><br></br>
-            <input type="text" id="user-pic" name="profile_pic" placeholder={this.props.recipeForEvent} onChange={this.handleChange} required></input><br></br><br></br>
+            <input type="text" id="user-pic" name="profile_pic" placeholder={this.props.user.profile_pic} onChange={this.handleChange} required></input><br></br><br></br>
             <button onClick={this.handleSubmit}>Update Your Profile</button>
           </form>
         </Modal>
@@ -91,3 +126,11 @@ export default UserInfo;
 
 // <button className='button'>Change PW</button><br></br>
 // <button className='button'>Delete Acct</button>
+
+
+// if (response.errors){
+//   alert(response.errors)
+// } else {
+// this.props.setCurrentUser(response)
+// this.props.history.push('/profile')
+// }
