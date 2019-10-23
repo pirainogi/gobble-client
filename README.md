@@ -5,6 +5,22 @@ A full service meal-prepping application with scheduling functionality so you ne
 
 *** Work in Progress ***
 
+# Features
+
+* Users are authenticated with bcrypt and JWT
+* Upon sign in, users can search and save recipes
+* Users can also create events that correlate to recipes
+
+Recipes can also be categorized in one or more of the following ways:
+
+* Dairy Free
+* Gluten Free
+* Healthy
+* Keto
+* Vegetarian
+* Vegan
+* Whole30
+
 ## Built With
 
 * Ruby on Rails
@@ -52,23 +68,6 @@ Then you can start running the program with `npm start`.
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-recipebox_view.png)
 
 ## Schedule Events on Personalized Calendar
-
-
-# Features
-
-* Users are authenticated with bcrypt and JWT
-* Upon sign in, users can search and save recipes
-* Users can also create events that correlate to recipes
-
-Recipes can also be categorized in one or more of the following ways:
-
-* Dairy Free
-* Gluten Free
-* Healthy
-* Keto
-* Vegetarian
-* Vegan
-* Whole30
 
 # WIP Features/Functionality
 
