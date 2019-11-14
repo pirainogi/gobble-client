@@ -3,12 +3,13 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+//importing react and all libraries
 import './App.css';
+//importing the css for App
 import Header from './components/Header'
 import Home from './components/Home';
 import UserShow from './containers/UserShow';
 import Footer from './components/Footer'
-// import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
 import EventForm from './components/EventForm';
 import Login from './components/Login';
@@ -16,35 +17,38 @@ import Signup from './components/Signup';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
 import SearchContainer from './containers/SearchContainer';
 import RecipeContainer from './containers/RecipeContainer';
+//importing  all of the components
+
+//setting the locale within the Moment library to be USA-Engl
 moment.locale('en-us');
+//setting the locale from moment so BigCal can use it
 BigCalendar.momentLocalizer(moment);
 
-
+//setting the API endpoints to variables
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
-// const UserAPI = 'http://localhost:3000/api/v1/users'
 const RecipeboxAPI = 'http://localhost:3000/api/v1/recipeboxes'
 const EventAPI = 'http://localhost:3000/api/v1/events'
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      recipes: [],
-      currentUser: {},
-      currentRecipebox: [],
-      currentRecipeView: {},
-      calendarEvents: [],
-      recipeForEvent: {},
-    }
+  //state is mostly held within app and includes all of the recipes being feld to the user, the curreent user, that user's recipe box, any recipe that they want to view, the user's associated calendar events, and any recipe associated with an event (functionality doesn't work  yet)
+  state = {
+    recipes: [],
+    currentUser: {},
+    currentRecipebox: [],
+    currentRecipeView: {},
+    calendarEvents: [],
+    recipeForEvent: {},
   }
 
+  //upon load, fetch all of the recipes and set them in state
   componentDidMount() {
     fetch(RecipeAPI)
     .then(res => res.json())
     .then(recipes => this.setState({recipes: recipes}) )
 
+    //further, fetch all the events
+    //this should be refactored so it only fetches the events associated with a user either that hasn't logged out, or upon login
     fetch(EventAPI)
     .then(res => res.json())
     .then(events => {
@@ -56,8 +60,10 @@ class App extends Component {
       this.setState({calendarEvents: events})
     })
 
+    //checking and saving any token in the browser's local storage as a local variable
     const token = localStorage.getItem("token")
     if (token){
+      //if the tokoen exists, fetch their user info from the API
       fetch("http://localhost:3000/api/v1/auto_login", {
         method: "GET",
         headers: {
@@ -65,8 +71,8 @@ class App extends Component {
         }
       })
       .then(res => res.json())
+      //upon the promise being resolved, set that data in state so the app can access the user info, their associated recipes, and events (this overwrites the earlier fetch for all events??)
       .then(response => {
-        // console.log('getting user info', response)
         this.setState({
           currentUser: response,
           currentRecipebox: response.recipes,
