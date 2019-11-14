@@ -28,13 +28,13 @@ Recipes can also be categorized in one or more of the following ways:
 * Javascript
 * HTML5 and CSS3 (semi-responsive)
 
-Please find the Rails database at [Gooble-Server](https://github.com/pirainogi/gobble-server). You will need to create an API key with RapidAPI in order to seed your data. **There is a limit to the amount of free data that you can seed from the API, so please be aware before you seed thousands of recipes.**
+Please find the Rails database at [Gobble-Server](https://github.com/pirainogi/gobble-server). You will need to create an API key with RapidAPI in order to seed your data. **There is a limit to the amount of free data that you can seed from the API, so please be aware before you seed thousands of recipes.**
 
 ## Prerequisites
 
 You will need `node` or `yarn` installed on your computer in order to run this app.
 
-In order to run this app, first clone the server repo down onto your local machine and follow the instructions in the readme to spin up the server. Then clone this repo down onto your local machine and navigate to that directory. Then install the necessary dependencies with either:
+In order to run this app, first clone the server repo down onto your local machine and follow the instructions in the readme to spin up the server. Then clone this repo down onto your local machine and navigate to that directory. Install the associated dependencies with either:
 * `npm install`
 * `yarn install`
 
@@ -71,6 +71,8 @@ Then you can start running the program with `npm start`.
 
 # WIP Features/Functionality
 
+* Allow a user to search recipes based on category
+* Allowing a user to specify what type of recipes they would like to exclude based on their diet (if a user self-selects gluten-free, exclude all recipes that aren't categorized as gluten-free)
 * Ability to specify the type of event: purchase, prep, or consume
 * Ability to link a recipe with a prep or consume event
 * Ability to create grocery lists
@@ -78,7 +80,6 @@ Then you can start running the program with `npm start`.
 * Authenticating a user with Google OAuth
 * Pushing calendar events from the application's built in calendar to a user's Google Calendar
 * Pushing grocery lists to a user's Google Keep
-* Allowing a user to specify what type of recipes they would like to exclude based on their diet (if a user self-selects gluten-free, exclude all recipes that aren't categorized as gluten-free)
 
 
 ## Available Scripts
