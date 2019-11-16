@@ -82,32 +82,31 @@ class App extends Component {
     }
   }
 
+  //takes a date and transforms it into UTC which BigCal requires
   convertDate = (date) => {
     return moment.utc(date).toDate()
   }
 
+  //taking in an ID and locates the recipe in local state that matches that id, returns said recipe
   findRecipe = (routerID) => {
-    // console.log('looking for recipe that matches', );
-    let foundRecipe =  this.state.recipes.find( recipe => recipe.id === parseInt(routerID) )
-    // console.log('returned recipe', foundRecipe);
+    let foundRecipe = this.state.recipes.find(recipe => recipe.id === parseInt(routerID))
     return foundRecipe
   }
 
+  //searches for a recipe in the user's recipebox that matches the id of the recipe preview they have clicked on and sets it to state so that it will render
   selectRecipePreviewForShow = (e) => {
-    // console.log(e.target.id);
     let recipeToView = this.state.currentRecipebox.find(recipe => recipe.id === parseInt(e.target.id))
-    // console.log(recipeToView);
+
     this.setState({
       currentRecipeView: recipeToView
     })
   }
 
+  //this takes in a recipe id and finds  the recipe object that matches, sends a post request to the API to connect a user and a recipe, then adds it pessimistically to the recipe box in state so that it will render in that component
   addRecipeToRecipeBox = (recipeID) => {
-    console.log('pushing add button', recipeID, 'user', this.state.currentUser);
     // // this.props.history.push(`/recipes/${e.target.id}`)
     let recipeToAdd = this.state.recipes.find(recipe => recipe.id === recipeID)
-    // // console.log('recipe to add', recipeToAdd)
-    // console.log('user id', this.state.currentUser[0].id, 'type', typeof this.state.currentUser[0].id, 'recipe id', recipeToAdd.id, 'type', typeof recipeToAdd.id)
+
     fetch(RecipeboxAPI,{
       method: 'POST',
       headers: {
@@ -122,7 +121,6 @@ class App extends Component {
     .then(res => res.json())
     .then(addedRecipe => {
       let foundRecipe = this.state.recipes.find(recipe => recipe.id === addedRecipe.recipe_id)
-      console.log(foundRecipe)
       let updatedRecipebox = [...this.state.currentRecipebox, foundRecipe]
       this.setState({
         currentRecipebox: updatedRecipebox
@@ -130,9 +128,9 @@ class App extends Component {
     })
   }
 
+  //from the response, set a jwt token in local storage and then set the user, their assoc recipes, and cal events to local state
   setCurrentUser = (response) => {
     localStorage.setItem("token", response.jwt)
-    console.log(response.user)
     this.setState({
       currentUser: response.user,
       currentRecipebox: response.user.recipes,
@@ -140,6 +138,7 @@ class App extends Component {
     })
   }
 
+  //remove the jwt token and reset the current user to empty obj 
   logout = () => {
     localStorage.removeItem("token")
     this.setState({
@@ -260,20 +259,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-
-
-// <Route
-//   path="/dashboard"
-//   component={() => <Dashboard
-//     currentRecipebox={this.state.currentRecipebox}
-//   />}
-// />
-
-// fetch(UserAPI)
-// .then(res => res.json())
-// .then(user =>
-//   this.setState({
-//     currentUser: user,
-//     currentRecipebox: user[0].recipes
-//   })
-// )
