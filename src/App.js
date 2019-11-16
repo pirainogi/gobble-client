@@ -159,7 +159,7 @@ class App extends Component {
     this.props.history.push('/eventform')
   }
 
-  //takes in the start, the end, and the recipe name, posts to the events API, and then pessimistically adds the event to the local state and pushes the user to the larger calendar component 
+  //takes in the start, the end, and the recipe name, posts to the events API, and then pessimistically adds the event to the local state and pushes the user to the larger calendar component
   createEvent = (stringifiedStart, stringifiedEnd, recipeName) => {
     fetch("http://localhost:3000/api/v1/events", {
       method: "POST",
@@ -186,7 +186,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Header currentUser={this.state.currentUser} logout={this.logout}/>
+        <Header currentUser={this.state.currentUser} logout={this.logout}/>
         <Switch>
           <Route
             path="/login"
@@ -249,7 +249,7 @@ class App extends Component {
             component={() => <Home />}
           />
         </Switch>
-      <Footer />
+        <Footer />
       </div>
     );
   }
