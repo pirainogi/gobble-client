@@ -138,7 +138,7 @@ class App extends Component {
     })
   }
 
-  //remove the jwt token and reset the current user to empty obj 
+  //remove the jwt token and reset the current user to empty obj
   logout = () => {
     localStorage.removeItem("token")
     this.setState({
@@ -146,22 +146,21 @@ class App extends Component {
     })
   }
 
-  updateCurrentUser = (response) => {
-    console.log(response);
-  }
 
+  // updateCurrentUser = (response) => {
+  //   console.log(response);
+  // }
+
+  //take in a recipe, set it to state, and push the user to the event form
   grabRecipeForEvent = (recipe) => {
-    console.log(recipe);
     this.setState({
       recipeForEvent: recipe
     })
     this.props.history.push('/eventform')
   }
 
+  //takes in the start, the end, and the recipe name, posts to the events API, and then pessimistically adds the event to the local state and pushes the user to the larger calendar component 
   createEvent = (stringifiedStart, stringifiedEnd, recipeName) => {
-
-    console.log(stringifiedStart, stringifiedEnd);
-
     fetch("http://localhost:3000/api/v1/events", {
       method: "POST",
       headers: {
@@ -178,7 +177,6 @@ class App extends Component {
     })
     .then(res => res.json())
     .then(addedEvent => {
-      console.log(addedEvent)
       this.setState({
         calendarEvents: [...this.state.calendarEvents, addedEvent]
       },     this.props.history.push('/calendar'))
@@ -186,7 +184,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log('logging all info', this.state);
     return (
       <div className="App">
       <Header currentUser={this.state.currentUser} logout={this.logout}/>
