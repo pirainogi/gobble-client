@@ -15,13 +15,14 @@ class Login extends Component {
     password: '',
   }
 
-
+  //handles the controlled login form
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
+  //upon submit, prevent the auto-refresh and send a post request to the API with the email and password, if successful, the returned user object is set in local state as the current user and the client is pushed to the profile page
   handleSubmit = (e) => {
     e.preventDefault()
     fetch("http://localhost:3000/api/v1/login", {
@@ -34,7 +35,6 @@ class Login extends Component {
     })
     .then(res => res.json())
     .then(response => {
-      console.log(response);
       if (response.errors){
         alert(response.errors)
       } else {
@@ -45,7 +45,6 @@ class Login extends Component {
   }
 
   render(){
-    // console.log(this.props);
     return (
       <div className='login'>
       <h3>login to gobble </h3>
