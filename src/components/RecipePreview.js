@@ -1,33 +1,27 @@
 import React from 'react';
 import '../css/RecipePreview.css';
 import { NavLink } from 'react-router-dom';
-// import '../css/Button.css';
 
 
 const RecipePreview = (props) => {
-  // console.log(props);
 
+  //should this be hoisted to app and passed down as a prop instead of writing the same fn twice?
   let capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   let generateIngredients = () => {
     let recipeingredients = props.recipe.ingredients.map(ingredient =>  ingredient.name)
-    // console.log(recipeingredients);
     let capitalizedRecipes = recipeingredients.map(ingredient => {
       return capitalizeFirstLetter(ingredient)
     })
-    // console.log(recipeingredients);
     return capitalizedRecipes.join(', ')
   }
 
   // let generateDishCategories = () => {
   //   let dishCategories = props.recipe.dishType.split(',')
-  //   // console.log(dishCategories);
   //   let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
-  //   // console.log(capitalizedCategories);
   //   return capitalizedCategories.join(', ')
-  //
   // }
 
   return (
