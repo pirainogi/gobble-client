@@ -1,9 +1,7 @@
 import React from 'react';
 import '../css/RecipeBoxPreview.css';
-// import Button from './Button'
 
 const RecipeBoxPreview = (props) => {
-  // console.log('recipeboxpreview props', props, 'button should work here');
 
   let capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1)
@@ -11,24 +9,19 @@ const RecipeBoxPreview = (props) => {
 
   let generateIngredients = () => {
     let recipeingredients = props.recipe.ingredients.map(ingredient =>  ingredient.name)
-    // console.log(recipeingredients);
     let capitalizedRecipes = recipeingredients.map(ingredient => {
       return capitalizeFirstLetter(ingredient)
     })
-    // console.log(recipeingredients);
     return capitalizedRecipes.join(', ')
   }
 
   // let generateDishCategories = () => {
   //   let dishCategories = props.recipe.dishType.split(',')
-  //   // console.log(dishCategories);
   //   let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
-  //   // console.log(capitalizedCategories);
   //   return capitalizedCategories.join(', ')
-  //
   // }
 
-
+  //based on the category data, render the category icon or render null 
   return (
     <div className="recipe-box-preview card-flex-wrapper">
       <aside>
@@ -38,7 +31,8 @@ const RecipeBoxPreview = (props) => {
           />
         </div>
         <div>
-          <button className="button" id={props.recipe.id} onClick={props.selectRecipePreviewForShow}>See Full Recipe</button>
+          <button className="button" id={props.recipe.id} onClick={props.selectRecipePreviewForShow}>See Full Recipe
+          </button>
         </div>
       </aside>
 
