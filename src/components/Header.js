@@ -4,35 +4,8 @@ import '../css/Header.css';
 
 class Header extends Component {
 
-  // constructor(props){
-  //   super(props)
-  //
-  //   this.state = {}
-  // }
-  //
-  // handleScroll = () => {
-  //   this.setState({
-  //     scroll: window.scrollY
-  //   })
-  // }
-  //
-  // componentDidMount(){
-  //   const header = document.getElementById('header')
-  //   this.setState({
-  //     top: header.offsetTop,
-  //     height: header.offsetHeight
-  //   })
-  //   window.addEventListener('scroll', this.handleScroll)
-  // }
-  //
-  // componentDidUpdate(){
-  //   this.state.scroll > this.state.top ?
-  //     document.body.style.paddingTop = 0 :
-  //     document.body.style.paddingTop = 0
-  // }
-
+  //if there's a current user, load the logged in header, otherwise only render the login and signup links 
   render(){
-    // console.log(this.props, this.props.currentUser);
     return (
       <div className='header' id='header'>
         {this.props.currentUser.id ?
@@ -68,5 +41,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// <li><NavLink to='/dashboard' activeClassName='active' id='navlink'>dashboard</NavLink></li>
