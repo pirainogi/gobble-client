@@ -4,10 +4,8 @@ import RecipeShow from '../components/RecipeShow'
 
 class RecipeContainer extends Component {
 
-
-
+  //same question here, why not just have this in the render?
   generateRecipe = () => {
-    // console.log(this.props.foundRecipe);
     return (
       <RecipeShow
         key={this.props.foundRecipe.id}
@@ -18,11 +16,7 @@ class RecipeContainer extends Component {
     )
   }
 
-
-
   render(){
-    // console.log('recipecontainer props', this.props)
-    // console.log('match params', this.props.match.params.id);
     return (
       <div className="recipe-container">
         {this.generateRecipe()}
