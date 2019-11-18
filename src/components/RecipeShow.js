@@ -3,8 +3,7 @@ import '../css/RecipeShow.css';
 import { NavLink } from 'react-router-dom';
 
 class RecipeShow extends Component {
-  // console.log('recipe container', this.props);
-  // //
+
   // state = {
   //   ingredients: []
   // }
@@ -38,15 +37,12 @@ class RecipeShow extends Component {
   // //
   // let generateDishCategories = () => {
   //   let dishCategories = this.props.recipe.dishType.split(',')
-  //   // console.log(dishCategories);
   //   let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
-  //   // console.log(capitalizedCategories);
   //   return capitalizedCategories.join(', ')
   //
   // }
 
   render() {
-    console.log('generateIngredients', this.props.recipe.ingredients);
     return (
       <div>
       { this.props.recipe ?
@@ -85,11 +81,12 @@ class RecipeShow extends Component {
               <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
               : null }
           </div>
-          <p> <b>Servings:</b> {this.props.recipe.servings}<br></br>
-          <b>    Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
-          <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
-          <b>Source:</b> <a href={this.props.recipe.sourceUrl} target="_blank" rel="noopener noreferrer"> {this.props.recipe.sourceUrl}</a></p>
-
+          <p>
+            <b>Servings:</b> {this.props.recipe.servings}<br></br>
+            <b>Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
+            <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
+            <b>Source:</b> <a href={this.props.recipe.sourceUrl} target="_blank" rel="noopener noreferrer"> {this.props.recipe.sourceUrl}</a>
+          </p>
 
           {this.props.addRecipeToRecipeBox ?
             <div className="button-group">
@@ -97,7 +94,6 @@ class RecipeShow extends Component {
               <NavLink to='/recipebox' activeClassName='active' id='navlink' className="button">Go to RecipeBox</NavLink><br></br>
               <NavLink to='/search' activeClassName='active' id='navlink' className="button">Return to Search</NavLink>
               <button onClick={() => this.props.grabRecipeForEvent(this.props.recipe)} className='button'>Add to Calendar</button>
-
             </div>
             : null}
         </div>
