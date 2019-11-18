@@ -5,18 +5,17 @@ import UserInfo from '../components/UserInfo';
 
 class UserShow extends Component {
 
+  //create the user info component 
   generateUserInfo = () => {
     return (
-        <UserInfo
-          key={this.props.user.id}
-          user={this.props.user}
-        />
-      )
+      <UserInfo
+        key={this.props.user.id}
+        user={this.props.user}
+      />
+    )
   }
 
-
   render(){
-    // console.log("usershow", this.props.user);
     return (
       <div className="user-show">
         {this.generateUserInfo()}
