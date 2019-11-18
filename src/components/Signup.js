@@ -9,18 +9,19 @@ class Signup extends Component {
     bio: '',
     allergies: '',
     diet: '',
-
     email: '',
     password: '',
     passwordConfirmation: ''
   }
 
+  //handling the controlled form
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
+  //posting to the users API with the state from the form, if the user posts successfully, the user is set to local state and the client is pushed to the profile
   createUser = () => {
     fetch("http://localhost:3000/api/v1/users", {
       method: "POST",
@@ -32,7 +33,6 @@ class Signup extends Component {
     })
     .then(res => res.json())
     .then((response) => {
-      console.log(response);
       if (response.errors){
         alert(response.errors)
       } else {
@@ -42,10 +42,10 @@ class Signup extends Component {
     })
   }
 
+  //upon submit, prevent the auto refresh, confirm that the passwords entered match, and then create the user 
   handleSubmit= (e) => {
     e.preventDefault()
     if(this.state.password === this.state.passwordConfirmation){
-      // console.log(this.state)
       this.createUser()
     } else {
       alert("Passwords don't match!")
@@ -53,8 +53,7 @@ class Signup extends Component {
   }
 
   render(){
-    // console.log(this.props);
-    return (
+     return (
       <div className='signup'>
         <h3>create your gobble account</h3>
         <form onSubmit={this.handleSubmit}>

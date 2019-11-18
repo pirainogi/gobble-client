@@ -5,19 +5,15 @@ import '../css/UserInfo.css';
 
 class UserInfo extends Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      isShowing: false,
-      name: '',
-      email: '',
-      bio: '',
-      allergies: '',
-      diet: '',
-      profile_pic: '',
-      password_digest: '',
-    }
+  state = {
+    isShowing: false,
+    name: '',
+    email: '',
+    bio: '',
+    allergies: '',
+    diet: '',
+    profile_pic: '',
+    password_digest: '',
   }
 
   componentDidMount() {
@@ -54,12 +50,10 @@ class UserInfo extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
-    console.log('changed stuff', this.state);
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('submitting', this.state)
     this.updateUser()
   }
 
