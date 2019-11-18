@@ -3,8 +3,8 @@ import '../css/RecipeBox.css'
 import RecipeBoxPreview from '../components/RecipeBoxPreview'
 
 const RecipeBox = (props) => {
-  // console.log('recipebox props', props);
 
+  //grab all of the recipes saved to local state and create a card component for each 
   let generateRecipeBoxPreviews = () => {
     return props.recipes.map(recipe => {
       return (
