@@ -10,7 +10,7 @@ import Header from './components/Header'
 import Home from './components/Home';
 import UserShow from './containers/UserShow';
 import Footer from './components/Footer'
-// import Calendar from './components/Calendar';
+import Calendar from './components/Calendar';
 import EventForm from './components/EventForm';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -201,13 +201,13 @@ class App extends Component {
             path="/profile"
             component={() => <UserShow user={this.state.currentUser}/>}
           />
-          {/*<Route
+          <Route
             path="/calendar"
             component={() => <Calendar
               events={this.state.calendarEvents}
               user={this.state.currentUser}
             />}
-          />*/}
+          />
           <Route
             path="/eventform"
             component={() => <EventForm
