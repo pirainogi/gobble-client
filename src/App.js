@@ -10,7 +10,7 @@ import Header from './components/Header'
 import Home from './components/Home';
 import UserShow from './containers/UserShow';
 import Footer from './components/Footer'
-import Calendar from './components/Calendar';
+// import Calendar from './components/Calendar';
 import EventForm from './components/EventForm';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -27,7 +27,7 @@ BigCalendar.momentLocalizer(moment);
 //setting the API endpoints to variables
 const RecipeAPI = 'http://localhost:3000/api/v1/recipes'
 const RecipeboxAPI = 'http://localhost:3000/api/v1/recipeboxes'
-const EventAPI = 'http://localhost:3000/api/v1/events'
+// const EventAPI = 'http://localhost:3000/api/v1/events'
 
 class App extends Component {
 
@@ -49,16 +49,16 @@ class App extends Component {
 
     //further, fetch all the events
     //this should be refactored so it only fetches the events associated with a user either that hasn't logged out, or upon login
-    fetch(EventAPI)
-    .then(res => res.json())
-    .then(events => {
-      for (let i=0; i < events.length; i++){
-        // console.log(events[i])
-        events[i].start = this.convertDate(events[i].eventStart)
-        events[i].end = this.convertDate(events[i].eventEnd)
-      }
-      this.setState({calendarEvents: events})
-    })
+    // fetch(EventAPI)
+    // .then(res => res.json())
+    // .then(events => {
+    //   for (let i=0; i < events.length; i++){
+    //     // console.log(events[i])
+    //     events[i].start = this.convertDate(events[i].eventStart)
+    //     events[i].end = this.convertDate(events[i].eventEnd)
+    //   }
+    //   this.setState({calendarEvents: events})
+    // })
 
     //checking and saving any token in the browser's local storage as a local variable
     const token = localStorage.getItem("token")
@@ -130,6 +130,7 @@ class App extends Component {
 
   //from the response, set a jwt token in local storage and then set the user, their assoc recipes, and cal events to local state
   setCurrentUser = (response) => {
+    console.log(response)
     localStorage.setItem("token", response.jwt)
     this.setState({
       currentUser: response.user,
@@ -200,13 +201,13 @@ class App extends Component {
             path="/profile"
             component={() => <UserShow user={this.state.currentUser}/>}
           />
-          <Route
+          {/*<Route
             path="/calendar"
             component={() => <Calendar
               events={this.state.calendarEvents}
               user={this.state.currentUser}
             />}
-          />
+          />*/}
           <Route
             path="/eventform"
             component={() => <EventForm

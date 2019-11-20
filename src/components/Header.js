@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/Header.css';
 
 class Header extends Component {
 
-  //if there's a current user, load the logged in header, otherwise only render the login and signup links 
+  //if there's a current user, load the logged in header, otherwise only render the login and signup links
   render(){
     return (
       <div className='header' id='header'>
