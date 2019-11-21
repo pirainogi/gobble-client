@@ -4,9 +4,9 @@ const Vegan = props => {
   return (
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
      width={props.width} height={props.height} viewBox="0 0 194.000000 196.000000"
-     preserveAspectRatio="xMidYMid meet">
+     preserveAspectRatio="xMidYMid meet" id="vegan">
     <metadata>
-    Created by potrace 1.15, written by Peter Selinger 2001-2017
+    Created by potrace 1.15, written by Peter Selinger 2001-201
     </metadata>
     <g transform="translate(0.000000,196.000000) scale(0.100000,-0.100000)"
     fill={props.fill} stroke="none">

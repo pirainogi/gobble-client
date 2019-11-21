@@ -16,10 +16,18 @@ class SearchBar extends Component {
           onChange={this.props.filterRecipesBySearchInput}
         />
         <div className="recipe-icons">
-          <Vegan fill={"green"} width={"50px"}/>
-          <Vegetarian fill={"green"} width={"50px"}/>
-          <Dairyfree fill={"green"} width={"50px"}/>
-          <Glutenfree fill={"green"} width={"50px"}/>
+          <div onClick={this.props.filterRecipesByDietaryRestriction}>
+            <Vegan fill={this.props.vegan ? "green" : "black"} width={"50px"} />
+          </div>
+          <div onClick={this.props.filterRecipesByDietaryRestriction}>
+            <Vegetarian fill={this.props.vegetarian ? "green" : "black"} width={"50px"}/>
+          </div>
+          <div onClick={this.props.filterRecipesByDietaryRestriction}>
+            <Dairyfree fill={this.props.dairyfree ? "green" : "black"} width={"49px"}/>
+          </div>
+          <div onClick={this.props.filterRecipesByDietaryRestriction}>
+            <Glutenfree fill={this.props.glutenfree ? "green" : "black"} width={"49px"}/>
+          </div>
         </div>
 
       </form>

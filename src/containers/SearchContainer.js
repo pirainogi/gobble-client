@@ -6,7 +6,11 @@ import RecipePreview from '../components/RecipePreview';
 class SearchContainer extends Component {
 
   state = {
-      recipesReturnedFromSearch: []
+      recipesReturnedFromSearch: [],
+      vegan: false,
+      vegetarian: false,
+      glutenfree: false,
+      dairyfree: false,
     }
 
   componentDidMount() {
@@ -59,10 +63,23 @@ class SearchContainer extends Component {
     })
   }
 
+  changeDietaryRestrictions = (diet) => {
+    this.setState({
+      [diet]: !this.state[diet]
+    })
+  }
+
+  //this function will change the local state to reflect the dietary filters
+  filterRecipesByDietaryRestriction = (e) => {
+    console.log(e.target.id)
+    this.changeDietaryRestrictions(e.target.id)
+  }
+
   render(){
+    console.log(this.state)
     return (
       <div className="search-container">
-        <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput}/>
+        <SearchBar filterRecipesBySearchInput={this.filterRecipesBySearchInput} filterRecipesByDietaryRestriction={this.filterRecipesByDietaryRestriction} vegan={this.state.vegan} vegetarian={this.state.vegetarian} glutenfree={this.state.glutenfree} dairyfree={this.state.dairyfree}/>
         <div className='seached-recipes-container'>
           {this.generateRecipePreview()}
         </div>
