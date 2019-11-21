@@ -18,3 +18,7 @@ input[type='text'] {
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
+
+.recipe-icons {
+  margin-top: .75em;
+}

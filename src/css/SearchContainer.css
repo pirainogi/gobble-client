@@ -3,11 +3,12 @@
   border-width: 2px; */
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  padding-top: 7%
+  padding-top: 6.5%;
 }
 
 .seached-recipes-container {
   display: grid;
+  margin-top: 3%;
   grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
   padding: 20px 0 50px 14px;
 }
