@@ -47,18 +47,6 @@ class App extends Component {
     .then(res => res.json())
     .then(recipes => this.setState({recipes: recipes}) )
 
-    //further, fetch all the events
-    //this should be refactored so it only fetches the events associated with a user either that hasn't logged out, or upon login
-    // fetch(EventAPI)
-    // .then(res => res.json())
-    // .then(events => {
-    //   for (let i=0; i < events.length; i++){
-    //     events[i].start = this.convertDate(events[i].eventStart)
-    //     events[i].end = this.convertDate(events[i].eventEnd)
-    //   }
-    //   this.setState({calendarEvents: events})
-    // })
-
     //checking and saving any token in the browser's local storage as a local variable
     const token = localStorage.getItem("token")
     if (token){

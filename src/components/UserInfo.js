@@ -70,7 +70,7 @@ class UserInfo extends Component {
   }
 
   render () {
-    console.log('user props', this.props.user, 'state', this.state);
+    console.log('state', this.state);
 
     return (
       <div className="user-info">
