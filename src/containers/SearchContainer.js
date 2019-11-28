@@ -6,48 +6,82 @@ import RecipePreview from '../components/RecipePreview';
 class SearchContainer extends Component {
 
   state = {
-    recipesReturnedFromSearch: [],
     searchValue: '',
     restrictions: {
       vegan: false,
       vegetarian: false,
-      glutenfree: false,
-      dairyfree: false,
+      glutenFree: false,
+      dairyFree: false,
     }
   }
 
-  componentDidMount() {
-    this.setState({
-      recipesReturnedFromSearch: this.props.recipes
-    })
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     recipesReturnedFromSearch: this.props.recipes
+  //   })
+  // }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      recipesReturnedFromSearch: nextProps.recipes
-    })
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({
+  //     recipesReturnedFromSearch: nextProps.recipes
+  //   })
+  // }
 
   //push to the recipe's show page
   pushToRecipeShow = (e) => {
     this.props.history.push(`/recipes/${e.target.id}`)
   }
 
-  //map over all oof the recipes coming back from state and create preview cards
+  //map over all of the recipes coming back from state and create preview cards
   generateRecipePreview = () => {
-    return this.state.recipesReturnedFromSearch.map(recipe => {
-      return (
-        <RecipePreview
-          key={recipe.id}
-          recipe={recipe}
-          pushToRecipeShow={this.pushToRecipeShow}
-        />
-      )
+    let filtered = this.searchRecipes()
+    console.log('num:', filtered.length)
+    if(filtered.length){
+      return filtered.map(recipe => {
+        return (
+          <RecipePreview
+            key={recipe.id}
+            recipe={recipe}
+            pushToRecipeShow={this.pushToRecipeShow}
+          />
+        )
+      })
+    }
+  }
+
+  filterRecipesByInput = () => {
+    const restrictions = []
+    for(let diet in this.state.restrictions){
+      if(this.state.restrictions[diet]){
+        restrictions.push(diet)
+      }
+    }
+    return restrictions
+  }
+
+  multiDietFilter = (recipes, restrictions) => {
+    if(restrictions.length){
+      return recipes.filter(recipe => {
+        for(const diet of restrictions){
+          return recipe[diet] === true
+        }
+      })
+    } else return recipes
+  }
+
+  searchRecipes = () => {
+    const filteredRecipes = this.multiDietFilter(
+      this.props.recipes,
+      this.filterRecipesByInput()
+    )
+    return filteredRecipes.filter(recipe => {
+      return recipe.name
+      .toLowerCase()
+      .includes(this.state.searchValue.toLowerCase())
     })
   }
 
   changeDietaryRestrictions = (e) => {
-    console.log('changing the diet to:', e.target.id)
     this.setState({
       restrictions: {
         ...this.state.restrictions,
@@ -57,7 +91,6 @@ class SearchContainer extends Component {
   }
 
   changeSearchValue = (e) => {
-    console.log('changing search value');
     this.setState({
       searchValue: e.target.value
     })
@@ -65,10 +98,8 @@ class SearchContainer extends Component {
 
   clickListener = (e) => {
     if(e.target.dataset.id === "input"){
-      console.log('search value');
       this.changeSearchValue(e)
     } else if(e.target.dataset.id === "button") {
-      console.log('diet restriction');
       this.changeDietaryRestrictions(e)
     } else {
 
@@ -76,10 +107,10 @@ class SearchContainer extends Component {
   }
 
   render(){
-    console.log('state:', this.state.searchValue, this.state.restrictions)
+    console.log('recipes:', this.props.recipes, this.state.restrictions)
     return (
       <div className="search-container">
-        <SearchBar clickListener={this.clickListener} vegan={this.state.restrictions.vegan} vegetarian={this.state.restrictions.vegetarian} glutenfree={this.state.restrictions.glutenfree} dairyfree={this.state.restrictions.dairyfree}/>
+        <SearchBar clickListener={this.clickListener} vegan={this.state.restrictions.vegan} vegetarian={this.state.restrictions.vegetarian} glutenfree={this.state.restrictions.glutenFree} dairyfree={this.state.restrictions.dairyFree}/>
         <div className='seached-recipes-container'>
           {this.generateRecipePreview()}
         </div>
@@ -155,29 +186,9 @@ export default (SearchContainer);
   //   })
   // }
   //
-  // filterRecipesByInput = () => {
-  //   const restrictions = []
-  //   for(let diet in this.state.restrictions){
-  //     if(this.state.restrictions[diet]){
-  //       restrictions.push(diet)
-  //     }
-  //   }
-  //   return restrictions
-  // }
+
   //
-  // multiDietFilter = (recipes, restrictions) => {
-  //   // console.log(recipes, 'array of diets:', restrictions)
-  //   return recipes.filter(recipe => {
-  //     return restrictions.every(diet => {
-  //       console.log(diet, recipe)
-  //       // recipes.includes(recipe[diet] === true)
-  //       // if(!restrictions[diet].length) {
-  //       //   return true
-  //       // }
-  //       // return restrictions[diet].includes(recipe[diet] === true)
-  //     })
-  //   })
-  // }
+
   //
   // searchRecipes = () => {
   //   console.log('hitting search recipes','current num of recipes:', this.state.recipesReturnedFromSearch.length, this.state.searchValue);
