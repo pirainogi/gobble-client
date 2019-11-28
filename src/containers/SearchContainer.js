@@ -88,7 +88,7 @@ class SearchContainer extends Component {
     })
   }
 
-  //for either de/selection of a restriction or input for the search, call the appropriate fn to update state 
+  //for either de/selection of a restriction or input for the search, call the appropriate fn to update state
   clickListener = (e) => {
     if(e.target.dataset.id === "input"){
       this.changeSearchValue(e)
@@ -98,7 +98,6 @@ class SearchContainer extends Component {
   }
 
   render(){
-    console.log('recipes:', this.props.recipes, this.state.restrictions)
     return (
       <div className="search-container">
         <SearchBar clickListener={this.clickListener} vegan={this.state.restrictions.vegan} vegetarian={this.state.restrictions.vegetarian} glutenfree={this.state.restrictions.glutenFree} dairyfree={this.state.restrictions.dairyFree}/>
