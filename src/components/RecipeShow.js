@@ -2,6 +2,11 @@ import React, { Component }  from 'react';
 import '../css/RecipeShow.css';
 import { NavLink } from 'react-router-dom';
 
+import Vegan from '../icons/vegan.js';
+import Vegetarian from '../icons/vegetarian.js';
+import Glutenfree from '../icons/glutenfree.js';
+import Dairyfree from '../icons/dairyfree.js';
+
 class RecipeShow extends Component {
 
   // state = {
@@ -52,33 +57,21 @@ class RecipeShow extends Component {
             <img src={this.props.recipe.imgurl} alt={this.props.recipe.name} />
           </div>
           <div className="recipe-icons">
-            {this.props.recipe.glutenFree ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
-              : null }
 
+            {this.props.recipe.glutenFree ?
+              <Glutenfree fill={"black"} width={"49px"}/>
+              : null }
 
             {this.props.recipe.dairyFree ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-4c.jpg'} alt='dairy-free icon'></img>
-              : null }
-
-            {this.props.recipe.keto ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/keto-4c.jpg'} alt='keto icon'></img>
-              : null }
-
-            {this.props.recipe.whole30 ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/whole30_4c.jpg'} alt='whole30 icon'></img>
+              <Dairyfree fill={"black"} width={"49px"}/>
               : null }
 
             {this.props.recipe.vegetarian ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-4c.png'} alt='vegetarian icon'></img>
+              <Vegetarian fill={"black"} width={"50px"}/>
               : null }
 
             {this.props.recipe.vegan ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpeg'} alt='vegan icon'></img>
-              : null }
-
-            {this.props.recipe.healthy ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
+              <Vegan fill={"black"} width={"50px"} />
               : null }
           </div>
           <p>
