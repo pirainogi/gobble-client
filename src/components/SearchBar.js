@@ -13,19 +13,19 @@ class SearchBar extends Component {
         <input
           type='text'
           placeholder='Search for Recipes...' data-id={"input"}
-          onChange={this.props.filterRecipes}
+          onChange={this.props.clickListener}
         />
         <div className="recipe-icons">
-          <div onClick={this.props.filterRecipes}>
+          <div onClick={this.props.clickListener}>
             <Vegan fill={this.props.vegan ? "green" : "black"} width={"50px"} />
           </div>
-          <div onClick={this.props.changeDietaryRestrictions}>
+          <div onClick={this.props.clickListener}>
             <Vegetarian fill={this.props.vegetarian ? "green" : "black"} width={"50px"}/>
           </div>
-          <div onClick={this.props.changeDietaryRestrictions} >
+          <div onClick={this.props.clickListener} >
             <Dairyfree fill={this.props.dairyfree ? "green" : "black"} width={"49px"}/>
           </div>
-          <div onClick={this.props.changeDietaryRestrictions} >
+          <div onClick={this.props.clickListener} >
             <Glutenfree fill={this.props.glutenfree ? "green" : "black"} width={"49px"}/>
           </div>
         </div>

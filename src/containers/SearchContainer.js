@@ -6,13 +6,15 @@ import RecipePreview from '../components/RecipePreview';
 class SearchContainer extends Component {
 
   state = {
-      recipesReturnedFromSearch: [],
-      searchValue: '',
+    recipesReturnedFromSearch: [],
+    searchValue: '',
+    restrictions: {
       vegan: false,
       vegetarian: false,
       glutenfree: false,
       dairyfree: false,
     }
+  }
 
   componentDidMount() {
     this.setState({
@@ -45,80 +47,122 @@ class SearchContainer extends Component {
   }
 
   //if the input field isn't empty, then filter all of the recipes and return those that match, set the returned value in state so they render in the component; otherwise just render all the recipes
+  // filterRecipesByInput = () => {
+  //   let searchedRecipes
+  //   if (this.state.searchValue !== ''){
+  //     searchedRecipes = this.state.recipesReturnedFromSearch.filter(recipe => {
+  //       const lowercaseRecipe = recipe.name.toLowerCase()
+  //       const lowerCaseFilter = this.state.searchValue.toLowerCase()
+  //       return lowercaseRecipe.includes(lowerCaseFilter)
+  //     })
+  //     if(this.state.vegan === true){
+  //       searchedRecipes = searchedRecipes.filter(recipe => {
+  //         return recipe.vegan === true
+  //       })
+  //       if(this.state.vegetarian === true){
+  //         searchedRecipes = searchedRecipes.filter(recipe => {
+  //           return recipe.vegetarian === true
+  //         })
+  //         if(this.state.glutenfree === true){
+  //           searchedRecipes = searchedRecipes.filter(recipe => {
+  //             return recipe.glutenFree === true
+  //           })
+  //           if(this.state.dairyfree === true){
+  //             searchedRecipes = searchedRecipes.filter(recipe => {
+  //               return recipe.dairyFree === true
+  //             })
+  //           }
+  //         }
+  //       }
+  //     }
+  //   } else if(this.state.vegan === true) {
+  //     searchedRecipes = this.state.recipesReturnedFromSearch.filter(recipe => {
+  //       return recipe.vegan === true
+  //     })
+  //     if(this.state.vegetarian === true){
+  //       searchedRecipes = searchedRecipes.filter(recipe => {
+  //         return recipe.vegetarian === true
+  //       })
+  //       if(this.state.glutenfree === true){
+  //         searchedRecipes = searchedRecipes.filter(recipe => {
+  //           return recipe.glutenFree === true
+  //         })
+  //         if(this.state.dairyfree === true){
+  //           searchedRecipes = searchedRecipes.filter(recipe => {
+  //             return recipe.dairyFree === true
+  //           })
+  //           if(this.state.searchValue !== ''){
+  //             searchedRecipes = searchedRecipes.filter(recipe => {
+  //               const lowercaseRecipe = recipe.name.toLowerCase()
+  //               const lowerCaseFilter = this.state.searchValue.toLowerCase()
+  //               return lowercaseRecipe.includes(lowerCaseFilter)
+  //             })
+  //           }
+  //         }
+  //       }
+  //     }
+  //   } else {
+  //     searchedRecipes = this.props.recipes
+  //   }
+  //   this.setState({
+  //     recipesReturnedFromSearch: searchedRecipes
+  //   })
+  // }
+
   filterRecipesByInput = () => {
-    let searchedRecipes
-    if (this.state.searchValue !== ''){
-      searchedRecipes = this.state.recipesReturnedFromSearch.filter(recipe => {
-        const lowercaseRecipe = recipe.name.toLowerCase()
-        const lowerCaseFilter = this.state.searchValue.toLowerCase()
-        return lowercaseRecipe.includes(lowerCaseFilter)
-      })
-      if(this.state.vegan === true){
-        searchedRecipes = searchedRecipes.filter(recipe => {
-          return recipe.vegan === true
-        })
-        if(this.state.vegetarian === true){
-          searchedRecipes = searchedRecipes.filter(recipe => {
-            return recipe.vegetarian === true
-          })
-          if(this.state.glutenfree === true){
-            searchedRecipes = searchedRecipes.filter(recipe => {
-              return recipe.glutenFree === true
-            })
-            if(this.state.dairyfree === true){
-              searchedRecipes = searchedRecipes.filter(recipe => {
-                return recipe.dairyFree === true
-              })
-            }
-          }
-        }
+    const restrictions = []
+    for(let diet in this.state.restrictions){
+      if(this.state.restrictions[diet]){
+        restrictions.push(diet)
       }
-    } else if(this.state.vegan === true) {
-      searchedRecipes = this.state.recipesReturnedFromSearch.filter(recipe => {
-        return recipe.vegan === true
-      })
-      if(this.state.vegetarian === true){
-        searchedRecipes = searchedRecipes.filter(recipe => {
-          return recipe.vegetarian === true
-        })
-        if(this.state.glutenfree === true){
-          searchedRecipes = searchedRecipes.filter(recipe => {
-            return recipe.glutenFree === true
-          })
-          if(this.state.dairyfree === true){
-            searchedRecipes = searchedRecipes.filter(recipe => {
-              return recipe.dairyFree === true
-            })
-            if(this.state.searchValue !== ''){
-              searchedRecipes = searchedRecipes.filter(recipe => {
-                const lowercaseRecipe = recipe.name.toLowerCase()
-                const lowerCaseFilter = this.state.searchValue.toLowerCase()
-                return lowercaseRecipe.includes(lowerCaseFilter)
-              })
-            }
-          }
-        }
-      }
-    } else {
-      searchedRecipes = this.props.recipes
     }
-    this.setState({
-      recipesReturnedFromSearch: searchedRecipes
+    return restrictions
+  }
+
+  multiDietFilter = (recipes, restrictions) => {
+    // console.log(recipes, 'array of diets:', restrictions)
+    return recipes.filter(recipe => {
+      return restrictions.every(diet => {
+        console.log(diet, recipe)
+        // recipes.includes(recipe[diet] === true)
+        // if(!restrictions[diet].length) {
+        //   return true
+        // }
+        // return restrictions[diet].includes(recipe[diet] === true)
+      })
     })
   }
 
-  changeDietaryRestrictions = (e) => {
-    console.log('this is the button state change', e.target.id);
+  searchRecipes = () => {
+    console.log('hitting search recipes','current num of recipes:', this.state.recipesReturnedFromSearch.length, this.state.searchValue);
+    // const filteredRecipes = this.multiDietFilter(this.state.recipesReturnedFromSearch, this.filterRecipesByInput())
+    let fr, starter
+    starter = this.state.recipesReturnedFromSearch
+    fr = starter.filter(recipe => {
+      const lowercaseRecipe = recipe.name.toLowerCase()
+      const lowerCaseFilter = this.state.searchValue.toLowerCase()
+      return lowercaseRecipe.includes(lowerCaseFilter)
+    })
     this.setState({
-      [e.target.id]: !this.state[e.target.id]
-    }, this.filterRecipesByInput)
+      recipesReturnedFromSearch: fr
+    }, console.log(this.state.recipesReturnedFromSearch.length, this.state.searchValue))
+  }
+
+  changeDietaryRestrictions = (e) => {
+    // console.log('changing the diet to:', e.target.id)
+    this.setState({
+      restrictions: {
+        ...this.state.restrictions,
+        [e.target.id]: !this.state.restrictions[e.target.id]
+      }
+    }, this.searchRecipes)
   }
 
   changeSearchValue = (e) => {
-    console.log('this is the search value state change', e.target.value);
+    // console.log('changing search value');
     this.setState({
       searchValue: e.target.value
-    }, this.filterRecipesByInput)
+    }, this.searchRecipes)
   }
 
   //this function will change the local state to reflect the dietary filters
@@ -147,7 +191,7 @@ class SearchContainer extends Component {
     })
   }
 
-  filterRecipes = (e) => {
+  clickListener = (e) => {
     if(e.target.dataset.id === "input"){
       this.changeSearchValue(e)
     } else if(e.target.dataset.id === "button") {
@@ -158,10 +202,10 @@ class SearchContainer extends Component {
   }
 
   render(){
-    console.log('render', this.state.recipesReturnedFromSearch)
+    // console.log('search val:', this.state.searchValue)
     return (
       <div className="search-container">
-        <SearchBar filterRecipes={this.filterRecipes} changeSearchValue={this.changeSearchValue} changeDietaryRestrictions={this.changeDietaryRestrictions} vegan={this.state.vegan} vegetarian={this.state.vegetarian} glutenfree={this.state.glutenfree} dairyfree={this.state.dairyfree}/>
+        <SearchBar clickListener={this.clickListener} vegan={this.state.restrictions.vegan} vegetarian={this.state.restrictions.vegetarian} glutenfree={this.state.restrictions.glutenfree} dairyfree={this.state.restrictions.dairyfree}/>
         <div className='seached-recipes-container'>
           {this.generateRecipePreview()}
         </div>

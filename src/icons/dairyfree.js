@@ -4,7 +4,7 @@ const Dairyfree = props => {
   return (
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
      width={props.width} height={props.height} viewBox="0 0 194.000000 196.000000"
-     preserveAspectRatio="xMidYMid meet" id="dairyfree">
+     preserveAspectRatio="xMidYMid meet" id="dairyfree" data-id="button">
     <metadata>
     Created by potrace 1.10, written by Peter Selinger 2001-2011
     </metadata>
