@@ -34,7 +34,7 @@ class Calendar extends Component {
 
   //conditionally render the calendar upon the props being passed down
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className='calendar'>
       {this.props.events ?

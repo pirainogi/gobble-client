@@ -47,19 +47,19 @@ const RecipeBoxPreview = (props) => {
 
           <div className="recipe-icons">
             {props.recipe.glutenFree ?
-              <Glutenfree fill={"black"} width={"49px"}/>
+              <Glutenfree fill={"black"} width={"39px"}/>
               : null }
 
             {props.recipe.dairyFree ?
-              <Dairyfree fill={"black"} width={"49px"}/>
+              <Dairyfree fill={"black"} width={"39px"}/>
               : null }
 
             {props.recipe.vegetarian ?
-              <Vegetarian fill={"black"} width={"50px"}/>
+              <Vegetarian fill={"black"} width={"40px"}/>
               : null }
 
             {props.recipe.vegan ?
-              <Vegan fill={"black"} width={"50px"} />
+              <Vegan fill={"black"} width={"40px"} />
               : null }
 
           </div>

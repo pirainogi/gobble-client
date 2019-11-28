@@ -20,9 +20,9 @@ class RecipeShow extends Component {
   // grabIngredients = () => { return this.props.recipe ? this.generateIngredients() : null }
   //
   // //
-  // capitalizeFirstLetter = (string) => {
-  //   return string.charAt(0).toUpperCase() + string.slice(1)
-  // }
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
   //
   // generateIngredients = () => {
   //   let recipeingredients = this.props.recipe.ingredients.map(ingredient => {
@@ -40,14 +40,16 @@ class RecipeShow extends Component {
   //   // console.log(recipeingredients);
   // }
   // //
-  // let generateDishCategories = () => {
-  //   let dishCategories = this.props.recipe.dishType.split(',')
-  //   let capitalizedCategories = dishCategories.map(dish => { return capitalizeFirstLetter(dish) })
-  //   return capitalizedCategories.join(', ')
-  //
-  // }
+  generateDishCategories = () => {
+    if(this.props.recipe.dishType){
+      let dishCategories = this.props.recipe.dishType.split(',')
+      let capitalizedCategories = dishCategories.map(dish => { return this.capitalizeFirstLetter(dish) })
+      return capitalizedCategories.join(', ')
+    }
+  }
 
   render() {
+    console.log(this.props.recipe);
     return (
       <div>
       { this.props.recipe ?
@@ -77,8 +79,10 @@ class RecipeShow extends Component {
           <p>
             <b>Servings:</b> {this.props.recipe.servings}<br></br>
             <b>Prep Time:</b> {this.props.recipe.preptime} minutes<br></br>
+            <b>Categories:</b> {this.generateDishCategories()}<br></br> 
+            <b><a href={this.props.recipe.sourceUrl} target="_blank" rel="noopener noreferrer">Source</a></b><br></br><br></br>
+
             <b>Instructions:</b> {this.props.recipe.instructions}<br></br>
-            <b>Source:</b> <a href={this.props.recipe.sourceUrl} target="_blank" rel="noopener noreferrer"> {this.props.recipe.sourceUrl}</a>
           </p>
 
           {this.props.addRecipeToRecipeBox ?
