@@ -1,6 +1,11 @@
 import React from 'react';
 import '../css/RecipeBoxPreview.css';
 
+import Vegan from '../icons/vegan.js';
+import Vegetarian from '../icons/vegetarian.js';
+import Glutenfree from '../icons/glutenfree.js';
+import Dairyfree from '../icons/dairyfree.js';
+
 const RecipeBoxPreview = (props) => {
 
   let capitalizeFirstLetter = (string) => {
@@ -21,7 +26,7 @@ const RecipeBoxPreview = (props) => {
   //   return capitalizedCategories.join(', ')
   // }
 
-  //based on the category data, render the category icon or render null 
+  //based on the category data, render the category icon or render null
   return (
     <div className="recipe-box-preview card-flex-wrapper">
       <aside>
@@ -42,32 +47,21 @@ const RecipeBoxPreview = (props) => {
 
           <div className="recipe-icons">
             {props.recipe.glutenFree ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/gf-4c.jpg'} alt='gluten-free icon'></img>
+              <Glutenfree fill={"black"} width={"49px"}/>
               : null }
 
             {props.recipe.dairyFree ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/df-4c.jpg'} alt='dairy-free icon'></img>
-              : null }
-
-            {props.recipe.keto ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/keto-4c.jpg'} alt='keto icon'></img>
-              : null }
-
-            {props.recipe.whole30 ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/whole30_4c.jpg'} alt='whole30 icon'></img>
+              <Dairyfree fill={"black"} width={"49px"}/>
               : null }
 
             {props.recipe.vegetarian ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/veg-4c.png'} alt='vegetarian icon'></img>
+              <Vegetarian fill={"black"} width={"50px"}/>
               : null }
 
             {props.recipe.vegan ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/vegan-4c.jpg'} alt='vegan icon'></img>
+              <Vegan fill={"black"} width={"50px"} />
               : null }
 
-            {props.recipe.healthy ?
-              <img className="iconboolean" src={process.env.PUBLIC_URL + '/healthy-4c.jpg'} alt='healthy icon'></img>
-              : null }
           </div>
 
           <br></br><p className="ingredients"><span><b>Ingredients:</b> {generateIngredients()}</span></p>
