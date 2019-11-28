@@ -15,27 +15,14 @@ class SearchContainer extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     recipesReturnedFromSearch: this.props.recipes
-  //   })
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({
-  //     recipesReturnedFromSearch: nextProps.recipes
-  //   })
-  // }
-
   //push to the recipe's show page
   pushToRecipeShow = (e) => {
     this.props.history.push(`/recipes/${e.target.id}`)
   }
 
-  //map over all of the recipes coming back from state and create preview cards
+  //map over all of the filtered recipes from the searcn fn and create preview cards
   generateRecipePreview = () => {
     let filtered = this.searchRecipes()
-    console.log('num:', filtered.length)
     if(filtered.length){
       return filtered.map(recipe => {
         return (
@@ -49,6 +36,7 @@ class SearchContainer extends Component {
     }
   }
 
+  //create  an array of the selected dietary restriction filters
   filterRecipesByInput = () => {
     const restrictions = []
     for(let diet in this.state.restrictions){
@@ -59,6 +47,7 @@ class SearchContainer extends Component {
     return restrictions
   }
 
+  //takes in all of the recipes and the restriction array, and if there are any restrictions, filter for the recipes that fulfill the restrictions
   multiDietFilter = (recipes, restrictions) => {
     if(restrictions.length){
       return recipes.filter(recipe => {
@@ -69,6 +58,7 @@ class SearchContainer extends Component {
     } else return recipes
   }
 
+  //first run the multiDietFilter fn and then further filter those by the search input value
   searchRecipes = () => {
     const filteredRecipes = this.multiDietFilter(
       this.props.recipes,
@@ -81,6 +71,7 @@ class SearchContainer extends Component {
     })
   }
 
+  //change the state to reflect whether a dietary restriction has been selected (or deselected)
   changeDietaryRestrictions = (e) => {
     this.setState({
       restrictions: {
@@ -90,19 +81,19 @@ class SearchContainer extends Component {
     })
   }
 
+  //change the state to reflect search form input
   changeSearchValue = (e) => {
     this.setState({
       searchValue: e.target.value
     })
   }
 
+  //for either de/selection of a restriction or input for the search, call the appropriate fn to update state 
   clickListener = (e) => {
     if(e.target.dataset.id === "input"){
       this.changeSearchValue(e)
     } else if(e.target.dataset.id === "button") {
       this.changeDietaryRestrictions(e)
-    } else {
-
     }
   }
 
