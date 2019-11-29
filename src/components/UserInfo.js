@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Modal from './Modal';
 import '../css/UserInfo.css';
 
-
 class UserInfo extends Component {
 
   state = {
     isShowing: false,
+    editUser: false,
     name: '',
     email: '',
     bio: '',
@@ -57,6 +57,12 @@ class UserInfo extends Component {
     this.updateUser()
   }
 
+  toggleEdit = () => {
+    this.setState({
+      editUser: !this.state.editUser
+    })
+  }
+
   openModalHandler = () => {
     this.setState({
       isShowing: true
@@ -69,32 +75,27 @@ class UserInfo extends Component {
     })
   }
 
-  render () {
-    console.log('state', this.state);
-
+  render() {
+    // console.log('state', this.state);
     return (
-      <div className="user-info">
-      {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
-
-        <img src={this.props.user.profile_pic} alt="user profile"></img>
-        <div className="details">
-          <p> <b>Name:</b> {this.props.user.name}<br></br><br></br>
-          <b>Bio:</b> {this.props.user.bio}<br></br>
-          <b>Allergies:</b> {this.props.user.allergies}<br></br>
-          <b>Diet:</b> {this.props.user.diet}</p>
-          {this.props.user.recipes === undefined ?
-            <p><b>RecipeBox:</b> 0 Saved Recipes</p> :
-            <p><b>RecipeBox:</b> {this.props.user.recipes.length} Saved Recipes</p>
-          }
-        </div>
-
-        <button className="open-modal-btn" onClick={this.openModalHandler}> edit ur profile</button>
-        <Modal
-          className="modal"
-          show={this.state.isShowing}
-          close={this.closeModalHandler}
-        >
-          <form>
+      <div>
+        {this.state.editUser
+          ?
+          <div className="user-info">
+            <img src={this.props.user.profile_pic} alt="user profile"></img>
+            <div className="details">
+              <b>Name:</b> {this.props.user.name}<br></br><br></br>
+              <b>Bio:</b> {this.props.user.bio}<br></br>
+              <b>Allergies:</b> {this.props.user.allergies}<br></br>
+              <b>Diet:</b> {this.props.user.diet}
+              {this.props.user.recipes === undefined
+                ? <p><b>RecipeBox:</b> 0 Saved Recipes</p>
+                : <p><b>RecipeBox</b><br></br> {this.props.user.recipes.length} Saved Recipes</p>
+              }
+              <button className="open-modal-btn" onClick={this.toggleEdit}> edit ur profile</button>
+            </div>
+          </div>
+          : <form>
             <br></br><label><b>Change Your Name:</b></label><br></br>
             <input type="text" id="user-name" name="name" placeholder={this.props.user.name} onChange={this.handleChange} required></input><br></br><br></br>
             <label><b>Change Your Email:</b></label><br></br>
@@ -108,9 +109,9 @@ class UserInfo extends Component {
             <label><b>Update Your Profile Picture:</b></label><br></br>
             <input type="text" id="user-pic" name="profile_pic" placeholder={this.props.user.profile_pic} onChange={this.handleChange} required></input><br></br><br></br>
             <button onClick={this.handleSubmit}>Update Your Profile</button>
+            <button onClick={this.toggleEdit}>Close form</button>
           </form>
-        </Modal>
-
+        }
       </div>
     )
   }
@@ -128,3 +129,17 @@ export default UserInfo;
 // this.props.setCurrentUser(response)
 // this.props.history.push('/profile')
 // }
+
+
+// {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+
+
+
+
+        // <Modal
+        //   className="modal"
+        //   show={this.state.isShowing}
+        //   close={this.closeModalHandler}
+        // >
+
+        // </Modal>
