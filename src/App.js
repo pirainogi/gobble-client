@@ -172,7 +172,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.currentUser, this.state.calendarEvents);
+    console.log(this.state.currentUser);
     return (
       <div className="App">
         <Header currentUser={this.state.currentUser} logout={this.logout}/>
