@@ -11,15 +11,12 @@ A full service meal-prepping application with scheduling functionality so you ne
 * Upon sign in, users can search and save recipes
 * Users can also create events that correlate to recipes
 
-Recipes can also be categorized in one or more of the following ways:
+Recipes can also be searched by name and/or filtered by dietary restrictions in one or more of the following ways:
 
 * Dairy Free
-* Gluten Free
-* Healthy
-* Keto
+* Gluten Fre
 * Vegetarian
 * Vegan
-* Whole30
 
 ## Built With
 
@@ -56,7 +53,7 @@ Then you can start running the program with `npm start`.
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-signup.png)
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-login.png)
 
-## Search for Recipes Instantly and View Full Details - All Recipes include Servings, Preparation Time, Ingredients, Instructions, Source, Image, and Health Icons 
+## Search for Recipes Instantly and View Full Details - All Recipes include Servings, Preparation Time, Ingredients, Categories, Source, Instructions, Image, and Dietary Icons
 
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-search.png)
 ![Gobble Home Page](https://raw.githubusercontent.com/pirainogi/gobble-client/master/public/gobble-live_search.png)
@@ -71,7 +68,7 @@ Then you can start running the program with `npm start`.
 
 # WIP Features/Functionality
 
-* Allow a user to search recipes based on category
+* Update User profile data 
 * Allowing a user to specify what type of recipes they would like to exclude based on their diet (if a user self-selects gluten-free, exclude all recipes that aren't categorized as gluten-free)
 * Ability to specify the type of event: purchase, prep, or consume
 * Ability to link a recipe with a prep or consume event
@@ -80,6 +77,9 @@ Then you can start running the program with `npm start`.
 * Authenticating a user with Google OAuth
 * Pushing calendar events from the application's built in calendar to a user's Google Calendar
 * Pushing grocery lists to a user's Google Keep
+
+* Testing with Jest
+* Responsive CSS 
 
 
 ## Available Scripts
