@@ -172,7 +172,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.currentUser);
+    // console.log(this.state.currentUser);
     return (
       <div className="App">
         <Header currentUser={this.state.currentUser} logout={this.logout}/>
@@ -231,7 +231,7 @@ class App extends Component {
           />
           <Route
             path="/search"
-            render={(routerProps) => <SearchContainer {...routerProps} recipes={this.state.recipes}/>}
+            render={(routerProps) => <SearchContainer {...routerProps} recipes={this.state.recipes} user={this.state.currentUser}/>}
           />
           <Route
             path="/"

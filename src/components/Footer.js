@@ -7,15 +7,6 @@ const Footer = () => {
       <div className='designed'>
         <p> Designed by Gabbie Piraino </p>
       </div>
-      <a href='https://github.com/pirainogi'>
-        <img src={process.env.PUBLIC_URL + '/github.png'} alt='github logo'></img>
-      </a>
-      <a href='https://www.linkedin.com/in/gabriellepiraino/'>
-        <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt='linkedin logo'></img>
-      </a>
-      <a href='https://medium.com/@nerdplusdog'>
-        <img src={process.env.PUBLIC_URL + '/medium.png'} alt='medium logo'></img>
-      </a>
     </div>
   )
 }

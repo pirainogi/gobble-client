@@ -15,6 +15,39 @@ class SearchContainer extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log(this.props.currentUser);
+    if(this.props.user_vegan){
+      this.setState({
+        restrictions: {
+          ...this.state.restrictions,
+          vegan: true
+        }
+      })
+    } if(this.props.user_veg){
+      this.setState({
+        restrictions: {
+          ...this.state.restrictions,
+          vegetarian: true
+        }
+      })
+    } if(this.props.user_gf){
+      this.setState({
+        restrictions: {
+          ...this.state.restrictions,
+          glutenFree: true
+        }
+      })
+    } if(this.props.user_df){
+      this.setState({
+        restrictions: {
+          ...this.state.restrictions,
+          dairyFree: true
+        }
+      })
+    }
+  }
+
   //push to the recipe's show page
   pushToRecipeShow = (e) => {
     this.props.history.push(`/recipes/${e.target.id}`)
@@ -98,6 +131,7 @@ class SearchContainer extends Component {
   }
 
   render(){
+    console.log(this.state);
     return (
       <div className="search-container">
         <SearchBar clickListener={this.clickListener} vegan={this.state.restrictions.vegan} vegetarian={this.state.restrictions.vegetarian} glutenfree={this.state.restrictions.glutenFree} dairyfree={this.state.restrictions.dairyFree}/>
