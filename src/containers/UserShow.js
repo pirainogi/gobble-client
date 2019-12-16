@@ -5,7 +5,7 @@ import UserInfo from '../components/UserInfo';
 
 class UserShow extends Component {
 
-  //create the user info component 
+  //create the user info component
   generateUserInfo = () => {
     return (
       <UserInfo
@@ -16,6 +16,7 @@ class UserShow extends Component {
   }
 
   render(){
+    console.log(process.env.REACT_APP_VARIABLE)
     return (
       <div className="user-show">
         {this.generateUserInfo()}

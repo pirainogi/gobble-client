@@ -71,7 +71,7 @@ class UserInfo extends Component {
 
 
   render() {
-    console.log('state', this.state);
+    // console.log('can i see the variable', this.props.test);
     return (
       <div>
         {this.state.editUser
