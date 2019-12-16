@@ -4,5 +4,5 @@ import {render} from '@testing-library/react'
 import App from '../App'
 
 it('renders without crashing', () => {
-const {getByText} = render(<Router><App /></Router>)
+const {container} = render(<Router><App /></Router>)
 })
