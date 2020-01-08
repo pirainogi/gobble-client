@@ -16,7 +16,7 @@ class UserShow extends Component {
   }
 
   render(){
-    console.log(process.env.REACT_APP_VARIABLE)
+    // console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
     return (
       <div className="user-show">
         {this.generateUserInfo()}

@@ -117,7 +117,7 @@ class App extends Component {
 
   //from the response, set a jwt token in local storage and then set the user, their assoc recipes, and cal events to local state
   setCurrentUser = (response) => {
-    console.log(response)
+    // console.log(response)
     localStorage.setItem("token", response.jwt)
     this.setState({
       currentUser: response.user,
