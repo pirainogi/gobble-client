@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import '../css/Login.css';
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 
 
 //trying to see if I can connect google auth for login purposes
 const responseGoogle = (response) => {
   console.log(response);
+  console.log(response.Zi.id_token)
 }
 
 class Login extends Component {
@@ -45,7 +46,7 @@ class Login extends Component {
   }
 
   render(){
-    console.log('google id', process.env.REACT_APP_GOOGLE_CLIENT_ID)
+    // console.log('google id', process.env.REACT_APP_GOOGLE_CLIENT_ID)
     return (
       <div className='login'>
         <h3>login to gobble </h3>
@@ -61,9 +62,6 @@ class Login extends Component {
 
           <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-            render={renderProps => (
-              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
-            )}
             buttonText="Login"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
